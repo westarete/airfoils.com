@@ -32,6 +32,11 @@ jobs:
       - name: Lint CSS
         run: npm run lint:css
 
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
   a11y:
     runs-on: ubuntu-latest
     needs: build-and-lint
@@ -57,3 +62,60 @@ jobs:
           npx serve dist -l 8080 &
           sleep 3
           npm run lint:a11y
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build-and-lint, a11y]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  smoke-test:
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Wait for deployment to propagate
+        run: sleep 10
+
+      - name: Verify HTML page loads
+        run: |
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${{ needs.deploy.outputs.page_url }}")
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "Homepage returned HTTP $HTTP_STATUS"
+            exit 1
+          fi
+          echo "Homepage OK (HTTP 200)"
+
+      - name: Verify CSS loads
+        run: |
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${{ needs.deploy.outputs.page_url }}css/style.css")
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "CSS returned HTTP $HTTP_STATUS"
+            exit 1
+          fi
+          echo "CSS OK (HTTP 200)"
+
+      - name: Verify page contains expected content
+        run: |
+          CONTENT=$(curl -s "${{ needs.deploy.outputs.page_url }}")
+          if ! echo "$CONTENT" | grep -q "Airfoils"; then
+            echo "Page doesn't contain expected content"
+            exit 1
+          fi
+          echo "Content check OK"
