@@ -1,0 +1,65 @@
+# airfoils.com
+
+Static website for Airfoils, the aerodynamic consulting firm of Dan Somers.
+
+## Tech Stack
+
+- **[Eleventy (11ty)](https://www.11ty.dev/)** - Static site generator
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **GitHub Actions** - CI/CD pipeline
+- **GitHub Pages** - Hosting
+
+## Why Eleventy?
+
+- Simple mental model: HTML templates with includes and layouts
+- Zero client-side JavaScript in output
+- Great Tailwind integration
+- Markdown support if content editing is needed later
+- Stable, active community
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server (with live reload)
+npm run dev
+
+# Build for production
+npm run build
+
+# Run linters
+npm run lint
+```
+
+## Project Structure
+
+```
+src/
+├── _includes/          # Shared templates (layouts, partials)
+├── css/
+│   └── input.css       # Tailwind directives
+├── images/             # Static images
+├── index.njk           # Homepage
+└── *.njk               # Other pages
+
+dist/                   # Built output (generated, not committed)
+```
+
+## Linting
+
+Local linting mirrors CI to catch issues before commit:
+
+- **html-validate** - HTML validation
+- **Stylelint** - CSS linting
+- **pa11y-ci** - Accessibility testing
+
+Run all checks: `npm run lint`
+
+## Deployment
+
+Push to `main` triggers GitHub Actions which:
+1. Builds the site
+2. Runs linters
+3. Deploys to GitHub Pages
