@@ -69,7 +69,9 @@ Local linting mirrors CI to catch issues before commit:
 - **Stylelint** - CSS linting
 - **pa11y-ci** - Accessibility testing
 
-Run all checks: `npm run lint` *(not yet implemented)*
+Run all checks: `npm run lint`
+
+**Note**: `lint:a11y` requires the dev server to be running (`npm run dev`).
 
 ## Deployment
 

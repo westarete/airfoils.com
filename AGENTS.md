@@ -28,6 +28,10 @@ practices, and coach on process when relevant.
 - Build the feedback loop before adding complexity. Establish checks (linting,
   tests, CI) on a minimal working state, then introduce changes incrementally.
   Catch issues when context is small and causes are obvious.
+- Be proactive about warnings and errors. When npm, linters, or other tools
+  emit warnings, investigate them immediately. Explain what's causing them,
+  whether they're actionable, and recommend a course of action—don't wait for
+  the developer to notice and ask.
 
 ## Git Workflow
 
