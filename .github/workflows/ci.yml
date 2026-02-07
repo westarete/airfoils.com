@@ -25,6 +25,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          PATH_PREFIX: /airfoils.com/
 
       - name: Lint HTML
         run: npm run lint:html
@@ -94,23 +96,33 @@ jobs:
       - name: Wait for deployment to propagate
         run: sleep 10
 
-      - name: Verify HTML page loads
+      - name: Verify page loads with no broken resources
         run: |
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${{ needs.deploy.outputs.page_url }}")
+          # Fetch the page and check for 200
+          HTTP_STATUS=$(curl -s -o /tmp/page.html -w "%{http_code}" "${{ needs.deploy.outputs.page_url }}")
           if [ "$HTTP_STATUS" != "200" ]; then
             echo "Homepage returned HTTP $HTTP_STATUS"
             exit 1
           fi
           echo "Homepage OK (HTTP 200)"
-
-      - name: Verify CSS loads
-        run: |
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${{ needs.deploy.outputs.page_url }}css/style.css")
-          if [ "$HTTP_STATUS" != "200" ]; then
-            echo "CSS returned HTTP $HTTP_STATUS"
-            exit 1
-          fi
-          echo "CSS OK (HTTP 200)"
+          
+          # Extract CSS URLs and verify they load
+          BASE_URL="${{ needs.deploy.outputs.page_url }}"
+          CSS_URLS=$(grep -oP 'href="\K[^"]*\.css' /tmp/page.html || true)
+          for css in $CSS_URLS; do
+            # Handle relative URLs
+            if [[ "$css" == /* ]]; then
+              FULL_URL="https://westarete.github.io${css}"
+            else
+              FULL_URL="${BASE_URL}${css}"
+            fi
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$FULL_URL")
+            if [ "$HTTP_STATUS" != "200" ]; then
+              echo "CSS $FULL_URL returned HTTP $HTTP_STATUS"
+              exit 1
+            fi
+            echo "CSS OK: $FULL_URL"
+          done
 
       - name: Verify page contains expected content
         run: |

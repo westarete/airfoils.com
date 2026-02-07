@@ -22,6 +22,17 @@
 6. [ ] Analyze legacy site structure
 7. [ ] Import content one page at a time, each passing checks
 
+## Go Live Checklist
+
+When ready to deploy to production at `airfoils.com`:
+
+1. [ ] Remove `PATH_PREFIX: /airfoils.com/` from `.github/workflows/ci.yml`
+2. [ ] Add `CNAME` file to `src/` containing `airfoils.com`
+3. [ ] Update `eleventy.config.js` to copy CNAME to dist
+4. [ ] Point `airfoils.com` DNS to GitHub Pages (185.199.108-111.153)
+5. [ ] Enable custom domain in GitHub repo settings
+6. [ ] Verify site works at `https://airfoils.com/`
+
 ## Wishlist
 
 - Responsive design refinements
