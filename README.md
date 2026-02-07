@@ -17,6 +17,10 @@ Static website for Airfoils, the aerodynamic consulting firm of Dan Somers.
 - Markdown support if content editing is needed later
 - Stable, active community
 
+## Prerequisites
+
+- Node.js (v18 or later recommended)
+
 ## Development
 
 ```bash
@@ -25,12 +29,10 @@ npm install
 
 # Start development server (with live reload)
 npm run dev
+# Then open http://localhost:8080
 
 # Build for production
 npm run build
-
-# Run linters
-npm run lint
 ```
 
 ## Project Structure
@@ -67,7 +69,7 @@ Local linting mirrors CI to catch issues before commit:
 - **Stylelint** - CSS linting
 - **pa11y-ci** - Accessibility testing
 
-Run all checks: `npm run lint`
+Run all checks: `npm run lint` *(not yet implemented)*
 
 ## Deployment
 
