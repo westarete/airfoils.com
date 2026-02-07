@@ -103,6 +103,18 @@ Push to `main` triggers GitHub Actions which:
 2. Runs linters
 3. Deploys to GitHub Pages
 
+## Git Workflow
+
+- Small, frequent commits
+- Follow [Tim Pope's commit message style](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
+  subject line ≤50 characters (imperative mood, capitalized, no trailing
+  period), blank line, then body wrapped at 72 characters
+- Keep these files in sync when making changes:
+  - `.gitignore` — when adding new tools or dependencies
+  - `TODO.md` — as tasks are completed or plans change
+  - `README.md` — developer instructions and documentation
+  - `STYLE_GUIDE.md` — when design decisions change
+
 ## Contact
 
 - **Owner**: Dan Somers <dan@airfoils.com>
