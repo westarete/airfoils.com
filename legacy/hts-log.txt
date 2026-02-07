@@ -1,0 +1,18 @@
+HTTrack3.49-2 launched on Sat, 07 Feb 2026 16:52:14 at http://airfoils.com/
+(httrack http://airfoils.com/ -O legacy/ )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+16:53:44	Error: 	"Not Found" (404) at link airfoils.com/companycommand/graphics/ideas_on.gif (from airfoils.com/airfoil.htm)
+16:53:44	Error: 	"Not Found" (404) at link airfoils.com/companycommand/graphics/cmdnet_on.gif (from airfoils.com/airfoil.htm)
+16:53:44	Error: 	"Not Found" (404) at link airfoils.com/companycommand/graphics/cmdtools_on.gif (from airfoils.com/airfoil.htm)
+16:53:44	Error: 	"Not Found" (404) at link airfoils.com/companycommand/graphics/reviews_on.gif (from airfoils.com/airfoil.htm)
+16:53:44	Error: 	"Not Found" (404) at link airfoils.com/companycommand/graphics/links_on.gif (from airfoils.com/airfoil.htm)
+16:53:48	Error: 	"Not Found" (404) at link airfoils.com/Why use new airfoils? (from airfoils.com/why.htm)
+16:53:51	Error: 	"Not Found" (404) at link airfoils.com/Low-speed aerodynamic characteristics of a 13-percent-thick airfoil section designed for general aviation applications (from airfoils.com/pubs2.htm)
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 minutes 50 seconds : 104 links scanned, 96 files written (808554 bytes overall) [557132 bytes received at 5064 bytes/sec], 359677 bytes transferred using HTTP compression in 33 files, ratio 21%, 20.8 requests per connection
+(7 errors, 0 warnings, 0 messages)

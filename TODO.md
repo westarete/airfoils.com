@@ -11,7 +11,7 @@
 
 ## Current Phase: Build the Feedback Loop
 
-1. [ ] Archive legacy site to `legacy/` for historical reference
+1. [x] Archive legacy site to `legacy/` for historical reference
 2. [ ] Scaffold Eleventy + Tailwind (minimal "hello world" that builds)
 3. [ ] Add local linting (HTML, CSS, a11y) that passes on hello world
 4. [ ] Set up GitHub Actions (CI runs same checks, deploys to Pages)

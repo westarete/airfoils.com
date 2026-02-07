@@ -45,7 +45,19 @@ src/
 └── *.njk               # Other pages
 
 dist/                   # Built output (generated, not committed)
+legacy/                 # Archived copy of original airfoils.com
 ```
+
+## Legacy Site
+
+A mirror of the original http://airfoils.com/ is preserved in `legacy/` for
+historical reference. To view it locally:
+
+```bash
+npx serve legacy/airfoils.com
+```
+
+Then open http://localhost:3000 in your browser.
 
 ## Linting
 

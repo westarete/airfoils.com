@@ -1,0 +1,97 @@
+<html>
+
+<!-- Mirrored from airfoils.com/eppler4.htm by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Feb 2026 21:53:57 GMT -->
+<head>
+<title>Eppler Code -- page 4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#CCCCCC">
+<table width="251" border="0" cellspacing="0" cellpadding="4" align="center">
+  <tr> 
+    <td height="36"> 
+      <div align="center"><a href="eppler3.html"><img src="graphics/previous.gif" width="98" height="25" border="0"></a></div>
+    </td>
+    <td height="36"> 
+      <div align="center"><a href="eppler5.html"><img src="graphics/next.gif" width="98" height="25" border="0"></a></div>
+    </td>
+  </tr>
+</table>
+<p align="center"><font size="3" face="Arial, Helvetica, sans-serif"><b>Theory 
+  (concluded)</b></font></p>
+<p align="center"><font size="3"><font face="Arial, Helvetica, sans-serif">Boundary-Layer 
+  Method</font></font></p>
+<p> <font size="2" face="Arial, Helvetica, sans-serif">The laminar and turbulent 
+  boundary-layer development is computed using integral momentum and energy equations. 
+  The approximate solutions obtained from the laminar boundary-layer method agree 
+  very well with exact solutions. The turbulent boundary-layer method is based 
+  on the best available empirical skin-friction, dissipation, and shape-factor 
+  laws.</font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif"> Of special interest are 
+  the predictions of separation and transition. The prediction of separation is 
+  determined by the shape factor based on energy and momentum thicknesses. (Note 
+  that this shape factor has the opposite tendency of the shape factor based on 
+  displacement and momentum thicknesses.) For laminar boundary layers, there exists 
+  a constant and reliable lower limit of this shape factor, which equals 1.515 
+  and corresponds to laminar separation. For turbulent boundary layers, no such 
+  unique and reliable limit exists. It has been determined, however, that the 
+  turbulent boundary layer will separate if the shape factor falls below 1.46 
+  and will not separate if the shape factor remains above 1.58. It has also been 
+  determined that thicker boundary layers tend to separate at lower shape factors. 
+  The uncertainty is not a significant disadvantage because the shape factor changes 
+  rapidly near separation. Nevertheless, results must be checked carefully with 
+  respect to turbulent separation. </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">The prediction of transition 
+  is based on an empirical criterion that contains the Reynolds number, based 
+  on local conditions and momentum thickness, and the shape factor. Previously, 
+  the transition criterion used was a local criterion. Recently, a new empirical 
+  transition criterion has been implemented that considers the instability history 
+  of the boundary layer. The results predicted using the new criterion are comparable 
+  to those using the e^n method but the computing time is negligible. The criterion 
+  contains a "roughness factor" that allows various degrees of surface roughness 
+  or free-stream turbulence to be simulated. The prediction of transition results 
+  in a switch from the laminar skin-friction, dissipation, and shape-factor laws 
+  to the turbulent ones, without changing the shape factor or the momentum thickness. 
+  Also, a procedure has recently been incorporated into the code that empirically 
+  estimates the increase in the boundary-layer thickness due to laminar separation 
+  bubbles; this procedure yields an additional "bubble drag." </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">The code contains an option 
+  that allows the analysis of the effect of single roughness elements on a turbulent 
+  as well as a laminar boundary layer. For the laminar case, transition is assumed 
+  to occur at the position of the roughness element. This simulates fixing transition 
+  by roughness in a wind tunnel or in flight. </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">The lift and pitching-moment 
+  coefficients are determined from the potential flow. Viscous corrections are 
+  then applied to these coefficients. The lift-curve slope where no separation 
+  is present is reduced to 2*pi from its theoretical value. In other words, the 
+  potential-flow thickness effects are assumed to be offset by the boundary-layer 
+  displacement effects. A lift-coefficient correction due to separation is also 
+  included. As an option, the displacement effect on the velocity distributions 
+  and the lift and pitching-moment coefficients can be computed. The boundary-layer 
+  characteristics at the trailing edge are used for the calculation of the profile-drag 
+  coefficient by a Squire-Young type formula. In general, the theoretical predictions 
+  agree well with experimental measurements. (See ref. 3, for example.) </font></p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">The code contains an option 
+  that allows aircraft-oriented boundary-layer developments to be computed, where 
+  the Reynolds number and the Mach number vary with aircraft lift coefficient 
+  and the local wing chord. In addition, a local twist angle can be input. Aircraft 
+  polars that include the induced drag and an aircraft parasite drag can also 
+  be computed. </font></p>
+<table width="251" border="0" cellspacing="0" cellpadding="4" align="center">
+  <tr> 
+    <td height="35"> 
+      <div align="center"><a href="eppler3.html"><img src="graphics/previous.gif" width="98" height="25" border="0"></a></div>
+    </td>
+    <td height="35"> 
+      <div align="center"><a href="eppler5.html"><img src="graphics/next.gif" width="98" height="25" border="0"></a></div>
+    </td>
+  </tr>
+</table>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="1">&copy; 2000 
+  Airfoils, Incorporated. </font></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+
+<!-- Mirrored from airfoils.com/eppler4.htm by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Feb 2026 21:53:58 GMT -->
+</html>
