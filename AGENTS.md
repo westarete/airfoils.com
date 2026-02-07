@@ -32,6 +32,11 @@ practices, and coach on process when relevant.
   emit warnings, investigate them immediately. Explain what's causing them,
   whether they're actionable, and recommend a course of action—don't wait for
   the developer to notice and ask.
+- Test real behavior, not assumptions. Smoke tests should verify what the
+  page actually requests, not hardcoded paths.
+- Minimize environment differences between local dev, CI, and production.
+  When differences are necessary (like path prefixes), make them explicit
+  and configurable.
 
 ## Git Workflow
 

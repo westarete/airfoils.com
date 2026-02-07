@@ -15,7 +15,7 @@
 2. [x] Scaffold Eleventy + Tailwind (minimal "hello world" that builds)
 3. [x] Add local linting (HTML, CSS, a11y) that passes on hello world
 4. [x] Set up GitHub Actions (CI runs same checks, deploys to Pages)
-5. [ ] Verify full loop: push → CI passes → site deploys
+5. [x] Verify full loop: push → CI passes → site deploys
 
 ## Next Phase: Import Content
 
