@@ -8,6 +8,7 @@ Static website for airfoils.com, the aerodynamic consulting firm of Dan Somers.
 - Hosted on GitHub Pages, deployed via GitHub Actions
 - See `README.md` for setup and commands
 - See `TODO.md` for current tasks and wishlist
+- See `STYLE_GUIDE.md` for design principles, colors, typography, and patterns
 
 ## Working With the Developer
 
@@ -38,6 +39,34 @@ practices, and coach on process when relevant.
   When differences are necessary (like path prefixes), make them explicit
   and configurable.
 
+## Design Approach
+
+We're modernizing a site that's been unchanged since ~2000. The philosophy is
+**evolution, not revolution**:
+
+- Honor the legacy blue/orange palette as inspiration
+- Apply classic design principles (color theory, typography, grids)
+- Prioritize readability and professionalism over trendiness
+- Ensure accessibility (WCAG 2.1 AA minimum)
+- Dan should recognize his site instantly; a designer should approve too
+
+### Design System Files
+
+Keep these in sync when making visual changes:
+
+1. **`STYLE_GUIDE.md`** — Design rationale, color theory, typography choices.
+   Explains the "why" behind decisions. Read this for context.
+
+2. **`tailwind.config.js`** — Source of truth for actual values (colors,
+   fonts, spacing). This is what the code uses.
+
+3. **`src/style-guide.njk`** — Rendered page showing design tokens and
+   components. Use this for visual review during development.
+
+When changing colors, fonts, or spacing: update `tailwind.config.js` first,
+then update `STYLE_GUIDE.md` to reflect the rationale, then verify visually
+on the style guide page.
+
 ## Git Workflow
 
 - Small, frequent commits.
@@ -48,4 +77,5 @@ practices, and coach on process when relevant.
   the commit message.
 - Keep `.gitignore` up to date when adding new tools or dependencies.
 - Keep `TODO.md` up to date as tasks are completed or plans change.
-- Keep `README.md` up to date with developer instructions and documentation. 
+- Keep `README.md` up to date with developer instructions and documentation.
+- Keep `STYLE_GUIDE.md` up to date when design decisions change. 

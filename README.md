@@ -44,11 +44,34 @@ src/
 │   └── input.css       # Tailwind directives
 ├── images/             # Static images
 ├── index.njk           # Homepage
+├── style-guide.njk     # Design system reference (dev only)
 └── *.njk               # Other pages
 
 dist/                   # Built output (generated, not committed)
 legacy/                 # Archived copy of original airfoils.com
 ```
+
+## Design System
+
+The site's visual design is documented in three places:
+
+1. **`STYLE_GUIDE.md`** — Design philosophy, color rationale, typography
+   choices, and component patterns. Read this first to understand the "why."
+
+2. **`tailwind.config.js`** — The source of truth for actual values (colors,
+   fonts, spacing). This is what the code uses.
+
+3. **`/style-guide/`** — A rendered page showing all design tokens and
+   components. Run `npm run dev` and visit http://localhost:8080/style-guide/
+   to see the design system in action.
+
+### Design Philosophy
+
+We're modernizing a site that's been unchanged since ~2000. The goal is
+**evolution, not revolution**—honor the legacy blue/orange palette and
+professional tone while applying modern design principles and accessibility
+standards. Dan should recognize his site instantly; a designer should approve
+of the craftsmanship.
 
 ## Legacy Site
 
