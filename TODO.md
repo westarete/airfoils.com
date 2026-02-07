@@ -9,7 +9,7 @@
 - Optimize the website for SEO and AI
 - Provide complete documentation for easy maintenance
 
-## Current Phase: Build the Feedback Loop
+## Completed: Build the Feedback Loop
 
 1. [x] Archive legacy site to `legacy/` for historical reference
 2. [x] Scaffold Eleventy + Tailwind (minimal "hello world" that builds)
@@ -17,10 +17,32 @@
 4. [x] Set up GitHub Actions (CI runs same checks, deploys to Pages)
 5. [x] Verify full loop: push → CI passes → site deploys
 
-## Next Phase: Import Content
+## Current Phase: Design & Content Import
 
-6. [ ] Analyze legacy site structure
-7. [ ] Import content one page at a time, each passing checks
+### Design System (do first, on 1-2 pages)
+
+6. [ ] Analyze legacy site structure and content inventory
+7. [ ] Create base layout (header, nav, footer)
+8. [ ] Establish Tailwind theme (colors, typography, spacing)
+9. [ ] Build homepage with new design
+10. [ ] Build one interior page to validate design system
+
+### Content Import (after design is solid)
+
+11. [ ] Import remaining pages one at a time
+12. [ ] Migrate images and assets
+
+### Validation
+
+13. [ ] Add link checker to CI
+14. [ ] Responsive testing across devices
+15. [ ] Final accessibility audit
+
+Consider Adding to Build/Lint:
+
+- **Broken link checker** - `linkinator` or html-validate plugin (after content import)
+- **Image optimization** - `eleventy-img` or build script (when importing images)
+- **Visual regression** - Playwright or Percy screenshots (optional)
 
 ## Go Live Checklist
 
