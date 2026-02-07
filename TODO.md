@@ -11,15 +11,16 @@
 
 ## Current Phase: Build the Feedback Loop
 
-1. [ ] Scaffold Eleventy + Tailwind (minimal "hello world" that builds)
-2. [ ] Add local linting (HTML, CSS, a11y) that passes on hello world
-3. [ ] Set up GitHub Actions (CI runs same checks, deploys to Pages)
-4. [ ] Verify full loop: push → CI passes → site deploys
+1. [ ] Archive legacy site to `legacy/` for historical reference
+2. [ ] Scaffold Eleventy + Tailwind (minimal "hello world" that builds)
+3. [ ] Add local linting (HTML, CSS, a11y) that passes on hello world
+4. [ ] Set up GitHub Actions (CI runs same checks, deploys to Pages)
+5. [ ] Verify full loop: push → CI passes → site deploys
 
 ## Next Phase: Import Content
 
-5. [ ] Analyze existing airfoils.com structure
-6. [ ] Import content one page at a time, each passing checks
+6. [ ] Analyze legacy site structure
+7. [ ] Import content one page at a time, each passing checks
 
 ## Wishlist
 

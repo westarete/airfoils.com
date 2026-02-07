@@ -37,4 +37,5 @@ practices, and coach on process when relevant.
   wrapped at 72 characters explaining what and why.
 - Always check with the developer before committing so they can review and edit
   the commit message.
-- Keep `.gitignore` up to date when adding new tools or dependencies. 
+- Keep `.gitignore` up to date when adding new tools or dependencies.
+- Keep `TODO.md` up to date as tasks are completed or plans change. 
