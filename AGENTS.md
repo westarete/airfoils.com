@@ -36,4 +36,5 @@ practices, and coach on process when relevant.
   (imperative mood, capitalized, no trailing period), blank line, then body
   wrapped at 72 characters explaining what and why.
 - Always check with the developer before committing so they can review and edit
-  the commit message. 
+  the commit message.
+- Keep `.gitignore` up to date when adding new tools or dependencies. 

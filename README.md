@@ -63,3 +63,10 @@ Push to `main` triggers GitHub Actions which:
 1. Builds the site
 2. Runs linters
 3. Deploys to GitHub Pages
+
+## Contact
+
+- **Owner**: Dan Somers <dan@airfoils.com>
+- **Developer**: Scott Woods <scott@westarete.com>
+
+For questions about this project, please reach out via email.
