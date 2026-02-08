@@ -108,7 +108,7 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
     - [x] Design Integration (`src/design-integration.md`)
     - [x] Specifications (`src/specifications.njk` — HTML with image)
     - [x] Add all new URLs to `.pa11yci.json` for accessibility testing
-12. [ ] Migrate images and assets
+12. [x] Migrate images and assets
     - [x] Copied 7 content images to `src/images/` (sailplane, tunnel, designint, eppler, turbine, chauvin, spec_chart)
     - [x] Copied 3 PDFs to `src/pdf/` (design.pdf, eppler.pdf, specifications.pdf)
     - [x] Added passthrough copy for `src/pdf` in `eleventy.config.js`
@@ -148,12 +148,6 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
     - [x] Consolidated separate `a11y` CI job into `build-and-lint` — all four linters now run together with one server
 15. [x] Responsive testing across devices
 16. [ ] Final accessibility audit
-
-### Consider Adding to Build/Lint
-
-- ~~**Broken link checker**~~ — done (linkinator, internal links only; see item 14)
-- ~~**Image optimization**~~ — not needed; images are tiny legacy files (91 KB total, all under 518px wide)
-- **Visual regression** - Playwright or Percy screenshots (optional)
 
 ### SEO & AI Optimization
 
@@ -208,7 +202,3 @@ When ready to deploy to production at `airfoils.com`:
    - Add redirect pages to pa11y-ci and html-validate checks
 7. [ ] Verify site works at `https://airfoils.com/`
 
-## Wishlist
-
-- Responsive design refinements
-- Performance tuning (image optimization, etc.)
