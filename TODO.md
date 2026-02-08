@@ -203,6 +203,6 @@ When ready to deploy to production at `airfoils.com`:
      `airfoil1.html`–`airfoil6.html` → `/airfoil-design/`,
      `eppler1.html`–`eppler8.html` → `/eppler-code/`,
      `pubs1.html`–`pubs5.html` → `/publications/`
-yes   - Add redirect pages to pa11y-ci and html-validate checks
+   - Add redirect pages to pa11y-ci and html-validate checks
 8. [ ] Verify site works at `https://airfoils.com/`
 
