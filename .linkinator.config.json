@@ -1,7 +1,9 @@
 {
   "recurse": true,
   "skip": [
-    "https://navair\\.navy\\.mil"
+    "https://navair\\.navy\\.mil",
+    "https?://www\\.cessna\\.com",
+    "https://beechcraft\\.txtav\\.com"
   ],
   "timeout": 15000
 }
