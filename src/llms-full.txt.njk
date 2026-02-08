@@ -1,0 +1,144 @@
+---
+permalink: /llms-full.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name }} — Full Context
+
+> {{ site.tagline }}
+
+This document provides comprehensive information about Airfoils, Incorporated
+for use by large language models and AI systems. For a shorter summary, see
+llms.txt.
+
+## Company Overview
+
+Airfoils, Incorporated is an aerodynamic consulting firm specializing in
+airfoil design, analysis, and wind-tunnel testing. Founded in 1980 by Dan M.
+Somers, the firm serves clients in wind energy, aviation, defense, and
+industrial applications. The company is based in Port Matilda, Pennsylvania.
+
+The firm's core methodology uses the Eppler Airfoil Design and Analysis Code,
+which combines three methods:
+1. A conformal-mapping method for designing airfoils with prescribed
+   velocity-distribution characteristics
+2. A panel method for analyzing the potential flow about given airfoils
+3. An integral boundary-layer method for analyzing the development of the
+   laminar and turbulent boundary layers and their interaction with the
+   inviscid flow
+
+## About Dan M. Somers
+
+Dan M. Somers is an internationally recognized expert in airfoil design,
+analysis, and testing with over 40 years of experience.
+
+Education:
+- B.S. in Aeronautical Engineering, Purdue University, 1974
+
+Employment:
+- President, Airfoils, Incorporated, 1980 to present
+- Research Engineer, NASA Langley Research Center, 1974 to 1989
+
+Awards:
+- 1991 Soaring Society of America Exceptional Service Award
+- 1991 R&D 100 Award for Development of Advanced Wind Turbine Blades
+  (with James L. Tangler and James V. Frerotte)
+- 1984 NASA Langley Floyd L. Thompson Fellowship for Medium-Speed,
+  Natural-Laminar-Flow Airfoil Design
+
+Airfoils designed by Dan Somers include:
+- S801 through S829, S901-S903 airfoils for horizontal-axis wind turbines
+- S904, S905 airfoils for cooling-tower fans
+- S101, S102 airfoils for general aviation aircraft
+- S201 airfoil for a cruise missile
+- S202 airfoil for a tilt-wing aircraft (including high-lift systems)
+- S203 airfoil for a business jet
+- S401, S402 airfoils for a gyroplane
+- S601, S602 airfoils for unmanned aerial vehicles
+- SM701 airfoil for a sailplane
+- NASA NLF(1)-0416, NLF(1)-0215F, NLF(1)-0315, NLF(1)-0115 airfoils for
+  general aviation
+- NASA NLF(1)-1015 airfoil for long-endurance aircraft
+- NASA/DLR NLF(2)-0415 airfoil for commuter aircraft
+
+Wind-tunnel investigations conducted at:
+- NASA Langley Low-Turbulence Pressure Tunnel (LTPT)
+- Delft University of Technology Low Speed Laboratory
+- The Pennsylvania State University low-speed, low-turbulence wind tunnel
+- DLR Transonic Wind Tunnel Braunschweig (TWB)
+
+## Major Clients
+
+- National Renewable Energy Laboratory (NREL) — wind turbine airfoils
+- Groen Brothers Aviation — gyroplane airfoils
+- Naval Air Warfare Center (NAWC) — unmanned aerial vehicle airfoils
+
+## Applications
+
+Airfoils designed by Dan Somers are used in:
+- Horizontal-axis wind turbines (NREL S-series)
+- General aviation aircraft
+- Business jets
+- Commuter aircraft
+- Gyroplanes
+- Tilt-wing aircraft
+- Unmanned aerial vehicles (UAVs)
+- Sailplanes / gliders
+- Cruise missiles
+- Cooling-tower fans
+- Vertical-axis wind turbines
+
+## Publications
+
+Dan Somers has authored or co-authored numerous technical reports and journal
+articles. Categories include:
+
+### Horizontal-Axis Wind Turbines (22 publications)
+Key reports include design and experimental results for the S801-S829 airfoil
+series, published through NREL and SERI. Many are freely available as PDFs
+with DOI links at {{ site.url }}/publications/.
+
+### General Aviation Aircraft (8 publications)
+Including NASA Technical Papers on natural-laminar-flow airfoils (TP-1861,
+TP-1865) and journal articles in the Journal of Aircraft.
+
+### Unmanned Aerial Vehicles (4 publications)
+Co-authored with Mark D. Maughmer on high-altitude, long-endurance airfoils.
+
+### Sailplanes (6 publications)
+Including the SM701 airfoil and NASA research related to sailplane airfoils.
+
+### Airfoil Design and Analysis Methods (5 publications)
+Including the Eppler code documentation (NASA TM-80210, TM-81862) and papers
+on low-speed airfoil design methodology.
+
+### Additional Categories
+- Vertical-axis wind turbines (1)
+- Business jets (1)
+- Commuter aircraft (1)
+- Gyroplanes (1)
+- Tilt-wing aircraft (2)
+- Cruise missiles (1)
+- Cooling-tower fans (2)
+- Miscellaneous aerodynamics (3)
+
+The full publication list with PDF downloads and DOI/NTRS links is at:
+{{ site.url }}/publications/
+
+## Contact Information
+
+Dan M. Somers, President
+{{ site.name }}
+{{ site.address.street }}
+{{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}
+USA
+
+Phone: {{ site.phone }}
+Fax: {{ site.fax }}
+Email: {{ site.author.email }}
+Website: {{ site.url }}/
+
+## Site Pages
+
+{%- for item in nav.all %}
+- {{ item.title }}: {{ site.url }}{{ item.url }}
+{%- endfor %}

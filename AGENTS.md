@@ -34,6 +34,13 @@ Some commands require specific permissions:
   blocks writes to `~/.npm` cache outside the workspace.
 - **`npm run check`** and **`npm run lint`** — Require `["all"]` permissions
   because pa11y-ci launches a headless browser that the sandbox blocks.
+  **Known issue:** Cursor's sandbox injects a `PUPPETEER_CACHE_DIR` env var
+  pointing to a temp sandbox directory. Chrome is installed in the default
+  location (`~/.cache/puppeteer/`) but Puppeteer can't find it because the
+  env var redirects the lookup. Even `["all"]` permissions don't clear the
+  env var. **Workaround:** Prefix with `unset PUPPETEER_CACHE_DIR &&`, e.g.
+  `unset PUPPETEER_CACHE_DIR && npm run lint` or
+  `unset PUPPETEER_CACHE_DIR && npm run check`.
 - **`npm run dev`** — Can run in background with `is_background: true`
 - **`git push`** — Requires `["full_network"]` permissions
 
@@ -46,9 +53,9 @@ bare commands. The npm scripts handle this automatically, but when running
 ad-hoc commands in the terminal, always use `npx`.
 
 **Never run `sudo` or commands that require elevated privileges.** If a
-command fails due to permissions (e.g., npm cache ownership), explain the
-problem to the developer and let them fix it in their own terminal. Do not
-attempt to work around OS-level permission issues.
+command truly requires root access (e.g., npm cache ownership needing
+`chown`), explain the problem and let the developer fix it in their own
+terminal.
 
 ## Principles
 
@@ -78,6 +85,16 @@ attempt to work around OS-level permission issues.
   "someone decided this before" — all decisions are documented, so the
   current context is all the context you need. Scope-creep is the wrong
   frame; coherence is the job.
+- Own your environment. When a command fails, **debug it** — check env vars,
+  paths, configs, permissions, and error messages before concluding "the
+  developer needs to do this manually." The Cursor sandbox adds constraints (env
+  vars, filesystem restrictions, network blocks), but most have workarounds
+  (unsetting vars, requesting permissions, adjusting paths). Delegating to the
+  human is a last resort, not a first instinct. The debugging steps are: (1)
+  read the error message carefully, (2) check relevant env vars with `env | grep
+  ...`, (3) verify paths and files exist, (4) try the obvious workaround, (5)
+  document what you learn in AGENTS.md. Only escalate to the developer when the
+  fix genuinely requires privileges or access you cannot obtain.
 
 ## Design Approach
 

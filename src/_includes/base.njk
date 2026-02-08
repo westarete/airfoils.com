@@ -3,12 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} | Airfoils, Incorporated</title>
-  <meta name="description" content="{{ description | default('Airfoils, Incorporated specializes in airfoil design, analysis, and wind-tunnel testing for wind turbines, fans, and aircraft.') }}">
+  {%- if page.url == "/" %}
+  <title>{{ site.name }} — Airfoil Design, Analysis, and Testing</title>
+  {%- else %}
+  <title>{{ title }} | {{ site.name }}</title>
+  {%- endif %}
+  <meta name="description" content="{{ description | default(site.description) }}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  {# ---- Open Graph ---- #}
+  {%- if page.url == "/" %}
+  <meta property="og:title" content="{{ site.name }} — Airfoil Design, Analysis, and Testing">
+  {%- else %}
+  <meta property="og:title" content="{{ title }} | {{ site.name }}">
+  {%- endif %}
+  <meta property="og:description" content="{{ description | default(site.description) }}">
+  <meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+
+  {# ---- Structured data (JSON-LD) ---- #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ site.url }}/#organization",
+        "name": "{{ site.name }}",
+        "url": "{{ site.url }}/",
+        "description": "{{ site.description }}",
+        "telephone": "{{ site.phone }}",
+        "faxNumber": "{{ site.fax }}",
+        "email": "{{ site.author.email }}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ site.address.street }}",
+          "addressLocality": "{{ site.address.city }}",
+          "addressRegion": "{{ site.address.state }}",
+          "postalCode": "{{ site.address.zip }}",
+          "addressCountry": "{{ site.address.country }}"
+        },
+        "founder": { "@id": "{{ site.url }}/#person" },
+        "knowsAbout": [
+          "Airfoil design",
+          "Wind-tunnel testing",
+          "Aerodynamics",
+          "Eppler airfoil code",
+          "Wind turbine airfoils",
+          "High-lift systems"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person",
+        "name": "{{ site.author.name }}",
+        "jobTitle": "{{ site.author.jobTitle }}",
+        "email": "{{ site.author.email }}",
+        "url": "{{ site.author.url }}",
+        "worksFor": { "@id": "{{ site.url }}/#organization" }
+      },
+      {%- if page.url == "/" %}
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "name": "{{ site.name }}",
+        "url": "{{ site.url }}/",
+        "description": "{{ site.description }}",
+        "publisher": { "@id": "{{ site.url }}/#organization" }
+      },
+      {%- endif %}
+      {
+        "@type": "WebPage",
+        "url": "{{ site.url }}{{ page.url }}",
+        "name": "{{ title }} | {{ site.name }}",
+        "description": "{{ description | default(site.description) }}",
+        "isPartOf": { "@id": "{{ site.url }}/#website" },
+        "about": { "@id": "{{ site.url }}/#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="flex flex-col min-h-screen bg-gray-50 font-sans text-body leading-relaxed text-gray-800">
 

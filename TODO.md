@@ -151,22 +151,24 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 
 ### SEO & AI Optimization
 
-- [ ] SEO fundamentals
-  - [ ] Add `<meta name="robots" content="index, follow">` to base layout
-  - [ ] Add canonical URLs (`<link rel="canonical">`)
-  - [ ] Add Open Graph meta tags (og:title, og:description, og:type, og:url)
-  - [ ] Generate a `sitemap.xml` (eleventy-plugin-sitemap or build script)
-  - [ ] Add `robots.txt` allowing all crawlers
-  - [ ] Structured data (JSON-LD) for Organization, Person (Dan), and Article schemas
-  - [ ] Verify heading hierarchy is clean on every page (h1 > h2 > h3)
-  - [ ] Ensure all images have descriptive alt text (not just present, but useful)
-- [ ] AI discoverability
-  - [ ] Add `llms.txt` — a plain-text summary of who Dan is, what Airfoils Inc. does, key capabilities, and how to contact (see llmstxt.org)
-  - [ ] Add `llms-full.txt` — extended version with publication list, client list, and technical background
-  - [ ] Consider structured data markup that AI systems can parse (JSON-LD covers this)
-- [ ] Content quality for search
-  - [ ] Review page titles and meta descriptions for keyword relevance (airfoil design, wind tunnel testing, Eppler code, etc.)
-  - [ ] Ensure the homepage has enough indexable text (not just images/cards)
+- [x] SEO fundamentals
+  - [x] Add `<meta name="robots" content="index, follow">` to base layout
+  - [x] Add canonical URLs (`<link rel="canonical">`)
+  - [x] Add Open Graph meta tags (og:title, og:description, og:type, og:url, og:site_name)
+  - [x] Generate a `sitemap.xml` (Nunjucks template using `collections.all`)
+  - [x] Add `robots.txt` allowing all crawlers (Nunjucks template with sitemap link)
+  - [x] Structured data (JSON-LD) for Organization, Person (Dan), WebSite, and WebPage schemas
+  - [x] Verify heading hierarchy is clean on every page (h1 > h2 > h3) — confirmed, no issues
+  - [x] Ensure all images have descriptive alt text — all 10 images verified
+  - [x] Created `src/_data/site.js` with site-wide metadata (name, URL, author, address, phone)
+  - [x] Homepage title uses `{{ site.name }} — Airfoil Design, Analysis, and Testing` for better SEO
+- [x] AI discoverability
+  - [x] Add `llms.txt` — plain-text summary following llmstxt.org format (company, Dan, capabilities, clients, pages)
+  - [x] Add `llms-full.txt` — extended version with publication list, client list, technical background, and page inventory
+  - [x] Structured data (JSON-LD) covers AI-parseable markup
+- [x] Content quality for search
+  - [x] Review page titles and meta descriptions for keyword relevance — all 13 pages have descriptive, keyword-rich titles and descriptions
+  - [x] Ensure the homepage has enough indexable text — 5 sections with substantial prose content
   - [x] Add internal cross-links between related pages
     - [x] Airfoil Design ↔ Eppler Code ↔ Publications
     - [x] Design Integration → Airfoil Design, Applications, Specifications (+ DOI for reference)
@@ -180,11 +182,12 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 When ready to deploy to production at `airfoils.com`:
 
 1. [ ] Remove `PATH_PREFIX: /airfoils.com/` from `.github/workflows/ci.yml`
-2. [ ] Add `CNAME` file to `src/` containing `airfoils.com`
-3. [ ] Update `eleventy.config.js` to copy CNAME to dist
-4. [ ] Point `airfoils.com` DNS to GitHub Pages (185.199.108-111.153)
-5. [ ] Enable custom domain in GitHub repo settings
-6. [ ] Add legacy URL redirects (GitHub Pages has no server-side redirects)
+2. [ ] Update `src/_data/site.js` default URL to `https://airfoils.com` (or set `SITE_URL` env var)
+3. [ ] Add `CNAME` file to `src/` containing `airfoils.com`
+4. [ ] Update `eleventy.config.js` to copy CNAME to dist
+5. [ ] Point `airfoils.com` DNS to GitHub Pages (185.199.108-111.153)
+6. [ ] Enable custom domain in GitHub repo settings
+7. [ ] Add legacy URL redirects (GitHub Pages has no server-side redirects)
    - Create a `redirect.njk` layout with `<meta http-equiv="refresh">` and `<link rel="canonical">`
    - Create a data file (`src/_data/redirects.json` or similar) mapping old → new paths
    - Use Eleventy pagination to generate an HTML file at each old path
@@ -199,6 +202,6 @@ When ready to deploy to production at `airfoils.com`:
      `airfoil1.html`–`airfoil6.html` → `/airfoil-design/`,
      `eppler1.html`–`eppler8.html` → `/eppler-code/`,
      `pubs1.html`–`pubs5.html` → `/publications/`
-   - Add redirect pages to pa11y-ci and html-validate checks
-7. [ ] Verify site works at `https://airfoils.com/`
+yes   - Add redirect pages to pa11y-ci and html-validate checks
+8. [ ] Verify site works at `https://airfoils.com/`
 

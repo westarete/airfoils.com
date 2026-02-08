@@ -1,0 +1,51 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name }}
+
+> {{ site.tagline }}
+
+Airfoils, Incorporated is an aerodynamic consulting firm founded and led by
+Dan M. Somers, an internationally recognized expert in airfoil design,
+analysis, and wind-tunnel testing. The firm is based in Port Matilda,
+Pennsylvania, USA.
+
+## About Dan M. Somers
+
+Dan M. Somers holds a B.S. in Aeronautical Engineering from Purdue University
+(1974). He served as a Research Engineer at NASA Langley Research Center from
+1974 to 1989 and founded Airfoils, Incorporated in 1980. He co-developed the
+Eppler Airfoil Design and Analysis Code with Richard Eppler and has designed
+airfoils for wind turbines, aircraft, gyroplanes, sailplanes, unmanned aerial
+vehicles, cruise missiles, and cooling-tower fans.
+
+## Key Capabilities
+
+- Custom airfoil design using the Eppler code (conformal-mapping design,
+  panel-method analysis, integral boundary-layer methods)
+- Experimental verification through wind-tunnel testing at world-class
+  facilities (NASA Langley LTPT, Delft University, Penn State, DLR)
+- Design of high-lift systems
+- Applications spanning wind energy, general aviation, business jets, commuter
+  aircraft, gyroplanes, UAVs, sailplanes, and industrial fans
+
+## Major Clients
+
+- National Renewable Energy Laboratory (NREL) — wind turbines
+- Groen Brothers Aviation — gyroplanes
+- Naval Air Warfare Center (NAWC) — unmanned aerial vehicles
+
+## Contact
+
+- Email: {{ site.author.email }}
+- Phone: {{ site.phone }}
+- Address: {{ site.address.street }}, {{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}, USA
+- Website: {{ site.url }}/
+
+## Pages
+
+{%- for item in nav.all %}
+- [{{ item.title }}]({{ site.url }}{{ item.url }}): {% if item.url == "/" %}Homepage with company overview and capabilities{% elif item.url == "/why/" %}Business case for custom airfoil design{% elif item.url == "/airfoil-design/" %}Technical paper on subsonic airfoil design methodology{% elif item.url == "/applications/" %}Table of airfoil applications across industries{% elif item.url == "/clients/" %}Major clients and their applications{% elif item.url == "/contact/" %}Contact information and address{% elif item.url == "/design-integration/" %}How airfoil and application design interact{% elif item.url == "/eppler-code/" %}The Eppler Airfoil Design and Analysis Code{% elif item.url == "/links/" %}Related organizations and resources{% elif item.url == "/publications/" %}Full publication list with PDFs and DOIs{% elif item.url == "/resume/" %}Dan M. Somers credentials and experience{% elif item.url == "/specifications/" %}Parameters required for airfoil design{% elif item.url == "/wind-tunnels/" %}Wind-tunnel testing facilities and services{% endif %}
+{%- endfor %}
+- [Full context for LLMs]({{ site.url }}/llms-full.txt): Extended version with publication list and technical details

@@ -75,13 +75,23 @@ requests, not that the link is broken.
 
 ```
 src/
+├── _data/
+│   ├── nav.js          # Navigation data (single source of truth for pages)
+│   └── site.js         # Site-wide metadata (name, URL, author, address)
 ├── _includes/          # Shared templates (layouts, partials)
+│   ├── base.njk        # Base layout (head, header, footer, SEO tags)
+│   └── page.njk        # Interior page layout (extends base)
 ├── css/
-│   └── input.css       # Tailwind directives
+│   └── input.css       # Tailwind directives and design tokens
 ├── images/             # Static images
+├── pdf/                # PDF documents (publications, specs)
 ├── index.njk           # Homepage
 ├── style-guide.njk     # Design system reference (dev only)
-└── *.njk               # Other pages
+├── sitemap.njk         # Generated sitemap.xml
+├── robots.txt.njk      # Generated robots.txt
+├── llms.txt.njk        # AI discoverability (llmstxt.org format)
+├── llms-full.txt.njk   # Extended AI context (publications, clients)
+└── *.md / *.njk        # Content pages
 
 dist/                   # Built output (generated, not committed)
 legacy/                 # Archived copy of original airfoils.com
@@ -106,6 +116,30 @@ We're modernizing a site that's been unchanged since ~2000. The goal is
 professional tone while applying modern design principles and accessibility
 standards. Dan should recognize his site instantly; a designer should approve
 of the craftsmanship.
+
+## SEO and AI Discoverability
+
+The base layout (`src/_includes/base.njk`) includes SEO tags on every page:
+
+- **Meta tags**: `robots`, `description`, `canonical` URL, Open Graph
+  (`og:title`, `og:description`, `og:type`, `og:url`, `og:site_name`)
+- **Structured data**: JSON-LD with `Organization`, `Person`, `WebPage`,
+  and `WebSite` (homepage only) schemas
+- **Title**: Homepage uses `Site Name — tagline` format; other pages use
+  `Page Title | Site Name`
+
+Site-wide metadata is centralized in `src/_data/site.js` (company name, URL,
+author, address, phone). The URL is derived from `PATH_PREFIX` for the current
+deployment; when going live on the custom domain, set `SITE_URL` or update
+the default in `site.js`.
+
+Generated files (built from Nunjucks templates, not static):
+
+- `/robots.txt` — allows all crawlers, links to sitemap
+- `/sitemap.xml` — auto-generated from `collections.all`
+- `/llms.txt` — AI-readable summary ([llmstxt.org](https://llmstxt.org/) format)
+- `/llms-full.txt` — extended version with publications, clients, and
+  technical background
 
 ## Internal Links and Path Prefix
 
