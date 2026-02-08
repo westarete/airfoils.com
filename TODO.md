@@ -59,7 +59,7 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 7. [x] Create style guide and design tokens
    - [x] Configure color palette in `src/css/input.css` (Tailwind v4 @theme)
    - [x] Build self-documenting `src/style-guide.njk` page with rationale
-   - [ ] Iterate: adjust values, refresh, review until it feels right
+   - [x] Iterate: adjust values, refresh, review until it feels right
 8. [ ] Create base layout (header, nav, footer)
    - Replace table-based layout with CSS Grid/Flexbox
    - Responsive navigation (hamburger menu on mobile)
