@@ -33,9 +33,25 @@ npm install
 npm run dev
 # Then open http://localhost:8080
 
-# Build for production
+# Build + lint (all three linters — run before committing)
+npm run check
+
+# Lint only (skip build, useful during dev)
+npm run lint
+
+# Build for production (no linting)
 npm run build
 ```
+
+**Note**: `lint` and `check` require the dev server to be running (`npm run dev`)
+because pa11y-ci tests against `http://localhost:8080`. Start the dev server in a
+separate terminal first.
+
+Linting mirrors CI to catch issues before commit:
+
+- **html-validate** — HTML validation
+- **Stylelint** — CSS linting
+- **pa11y-ci** — Accessibility testing
 
 ## Project Structure
 
@@ -97,26 +113,8 @@ A mirror of the original http://airfoils.com/ is preserved in `legacy/` for
 historical reference. To view it locally:
 
 ```bash
-npx serve legacy/airfoils.com
+open legacy/index.html
 ```
-
-Then open http://localhost:3000 in your browser.
-
-## Linting
-
-Local linting mirrors CI to catch issues before commit:
-
-- **html-validate** - HTML validation
-- **Stylelint** - CSS linting
-- **pa11y-ci** - Accessibility testing
-
-```bash
-npm run check   # build + lint (all three linters)
-npm run lint     # lint only (skip build, useful during dev)
-```
-
-**Note**: `lint:a11y` (pa11y-ci) requires the dev server to be running
-(`npm run dev`). Start it in a separate terminal before running lint or check.
 
 ## Deployment
 
