@@ -8,6 +8,8 @@
       }
     ],
     "import-notation": null,
-    "color-hex-length": null
+    "color-hex-length": null,
+    "value-keyword-case": null,
+    "custom-property-pattern": null
   }
 }

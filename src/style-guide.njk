@@ -3,7 +3,7 @@ layout: base.njk
 title: Style Guide
 ---
 
-<h1 class="text-4xl font-bold text-primary-700 mb-4">Style Guide</h1>
+<h1 class="font-heading text-4xl font-bold text-primary-700 leading-tight mb-4">Style Guide</h1>
 
 <p class="text-lg text-gray-600 mb-8">
   Design tokens and component patterns for airfoils.com. This page is the
@@ -16,7 +16,7 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16 bg-gray-50 p-6 rounded-lg border border-gray-200">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4">Design Philosophy</h2>
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4">Design Philosophy</h2>
 
   <p class="text-gray-700 mb-4">
     <strong>Evolution, not revolution.</strong> Dan Somers has had the same
@@ -40,7 +40,7 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Colors</h2>
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Colors</h2>
 
   <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6">
     <p class="text-gray-700 mb-2">
@@ -54,7 +54,7 @@ title: Style Guide
     </p>
   </div>
 
-  <h3 class="text-lg font-medium text-gray-700 mb-4">Primary (Blue)</h3>
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Primary (Blue)</h3>
   <p class="text-sm text-gray-600 mb-3">
     Used for navigation, headers, buttons, and links. Legacy value: <code class="bg-gray-200 px-1 rounded">#006699</code>
   </p>
@@ -101,7 +101,7 @@ title: Style Guide
     </div>
   </div>
 
-  <h3 class="text-lg font-medium text-gray-700 mb-4">Accent (Orange)</h3>
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Accent (Orange)</h3>
   <p class="text-sm text-gray-600 mb-3">
     Used for emphasis, CTAs, and highlights. Legacy value: <code class="bg-gray-200 px-1 rounded">#CC3300</code>
   </p>
@@ -148,7 +148,7 @@ title: Style Guide
     </div>
   </div>
 
-  <h3 class="text-lg font-medium text-gray-700 mb-4">Neutral (Gray)</h3>
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Neutral (Gray)</h3>
   <p class="text-sm text-gray-600 mb-3">
     Tailwind's default gray scale. Used for text, borders, and backgrounds.
   </p>
@@ -195,7 +195,7 @@ title: Style Guide
     </div>
   </div>
 
-  <h3 class="text-lg font-medium text-gray-700 mb-4">Color Usage Guide</h3>
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Color Usage Guide</h3>
   <div class="overflow-x-auto">
     <table class="w-full text-sm border-collapse">
       <thead>
@@ -209,8 +209,8 @@ title: Style Guide
         <tr><td class="p-2 border border-gray-200">Primary buttons</td><td class="p-2 border border-gray-200">primary-500</td><td class="p-2 border border-gray-200">White text</td></tr>
         <tr><td class="p-2 border border-gray-200">Button hover</td><td class="p-2 border border-gray-200">primary-600</td><td class="p-2 border border-gray-200"></td></tr>
         <tr><td class="p-2 border border-gray-200">Links</td><td class="p-2 border border-gray-200">primary-600</td><td class="p-2 border border-gray-200">Underline on hover</td></tr>
-        <tr><td class="p-2 border border-gray-200">Section headings</td><td class="p-2 border border-gray-200">primary-700</td><td class="p-2 border border-gray-200"></td></tr>
-        <tr><td class="p-2 border border-gray-200">Body text</td><td class="p-2 border border-gray-200">gray-700/800</td><td class="p-2 border border-gray-200"></td></tr>
+        <tr><td class="p-2 border border-gray-200">Section headings</td><td class="p-2 border border-gray-200">primary-700</td><td class="p-2 border border-gray-200">Source Serif 4</td></tr>
+        <tr><td class="p-2 border border-gray-200">Body text</td><td class="p-2 border border-gray-200">gray-700/800</td><td class="p-2 border border-gray-200">System sans-serif</td></tr>
         <tr><td class="p-2 border border-gray-200">Secondary text</td><td class="p-2 border border-gray-200">gray-600</td><td class="p-2 border border-gray-200"></td></tr>
         <tr><td class="p-2 border border-gray-200">Borders</td><td class="p-2 border border-gray-200">gray-200</td><td class="p-2 border border-gray-200"></td></tr>
         <tr><td class="p-2 border border-gray-200">Backgrounds</td><td class="p-2 border border-gray-200">white, gray-50</td><td class="p-2 border border-gray-200"></td></tr>
@@ -224,68 +224,137 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Typography</h2>
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Typography</h2>
 
   <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6">
-    <p class="text-gray-700 mb-2">
-      <strong>Rationale:</strong> We use system fonts for performance and native feel.
-      The legacy site used Arial/Helvetica, so this maintains continuity while
-      looking better on each platform.
+    <p class="text-gray-700 mb-3">
+      <strong>Approach:</strong> Serif headings with sans-serif body. This inverts
+      the typical web convention—intentionally. Serif headings evoke technical
+      publishing (NASA TMs, AIAA papers, engineering journals) and carry the
+      institutional gravitas appropriate for an internationally recognized expert.
+      Sans-serif body ensures readability for dense technical prose on screen.
     </p>
     <p class="text-sm text-gray-600 mb-2">
-      <strong>Font stack:</strong>
-      <code class="bg-gray-200 px-1 rounded text-xs">ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif</code>
+      <strong>Headings:</strong>
+      <code class="bg-gray-200 px-1 rounded text-xs">Source Serif 4</code>
+      — transitional serif by Frank Griesshammer (Adobe). Loaded from Google Fonts.
+    </p>
+    <p class="text-sm text-gray-600 mb-2">
+      <strong>Body:</strong>
+      <code class="bg-gray-200 px-1 rounded text-xs">ui-sans-serif, system-ui, -apple-system, ...</code>
+      — system font stack for zero load cost and legacy Arial continuity.
+    </p>
+    <p class="text-sm text-gray-600 mb-2">
+      <strong>Technical:</strong>
+      <code class="bg-gray-200 px-1 rounded text-xs">ui-monospace, SFMono-Regular, ...</code>
+      — for airfoil designations, Reynolds numbers, and code.
     </p>
     <p class="text-sm text-gray-600">
-      <strong>Type scale:</strong> Based on Tailwind defaults (roughly 1.25 ratio / Major Third).
+      <strong>Body text size:</strong> 17px (1.0625rem) with 1.7 line height.
+      Dense technical prose benefits from slightly larger text and more generous leading.
     </p>
   </div>
 
-  <div class="space-y-6">
+  {# --- Heading Scale --- #}
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Heading Scale (Source Serif 4)</h3>
+  <div class="space-y-6 mb-10">
     <div>
-      <span class="text-xs text-gray-500 uppercase tracking-wide">5xl / Hero</span>
-      <p class="text-5xl font-bold text-primary-700">Only The Best Is Good Enough</p>
+      <span class="text-xs text-gray-500 uppercase tracking-wide font-sans">5xl / Hero</span>
+      <p class="font-heading text-5xl font-bold text-primary-700 leading-tight">Only The Best Is Good Enough</p>
     </div>
     <div>
-      <span class="text-xs text-gray-500 uppercase tracking-wide">4xl / H1</span>
-      <p class="text-4xl font-bold text-gray-900">Page Title</p>
+      <span class="text-xs text-gray-500 uppercase tracking-wide font-sans">4xl / H1</span>
+      <p class="font-heading text-4xl font-bold text-gray-900 leading-tight">Subsonic Airfoil Design</p>
     </div>
     <div>
-      <span class="text-xs text-gray-500 uppercase tracking-wide">3xl / H2</span>
-      <p class="text-3xl font-semibold text-gray-800">Section Heading</p>
+      <span class="text-xs text-gray-500 uppercase tracking-wide font-sans">3xl / H2</span>
+      <p class="font-heading text-3xl font-semibold text-gray-800 leading-snug">Qualifications and Major Contributions</p>
     </div>
     <div>
-      <span class="text-xs text-gray-500 uppercase tracking-wide">2xl / H3</span>
-      <p class="text-2xl font-semibold text-gray-800">Subsection Heading</p>
+      <span class="text-xs text-gray-500 uppercase tracking-wide font-sans">2xl / H3</span>
+      <p class="font-heading text-2xl font-semibold text-gray-800 leading-snug">Wind-Tunnel Testing</p>
     </div>
     <div>
-      <span class="text-xs text-gray-500 uppercase tracking-wide">xl / H4</span>
-      <p class="text-xl font-medium text-gray-700">Card Title</p>
+      <span class="text-xs text-gray-500 uppercase tracking-wide font-sans">xl / H4</span>
+      <p class="font-heading text-xl font-semibold text-gray-700 leading-snug">Eppler Airfoil Design and Analysis Code</p>
     </div>
+  </div>
+
+  {# --- Body Scale --- #}
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Body Scale (System Sans-Serif)</h3>
+  <div class="space-y-6 mb-10">
     <div>
       <span class="text-xs text-gray-500 uppercase tracking-wide">lg / Lead</span>
-      <p class="text-lg text-gray-600">Lead paragraph text for introductions and summaries.</p>
+      <p class="text-lg text-gray-600">Airfoils, Incorporated specializes in airfoil design, analysis, and wind-tunnel testing, including high-lift systems, for wind turbines, fans, and aircraft.</p>
     </div>
     <div>
-      <span class="text-xs text-gray-500 uppercase tracking-wide">base / Body</span>
-      <p class="text-base text-gray-700">Regular body text. Airfoils, Incorporated is a consulting firm specializing in airfoil design, analysis, and testing, including high-lift systems.</p>
+      <span class="text-xs text-gray-500 uppercase tracking-wide">body (17px) / Body</span>
+      <p class="text-body text-gray-700">The cost of the airfoil design is trivial compared to the economic benefits of the new technology. For example, the cost of tailoring an airfoil to a single-engine airplane is less than 0.1 percent of the cost of bringing that airplane to production, yet the new airfoil determines to a large extent the airplane's performance and handling.</p>
     </div>
     <div>
       <span class="text-xs text-gray-500 uppercase tracking-wide">sm / Secondary</span>
-      <p class="text-sm text-gray-600">Secondary text for captions and metadata.</p>
+      <p class="text-sm text-gray-600">Secondary text for captions, metadata, and navigation labels.</p>
     </div>
     <div>
       <span class="text-xs text-gray-500 uppercase tracking-wide">xs / Fine print</span>
-      <p class="text-xs text-gray-500">Fine print and legal text.</p>
+      <p class="text-xs text-gray-500">Copyright 2000 Airfoils, Incorporated. All rights reserved.</p>
     </div>
   </div>
 
-  <h3 class="text-lg font-medium text-gray-700 mt-8 mb-4">Font Weights</h3>
-  <div class="space-y-2">
-    <p class="font-normal text-gray-700"><span class="text-gray-500 w-24 inline-block">Normal (400):</span> Body text</p>
-    <p class="font-medium text-gray-700"><span class="text-gray-500 w-24 inline-block">Medium (500):</span> Navigation, labels</p>
-    <p class="font-semibold text-gray-700"><span class="text-gray-500 w-24 inline-block">Semibold (600):</span> Subheadings, emphasis</p>
-    <p class="font-bold text-gray-700"><span class="text-gray-500 w-24 inline-block">Bold (700):</span> Headings, CTAs</p>
+  {# --- Technical Text --- #}
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Technical Text (Monospace)</h3>
+  <div class="space-y-4 mb-10">
+    <p class="text-gray-700">
+      Airfoil designations like
+      <code class="font-mono bg-gray-100 px-1 rounded text-sm">S801</code>,
+      <code class="font-mono bg-gray-100 px-1 rounded text-sm">NLF(1)-0416</code>, and
+      <code class="font-mono bg-gray-100 px-1 rounded text-sm">S829</code>
+      are set in monospace to distinguish them from surrounding prose.
+    </p>
+    <p class="text-gray-700">
+      Numerical data like Reynolds numbers
+      (<code class="font-mono bg-gray-100 px-1 rounded text-sm">Re = 3 × 10⁶</code>)
+      and performance figures
+      (<code class="font-mono bg-gray-100 px-1 rounded text-sm">+23% AEP</code>)
+      also use monospace for clarity.
+    </p>
+  </div>
+
+  {# --- Font Weights --- #}
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Font Weights</h3>
+  <div class="space-y-3 mb-6">
+    <div class="flex items-baseline gap-4">
+      <span class="text-sm text-gray-500 w-32 shrink-0">Normal (400)</span>
+      <span class="font-normal text-gray-700">Body text — system sans-serif</span>
+    </div>
+    <div class="flex items-baseline gap-4">
+      <span class="text-sm text-gray-500 w-32 shrink-0">Semibold (600)</span>
+      <span class="font-heading font-semibold text-gray-700">Subheadings — Source Serif 4</span>
+    </div>
+    <div class="flex items-baseline gap-4">
+      <span class="text-sm text-gray-500 w-32 shrink-0">Bold (700)</span>
+      <span class="font-heading font-bold text-gray-700">Major headings — Source Serif 4</span>
+    </div>
+  </div>
+
+  {# --- Serif vs Sans Comparison --- #}
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Serif / Sans Pairing in Context</h3>
+  <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+    <h4 class="font-heading text-2xl font-semibold text-primary-700 leading-snug mb-3">Why Use New Airfoils?</h4>
+    <p class="text-body text-gray-700 mb-4">
+      Because new airfoils will increase your profits and your customers' profits.
+      The cost of the airfoil design is trivial compared to the economic benefits
+      of the new technology. For wind turbines, the cost of the airfoil design is
+      less than five percent of the annual-energy increase. In other words,
+      the increased energy production will pay for the airfoil design
+      within the turbine's first month of operation.
+    </p>
+    <p class="text-body text-gray-700">
+      New airfoils were designed specifically for such machines, that resulted in
+      measured, annual-energy increases of
+      <code class="font-mono bg-gray-100 px-1 rounded text-sm">23–35%</code>,
+      with greatly reduced peak-power variability.
+    </p>
   </div>
 </section>
 
@@ -294,7 +363,7 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Spacing &amp; Layout</h2>
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Spacing &amp; Layout</h2>
 
   <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6">
     <p class="text-gray-700 mb-2">
@@ -303,7 +372,7 @@ title: Style Guide
     </p>
   </div>
 
-  <h3 class="text-lg font-medium text-gray-700 mb-4">Common Patterns</h3>
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Common Patterns</h3>
   <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
     <li>Section padding: <code class="bg-gray-200 px-1 rounded">py-12</code> to <code class="bg-gray-200 px-1 rounded">py-16</code> (48–64px)</li>
     <li>Container max-width: <code class="bg-gray-200 px-1 rounded">max-w-6xl</code> (72rem = 1152px)</li>
@@ -312,7 +381,7 @@ title: Style Guide
     <li>Inline spacing: <code class="bg-gray-200 px-1 rounded">space-x-2</code> to <code class="bg-gray-200 px-1 rounded">space-x-4</code></li>
   </ul>
 
-  <h3 class="text-lg font-medium text-gray-700 mb-4">Responsive Breakpoints</h3>
+  <h3 class="font-heading text-lg font-semibold text-gray-700 mb-4">Responsive Breakpoints</h3>
   <ul class="list-disc list-inside text-gray-700 space-y-1">
     <li><code class="bg-gray-200 px-1 rounded">sm</code>: 640px</li>
     <li><code class="bg-gray-200 px-1 rounded">md</code>: 768px</li>
@@ -326,7 +395,7 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Buttons</h2>
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Buttons</h2>
 
   <div class="flex flex-wrap gap-4 items-center mb-6">
     <button type="button" class="bg-primary-500 hover:bg-primary-600 text-white font-medium px-4 py-2 rounded transition-colors">
@@ -345,13 +414,11 @@ title: Style Guide
 
   <details class="bg-gray-50 p-4 rounded-lg border border-gray-200">
     <summary class="font-medium text-gray-700 cursor-pointer">View button code</summary>
-    <pre class="mt-4 text-xs overflow-x-auto"><code>{# Primary #}
-&lt;button class="bg-primary-500 hover:bg-primary-600 text-white
+    <pre class="mt-4 text-xs overflow-x-auto font-mono"><code>&lt;button class="bg-primary-500 hover:bg-primary-600 text-white
   font-medium px-4 py-2 rounded transition-colors"&gt;
   Primary Button
 &lt;/button&gt;
 
-{# Secondary #}
 &lt;button class="border border-primary-500 text-primary-600
   hover:bg-primary-50 font-medium px-4 py-2 rounded transition-colors"&gt;
   Secondary Button
@@ -364,16 +431,16 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Cards</h2>
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Cards</h2>
 
   <div class="grid md:grid-cols-2 gap-6 mb-6">
     <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-      <h3 class="text-xl font-semibold text-primary-700 mb-2">Card Title</h3>
-      <p class="text-gray-600">Card content goes here. This is a basic card component with a title and body text.</p>
+      <h3 class="font-heading text-xl font-semibold text-primary-700 mb-2">Wind Turbines</h3>
+      <p class="text-gray-600">New airfoils designed for horizontal-axis wind turbines resulted in annual-energy increases of 23 to 35 percent.</p>
     </div>
     <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-      <h3 class="text-xl font-semibold text-primary-700 mb-2">Another Card</h3>
-      <p class="text-gray-600 mb-4">Cards can also contain buttons and other interactive elements.</p>
+      <h3 class="font-heading text-xl font-semibold text-primary-700 mb-2">Aircraft Design</h3>
+      <p class="text-gray-600 mb-4">Custom airfoils for applications from single-engine airplanes to business jets and unmanned aerial vehicles.</p>
       <button type="button" class="bg-primary-500 hover:bg-primary-600 text-white font-medium px-4 py-2 rounded transition-colors text-sm">
         Learn More
       </button>
@@ -382,8 +449,8 @@ title: Style Guide
 
   <details class="bg-gray-50 p-4 rounded-lg border border-gray-200">
     <summary class="font-medium text-gray-700 cursor-pointer">View card code</summary>
-    <pre class="mt-4 text-xs overflow-x-auto"><code>&lt;div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm"&gt;
-  &lt;h3 class="text-xl font-semibold text-primary-700 mb-2"&gt;Card Title&lt;/h3&gt;
+    <pre class="mt-4 text-xs overflow-x-auto font-mono"><code>&lt;div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm"&gt;
+  &lt;h3 class="font-heading text-xl font-semibold text-primary-700 mb-2"&gt;Card Title&lt;/h3&gt;
   &lt;p class="text-gray-600"&gt;Card content goes here.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
   </details>
@@ -394,25 +461,25 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Section Headers</h2>
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Section Headers</h2>
 
   <p class="text-gray-600 mb-4">Inspired by the legacy site's blue header bars:</p>
 
   <div class="space-y-4 mb-6">
-    <div class="bg-primary-500 text-white px-4 py-2 font-semibold rounded">
-      Section Title (Primary)
+    <div class="bg-primary-500 text-white px-4 py-2 font-heading font-semibold rounded">
+      Economics
     </div>
-    <div class="bg-primary-700 text-white px-4 py-2 font-semibold rounded">
-      Section Title (Darker)
+    <div class="bg-primary-700 text-white px-4 py-2 font-heading font-semibold rounded">
+      Performance
     </div>
-    <div class="bg-gray-200 text-gray-800 px-4 py-2 font-semibold rounded">
-      Section Title (Neutral)
+    <div class="bg-gray-200 text-gray-800 px-4 py-2 font-heading font-semibold rounded">
+      Employment History
     </div>
   </div>
 
   <details class="bg-gray-50 p-4 rounded-lg border border-gray-200">
     <summary class="font-medium text-gray-700 cursor-pointer">View section header code</summary>
-    <pre class="mt-4 text-xs overflow-x-auto"><code>&lt;div class="bg-primary-500 text-white px-4 py-2 font-semibold rounded"&gt;
+    <pre class="mt-4 text-xs overflow-x-auto font-mono"><code>&lt;div class="bg-primary-500 text-white px-4 py-2 font-heading font-semibold rounded"&gt;
   Section Title
 &lt;/div&gt;</code></pre>
   </details>
@@ -423,17 +490,20 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Links</h2>
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Links</h2>
 
-  <p class="text-gray-700 mb-4">
+  <p class="text-body text-gray-700 mb-4">
     This is body text with an
     <a href="#" class="text-primary-600 hover:text-primary-700 hover:underline">inline link</a>
     that shows the link styling. Links use primary-600 with underline on hover.
+    Technical references like the
+    <a href="#" class="text-primary-600 hover:text-primary-700 hover:underline">Eppler Airfoil Design and Analysis Code</a>
+    use the same treatment.
   </p>
 
   <details class="bg-gray-50 p-4 rounded-lg border border-gray-200">
     <summary class="font-medium text-gray-700 cursor-pointer">View link code</summary>
-    <pre class="mt-4 text-xs overflow-x-auto"><code>&lt;a href="#" class="text-primary-600 hover:text-primary-700 hover:underline"&gt;
+    <pre class="mt-4 text-xs overflow-x-auto font-mono"><code>&lt;a href="#" class="text-primary-600 hover:text-primary-700 hover:underline"&gt;
   Link text
 &lt;/a&gt;</code></pre>
   </details>
@@ -444,7 +514,7 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Legacy Color Comparison</h2>
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Legacy Color Comparison</h2>
 
   <p class="text-gray-600 mb-4">Side-by-side comparison with original legacy colors (they should match):</p>
 
@@ -473,7 +543,7 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Accessibility</h2>
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Accessibility</h2>
 
   <p class="text-gray-700 mb-4">
     Target: <strong>WCAG 2.1 Level AA</strong>
@@ -491,11 +561,133 @@ title: Style Guide
 </section>
 
 {# ============================================ #}
+{# Typography Philosophy #}
+{# ============================================ #}
+
+<section class="mb-16">
+  <h2 class="font-heading text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Typography Philosophy</h2>
+
+  <div class="space-y-6 text-body text-gray-700">
+
+    <h3 class="font-heading text-xl font-semibold text-primary-700 leading-snug">The Man and the Work</h3>
+
+    <p>
+      Dan Somers is a Purdue-educated aeronautical engineer who spent 15 years
+      at NASA Langley Research Center before founding Airfoils, Incorporated in
+      1980. He co-developed the Eppler Airfoil Design and Analysis Code with
+      Richard Eppler of Universität Stuttgart—a tool that allows airfoils to
+      be designed for almost all subcritical applications. He has designed
+      dozens of named airfoil families: the S-series for wind turbines and fans,
+      the NASA NLF series for general aviation, airfoils for cruise missiles,
+      business jets, gyroplanes, sailplanes, and unmanned aerial vehicles. His
+      resume lists him as an "internationally recognized expert in airfoil
+      design, analysis, and testing."
+    </p>
+
+    <p>
+      His tagline—<em class="font-heading">Only The Best Is Good Enough</em>—is
+      not marketing. It is a statement of professional identity from someone whose
+      airfoils are spinning on wind turbines and flying on aircraft around the
+      world.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-primary-700 leading-snug">The Audience</h3>
+
+    <p>
+      Dan's clients are the National Renewable Energy Laboratory, the Naval Air
+      Warfare Center, NASA, and private aerospace companies. His audience is
+      engineers—people who read AIAA Journal papers and NASA Technical
+      Memorandums, who evaluate consultants on technical depth, and who distrust
+      anything that looks like it's trying too hard. They hire Dan because he is
+      one of the best in the world at what he does, and they expect his
+      presentation to reflect that substance.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-primary-700 leading-snug">Why Serif Headings</h3>
+
+    <p>
+      The world Dan inhabits—NASA technical reports, AIAA conference
+      proceedings, university research publications—is a world of serif type.
+      When his audience sees "Subsonic Airfoil Design" set in a transitional
+      serif, it registers as a journal article title, a technical memorandum, a
+      publication of substance. In a sans-serif, the same words read as a blog
+      post or a product page.
+    </p>
+
+    <p>
+      We chose <strong>Source Serif 4</strong>, a transitional serif designed by
+      Frank Griesshammer at Adobe. Its letterforms are precise without being cold—the
+      subtle contrast in stroke weight and the clean, open counters echo the kind
+      of careful, methodical craft that defines Dan's approach to airfoil design.
+      It is a modern typeface with roots in the tradition of technical publishing.
+      It does not call attention to itself. It simply looks right.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-primary-700 leading-snug">Why Sans-Serif Body</h3>
+
+    <p>
+      Dan's content is dense technical prose: Reynolds numbers, boundary-layer
+      characteristics, NACA designations, performance percentages. Paragraphs
+      are long and information-rich. For sustained reading of this kind of
+      material on screen, a humanist sans-serif outperforms a serif at body
+      sizes—it handles the mix of acronyms, numerals, and technical
+      abbreviations more cleanly, and it provides better legibility at the
+      smaller sizes where body text lives.
+    </p>
+
+    <p>
+      The system font stack also honors the legacy site's use of Arial and
+      Helvetica while delivering modern refinements: San Francisco on macOS,
+      Segoe UI on Windows, Roboto on Android. Zero loading cost. Instant
+      rendering. The body text gets out of the way so the reader can focus on
+      the content—which is, after all, what Dan's clients came for.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-primary-700 leading-snug">Why Monospace for Technical Identifiers</h3>
+
+    <p>
+      Airfoil designations like
+      <code class="font-mono bg-gray-100 px-1 rounded text-sm">S801</code>,
+      <code class="font-mono bg-gray-100 px-1 rounded text-sm">NLF(1)-0416</code>, and
+      <code class="font-mono bg-gray-100 px-1 rounded text-sm">SM701</code>
+      are not words—they are identifiers. Setting them in monospace
+      distinguishes them from the surrounding prose instantly, just as they would
+      appear in a data table or a wind-tunnel report. This is how engineers
+      expect to see these designations in documentation.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-primary-700 leading-snug">Why 17px Body Text</h3>
+
+    <p>
+      The default web body size of 16px was established when screens were lower
+      resolution and reading distances were shorter. Dan's content demands
+      sustained attention—paragraphs explaining boundary-layer development,
+      pressure distributions, and Reynolds-number ranges. At 17px with a 1.7
+      line height, the text has room to breathe. The slightly larger size and
+      more generous leading reduce eye strain and improve comprehension for the
+      kind of careful, technical reading this content requires.
+    </p>
+
+    <h3 class="font-heading text-xl font-semibold text-primary-700 leading-snug">The Overall Effect</h3>
+
+    <p>
+      The combination—serif headings, sans body, monospace technical text—creates
+      a site that looks like it belongs to someone who publishes in journals,
+      works with NASA, and conducts wind-tunnel investigations. Not a startup.
+      Not a blog. A serious technical practice with institutional depth, presented
+      with modern craft. Dan should recognize his site. An engineer should trust
+      it. A typographer should approve of it.
+    </p>
+
+  </div>
+</section>
+
+{# ============================================ #}
 {# Files Reference #}
 {# ============================================ #}
 
 <section class="mb-8 bg-gray-50 p-6 rounded-lg border border-gray-200">
-  <h2 class="text-xl font-semibold text-gray-800 mb-4">Files Reference</h2>
+  <h2 class="font-heading text-xl font-semibold text-gray-800 mb-4">Files Reference</h2>
 
   <p class="text-gray-700 mb-4">
     When making design changes, update these files:

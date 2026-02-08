@@ -1,6 +1,29 @@
 @import "tailwindcss";
 
 @theme {
+  /* ===== Typography ===== */
+
+  /* Headings: Source Serif 4 — transitional serif evoking technical
+     publishing (NASA TMs, AIAA papers). Provides institutional gravitas. */
+  --font-heading: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+  /* Body: System font stack — zero load cost, maintains legacy Arial
+     continuity, excellent screen readability for dense technical prose. */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Technical identifiers: airfoil designations (S801, NLF(1)-0416),
+     Reynolds numbers, code references. */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Body text size: 17px (1.0625rem) instead of default 16px.
+     Dense technical prose benefits from slightly larger text. */
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.7;
+
+  /* ===== Colors ===== */
+
   /* Primary (Blue) - legacy #006699 */
   --color-primary-50: #E6F0F5;
   --color-primary-100: #CCE1EB;
