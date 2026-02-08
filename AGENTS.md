@@ -38,7 +38,12 @@ Some commands require specific permissions:
 - **`git push`** — Requires `["full_network"]` permissions
 
 The dev server (`npm run dev`) must be running before `lint` or `check`
-because pa11y-ci tests against `http://localhost:8080`.
+because pa11y-ci and linkinator test against `http://localhost:8080`.
+
+All dev tools (linkinator, pa11y-ci, html-validate, etc.) are local
+dependencies — run them with `npx` (e.g., `npx linkinator ...`), not as
+bare commands. The npm scripts handle this automatically, but when running
+ad-hoc commands in the terminal, always use `npx`.
 
 **Never run `sudo` or commands that require elevated privileges.** If a
 command fails due to permissions (e.g., npm cache ownership), explain the
@@ -106,7 +111,11 @@ Additional guidance for agents:
   before proposing a commit. Add detail (sub-items with `[x]`) showing what
   was done. Leave the parent checkbox unchecked until the developer approves.
   This has been forgotten repeatedly; treat it as a hard requirement.
-- When making changes, proactively update related documentation files.
+- When making changes, proactively update **all** related documentation —
+  not just AGENTS.md but also README.md, TODO.md, and the style guide.
+  README.md is the human-facing documentation and matters most. Follow the
+  ripple: if you change a command, a tool, or a workflow, check every file
+  that references it.
 - When you encounter a new constraint, gotcha, or learn something about the
   development environment (e.g., a command needs special permissions, a tool
   has quirks), update AGENTS.md immediately so you don't repeat the mistake.

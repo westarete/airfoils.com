@@ -33,7 +33,7 @@ npm install
 npm run dev
 # Then open http://localhost:8080
 
-# Build + lint (all three linters — run before committing)
+# Build + lint (all four linters — run before committing)
 npm run check
 
 # Lint only (skip build, useful during dev)
@@ -44,8 +44,8 @@ npm run build
 ```
 
 **Note**: `lint` and `check` require the dev server to be running (`npm run dev`)
-because pa11y-ci tests against `http://localhost:8080`. Start the dev server in a
-separate terminal first.
+because pa11y-ci and linkinator test against `http://localhost:8080`. Start the
+dev server in a separate terminal first.
 
 Linting mirrors CI to catch issues before commit:
 

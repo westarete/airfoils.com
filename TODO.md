@@ -112,7 +112,6 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
     - [x] Copied 7 content images to `src/images/` (sailplane, tunnel, designint, eppler, turbine, chauvin, spec_chart)
     - [x] Copied 3 PDFs to `src/pdf/` (design.pdf, eppler.pdf, specifications.pdf)
     - [x] Added passthrough copy for `src/pdf` in `eleventy.config.js`
-    - [ ] Optimize images (modern formats, responsive sizes)
     - [x] Convert GIF nav buttons to CSS (no longer needed as images — new site uses CSS nav)
 13. [x] Handle multi-page articles
     - [x] Consolidated publications 5 sub-pages into single `src/publications.md` with anchor navigation
@@ -150,7 +149,7 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 ### Consider Adding to Build/Lint
 
 - ~~**Broken link checker**~~ — done (linkinator, internal links only; see item 14)
-- **Image optimization** - `eleventy-img` or build script (when importing)
+- ~~**Image optimization**~~ — not needed; images are tiny legacy files (91 KB total, all under 518px wide)
 - **Visual regression** - Playwright or Percy screenshots (optional)
 
 ### SEO & AI Optimization
