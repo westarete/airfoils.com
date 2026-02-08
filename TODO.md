@@ -183,7 +183,23 @@ When ready to deploy to production at `airfoils.com`:
 3. [ ] Update `eleventy.config.js` to copy CNAME to dist
 4. [ ] Point `airfoils.com` DNS to GitHub Pages (185.199.108-111.153)
 5. [ ] Enable custom domain in GitHub repo settings
-6. [ ] Verify site works at `https://airfoils.com/`
+6. [ ] Add legacy URL redirects (GitHub Pages has no server-side redirects)
+   - Create a `redirect.njk` layout with `<meta http-equiv="refresh">` and `<link rel="canonical">`
+   - Create a data file (`src/_data/redirects.json` or similar) mapping old → new paths
+   - Use Eleventy pagination to generate an HTML file at each old path
+   - Legacy main pages (12):
+     `airfoil.html` → `/airfoil-design/`, `apps.html` → `/applications/`,
+     `clients.html` → `/clients/`, `contact.html` → `/contact/`,
+     `integration.htm` → `/design-integration/`, `eppler.html` → `/eppler-code/`,
+     `links.html` → `/links/`, `pubs.html` → `/publications/`,
+     `resume.html` → `/resume/`, `spec.html` → `/specifications/`,
+     `why.html` → `/why/`, `tunnel.html` → `/wind-tunnels/`
+   - Legacy multi-page articles (~19):
+     `airfoil1.html`–`airfoil6.html` → `/airfoil-design/`,
+     `eppler1.html`–`eppler8.html` → `/eppler-code/`,
+     `pubs1.html`–`pubs5.html` → `/publications/`
+   - Add redirect pages to pa11y-ci and html-validate checks
+7. [ ] Verify site works at `https://airfoils.com/`
 
 ## Wishlist
 
