@@ -1,7 +1,200 @@
 ---
 layout: base.njk
 title: Home
+fullWidth: true
+description: "Airfoils, Incorporated specializes in airfoil design, analysis, and wind-tunnel testing, including high-lift systems, for wind turbines, fans, and aircraft."
 ---
 
-<h1 class="font-heading text-4xl font-bold text-primary-700 leading-tight mb-4">Airfoils, Incorporated</h1>
-<p class="text-lg text-gray-600">Aerodynamic consulting by Dan Somers.</p>
+{# ============================================ #}
+{# Hero Section #}
+{# ============================================ #}
+
+<section class="bg-primary-800 text-white py-16 sm:py-20 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+      Airfoil Design, Analysis,<br class="hidden sm:inline"> and Testing
+    </h1>
+    <p class="text-lg sm:text-xl text-primary-100 max-w-3xl mx-auto mb-8">
+      Airfoils, Incorporated is a consulting firm founded by Dan&nbsp;M.&nbsp;Somers,
+      an internationally recognized expert with over 40&nbsp;years of experience
+      designing airfoils for wind turbines, fans, and aircraft.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="{{ '/contact/' | url }}"
+         class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-medium px-6 py-3 rounded transition-colors text-lg">
+        Contact Dan Somers
+      </a>
+      <a href="{{ '/why/' | url }}"
+         class="inline-block border border-primary-300 text-primary-100 hover:bg-primary-700 hover:text-white font-medium px-6 py-3 rounded transition-colors text-lg">
+        Why New Airfoils?
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ============================================ #}
+{# Company Overview #}
+{# ============================================ #}
+
+<section class="py-12 sm:py-16 lg:py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div>
+        <h2 class="font-heading text-3xl font-semibold text-gray-800 leading-snug mb-6">
+          Specialized Expertise in Airfoil Design
+        </h2>
+        <p class="text-body text-gray-700 mb-4">
+          Airfoils, Incorporated specializes in airfoil design, analysis, and
+          testing, including high-lift systems. Consultation in general
+          aerodynamics is also available.
+        </p>
+        <p class="text-body text-gray-700 mb-4">
+          Founder Dan&nbsp;M.&nbsp;Somers has designed airfoils for a wide range of
+          applications including wind turbines, fans, and aircraft using the
+          <a href="{{ '/eppler-code/' | url }}" class="text-primary-600 hover:text-primary-700 hover:underline">Eppler
+          Airfoil Design and Analysis Code</a>. He has also conducted many
+          wind-tunnel investigations of his airfoils.
+        </p>
+        <p class="text-body text-gray-700">
+          Before founding Airfoils, Incorporated, Dan spent 15&nbsp;years at the
+          <strong>NASA Langley Research Center</strong>, where he co-developed the
+          Eppler Code with Richard Eppler of Universität Stuttgart.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <img src="{{ '/images/airfoil_group.gif' | url }}"
+             alt="A collection of airfoil cross-section profiles designed by Dan Somers, showing the variety of shapes tailored for different applications"
+             class="max-w-full h-auto rounded-lg shadow-sm"
+             width="216" height="310">
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================================ #}
+{# Services / Capabilities #}
+{# ============================================ #}
+
+<section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-heading text-3xl font-semibold text-gray-800 leading-snug mb-4 text-center">
+      Capabilities
+    </h2>
+    <p class="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-10">
+      From initial design through wind-tunnel verification, Airfoils, Incorporated
+      provides end-to-end airfoil engineering.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+
+      {# Card: Airfoil Design #}
+      <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+        <h3 class="font-heading text-xl font-semibold text-primary-700 mb-3">Airfoil Design</h3>
+        <p class="text-gray-600 mb-4">
+          Custom airfoils designed for specific applications using the Eppler
+          Airfoil Design and Analysis Code. Each airfoil is tailored to the
+          aerodynamic requirements of the intended use.
+        </p>
+        <a href="{{ '/airfoil-design/' | url }}"
+           class="text-primary-600 hover:text-primary-700 hover:underline font-medium">
+          Learn more &rarr;
+        </a>
+      </div>
+
+      {# Card: Wind-Tunnel Testing #}
+      <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+        <h3 class="font-heading text-xl font-semibold text-primary-700 mb-3">Wind-Tunnel Testing</h3>
+        <p class="text-gray-600 mb-4">
+          Comprehensive wind-tunnel investigations to verify airfoil performance.
+          Dan Somers has conducted tests in facilities across the United States
+          and internationally.
+        </p>
+        <a href="{{ '/wind-tunnels/' | url }}"
+           class="text-primary-600 hover:text-primary-700 hover:underline font-medium">
+          Learn more &rarr;
+        </a>
+      </div>
+
+      {# Card: Applications #}
+      <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+        <h3 class="font-heading text-xl font-semibold text-primary-700 mb-3">Applications</h3>
+        <p class="text-gray-600 mb-4">
+          Airfoils designed for wind turbines, fans, aircraft, sailplanes,
+          unmanned aerial vehicles, and more. New airfoils have delivered
+          annual-energy increases of 23–35% for wind turbines.
+        </p>
+        <a href="{{ '/applications/' | url }}"
+           class="text-primary-600 hover:text-primary-700 hover:underline font-medium">
+          Learn more &rarr;
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ============================================ #}
+{# Credentials / Trust #}
+{# ============================================ #}
+
+<section class="py-12 sm:py-16 lg:py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div class="order-2 md:order-1 flex justify-center">
+        <img src="{{ '/images/front_plane.jpg' | url }}"
+             alt="Aircraft in flight employing a Somers-designed airfoil"
+             class="max-w-full h-auto rounded-lg shadow-sm"
+             width="223" height="128">
+      </div>
+      <div class="order-1 md:order-2">
+        <h2 class="font-heading text-3xl font-semibold text-gray-800 leading-snug mb-6">
+          Trusted by Industry Leaders
+        </h2>
+        <p class="text-body text-gray-700 mb-4">
+          Over the past four decades, Dan Somers has worked with clients
+          including the National Renewable Energy Laboratory, the Naval Air
+          Warfare Center, NASA, and leading aerospace companies worldwide.
+        </p>
+        <p class="text-body text-gray-700 mb-6">
+          His airfoils are in service on wind turbines generating clean energy,
+          on aircraft in military and civilian service, and in industrial
+          applications around the globe.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="{{ '/resume/' | url }}"
+             class="text-primary-600 hover:text-primary-700 hover:underline font-medium">
+            View resume &rarr;
+          </a>
+          <a href="{{ '/clients/' | url }}"
+             class="text-primary-600 hover:text-primary-700 hover:underline font-medium">
+            View clients &rarr;
+          </a>
+          <a href="{{ '/publications/' | url }}"
+             class="text-primary-600 hover:text-primary-700 hover:underline font-medium">
+            Publications &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================================ #}
+{# Contact CTA #}
+{# ============================================ #}
+
+<section class="bg-primary-700 text-white py-12 sm:py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="font-heading text-3xl font-semibold leading-snug mb-4">
+      Ready to Discuss Your Project?
+    </h2>
+    <p class="text-lg text-primary-100 max-w-2xl mx-auto mb-8">
+      Whether you need a new airfoil designed, an existing design analyzed, or
+      wind-tunnel testing arranged, Dan Somers can help.
+    </p>
+    <a href="{{ '/contact/' | url }}"
+       class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-medium px-6 py-3 rounded transition-colors text-lg">
+      Get in Touch
+    </a>
+  </div>
+</section>
