@@ -9,6 +9,17 @@
   "urls": [
     "http://localhost:8080/",
     "http://localhost:8080/style-guide/",
-    "http://localhost:8080/why/"
+    "http://localhost:8080/why/",
+    "http://localhost:8080/contact/",
+    "http://localhost:8080/resume/",
+    "http://localhost:8080/applications/",
+    "http://localhost:8080/clients/",
+    "http://localhost:8080/airfoil-design/",
+    "http://localhost:8080/eppler-code/",
+    "http://localhost:8080/publications/",
+    "http://localhost:8080/links/",
+    "http://localhost:8080/wind-tunnels/",
+    "http://localhost:8080/design-integration/",
+    "http://localhost:8080/specifications/"
   ]
 }

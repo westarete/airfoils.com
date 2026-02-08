@@ -68,7 +68,7 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
    - [x] Curated main nav (9 items mapped to buyer's journey)
    - [x] Fat footer with pages grouped by category (About, Services, Resources)
    - [x] Skip link, aria-current, aria-expanded for accessibility
-9. [ ] Build homepage with new design
+9. [x] Build homepage with new design
    - [x] Hero section with value proposition and dual CTAs (Contact, Why?)
    - [x] Company overview with airfoil group image and Eppler Code link
    - [x] Capabilities cards (Airfoil Design, Wind-Tunnel Testing, Applications)
@@ -76,7 +76,7 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
    - [x] Contact CTA section
    - [x] Full-width layout support (`fullWidth` front-matter flag in base.njk)
    - [x] Key legacy images copied to `src/images/` (optimization deferred to step 12)
-10. [ ] Build one interior page to validate design system
+10. [x] Build one interior page to validate design system
     - [x] Installed `@tailwindcss/typography` for Markdown prose styling
     - [x] Created `page.njk` content layout (extends base, prose wrapper, h2 header bars)
     - [x] Ported "Why?" page from legacy HTML to `src/why.md` (pure Markdown)
@@ -85,17 +85,28 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 
 ### Content Import (after design is solid)
 
-11. [ ] Import remaining pages one at a time
-    - Prioritize: Contact, Resume, Applications, Clients
-    - Then: Airfoil Design, Eppler Code, Publications, Links, etc.
+11. [x] Import all remaining pages (batch import)
+    - [x] Contact (`src/contact.md`)
+    - [x] Resume (`src/resume.md`)
+    - [x] Applications (`src/applications.njk` — HTML table)
+    - [x] Clients (`src/clients.njk` — HTML table)
+    - [x] Airfoil Design (`src/airfoil-design.md`)
+    - [x] Eppler Code (`src/eppler-code.md`)
+    - [x] Publications (`src/publications.md` — consolidated from 5 sub-pages)
+    - [x] Links (`src/links.md`)
+    - [x] Wind Tunnels (`src/wind-tunnels.md`)
+    - [x] Design Integration (`src/design-integration.md`)
+    - [x] Specifications (`src/specifications.njk` — HTML with image)
+    - [x] Add all new URLs to `.pa11yci.json` for accessibility testing
 12. [ ] Migrate images and assets
-    - Optimize images (modern formats, responsive sizes)
-    - Preserve key photos: Dan Somers, wind turbines, aircraft, wind tunnel
-    - Convert GIF nav buttons to CSS (no longer needed as images)
-13. [ ] Handle multi-page articles
-    - Option A: Consolidate into single pages with anchor navigation
-    - Option B: Keep as separate pages with prev/next navigation
-    - Ensure PDFs are accessible and linked
+    - [x] Copied 7 content images to `src/images/` (sailplane, tunnel, designint, eppler, turbine, chauvin, spec_chart)
+    - [x] Copied 3 PDFs to `src/pdf/` (design.pdf, eppler.pdf, specifications.pdf)
+    - [x] Added passthrough copy for `src/pdf` in `eleventy.config.js`
+    - [ ] Optimize images (modern formats, responsive sizes)
+    - [x] Convert GIF nav buttons to CSS (no longer needed as images — new site uses CSS nav)
+13. [x] Handle multi-page articles
+    - [x] Consolidated publications 5 sub-pages into single `src/publications.md` with anchor navigation
+    - [x] Airfoil Design and Eppler Code papers linked via PDF; legacy multi-page HTML versions deferred
 
 ### Modernization Checklist
 
@@ -106,8 +117,8 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
   - Sufficient color contrast
   - Keyboard navigation
   - Skip links
-- [ ] Remove legacy JavaScript (image rollovers → CSS :hover)
-- [ ] Semantic HTML (no tables for layout)
+- [x] Remove legacy JavaScript (image rollovers → CSS :hover) — new site has no legacy JS
+- [x] Semantic HTML (no tables for layout) — new site uses CSS Grid/Flexbox throughout
 - [ ] Review/update external links (many 2000-era links may be broken)
 - [ ] Verify contact info is current
 
