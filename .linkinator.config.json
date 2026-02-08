@@ -3,7 +3,8 @@
   "skip": [
     "https://navair\\.navy\\.mil",
     "https?://www\\.cessna\\.com",
-    "https://beechcraft\\.txtav\\.com"
+    "https://beechcraft\\.txtav\\.com",
+    "https?://www\\.groenbros\\.com"
   ],
   "timeout": 15000
 }

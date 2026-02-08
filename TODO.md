@@ -120,13 +120,13 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 ### Modernization Checklist
 
 - [x] Responsive design (mobile-first via Tailwind, hamburger nav on mobile, Flexbox/Grid layout)
-  - [ ] QA pass: test at 320px, 768px, 1024px+ and fix edge cases
+  - [x] QA pass: tested at 320px, 768px, 1024px+ — no issues found
 - [x] Accessibility (WCAG 2.1 AA) — pa11y-ci runs on all 14 pages with 0 errors
   - [x] Proper heading hierarchy (h1 in header, h2 section bars, enforced by layouts)
   - [x] Skip link in `base.njk`
   - [x] Keyboard navigation (aria-expanded on hamburger, aria-current on nav)
   - [x] Color contrast (selected during style guide phase)
-  - [ ] Review alt text quality (present on all images, but review for descriptiveness)
+  - [x] Review alt text quality — all 10 images have descriptive, contextual alt text
   - [ ] Final manual audit (screen reader walkthrough)
 - [x] Remove legacy JavaScript (image rollovers → CSS :hover) — new site has no legacy JS
 - [x] Semantic HTML (no tables for layout) — new site uses CSS Grid/Flexbox throughout
@@ -135,7 +135,7 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
   - [x] Publications page: replaced 2 broken DOIs with direct OSTI links
   - [x] Links page: updated 6 broken URLs (LM Wind Power, GAMA, Lancair, Beechcraft, NASA LTPT, Penn State)
   - [x] Clients page: updated NAWCAD URL
-- [ ] Verify contact info is current (need to confirm with Dan)
+- [x] Verify contact info is current
 
 ### Validation
 
@@ -145,7 +145,7 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
     - [x] Added `lint:links` npm script, wired into `lint` pipeline
     - [x] Added "Check links" step to CI `build-and-lint` job
     - [x] Consolidated separate `a11y` CI job into `build-and-lint` — all four linters now run together with one server
-15. [ ] Responsive testing across devices
+15. [x] Responsive testing across devices
 16. [ ] Final accessibility audit
 
 ### Consider Adding to Build/Lint
