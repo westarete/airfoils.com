@@ -3,21 +3,61 @@ layout: base.njk
 title: Style Guide
 ---
 
-<h1 class="text-4xl font-bold text-primary-700 mb-8">Style Guide</h1>
+<h1 class="text-4xl font-bold text-primary-700 mb-4">Style Guide</h1>
 
-<p class="text-lg text-gray-600 mb-12">
-  Design tokens and component patterns for airfoils.com.
-  See <code class="bg-gray-200 px-1 rounded">STYLE_GUIDE.md</code> for rationale.
+<p class="text-lg text-gray-600 mb-8">
+  Design tokens and component patterns for airfoils.com. This page is the
+  single source of truth for the site's visual design—both the examples
+  and the rationale behind them.
 </p>
+
+{# ============================================ #}
+{# Design Philosophy #}
+{# ============================================ #}
+
+<section class="mb-16 bg-gray-50 p-6 rounded-lg border border-gray-200">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4">Design Philosophy</h2>
+
+  <p class="text-gray-700 mb-4">
+    <strong>Evolution, not revolution.</strong> Dan Somers has had the same
+    website since ~2000. Our goal is to modernize the code and presentation
+    while preserving the site's identity. A visitor familiar with the old site
+    should recognize it instantly, while a designer should approve of the
+    craftsmanship.
+  </p>
+
+  <ul class="list-disc list-inside text-gray-700 space-y-1">
+    <li>Honor the legacy palette and layout as inspiration</li>
+    <li>Apply classic design principles (color theory, typography, grids)</li>
+    <li>Prioritize readability and professionalism over trendiness</li>
+    <li>Keep it simple—this is a consulting firm, not a startup</li>
+    <li>Ensure accessibility (WCAG 2.1 AA minimum)</li>
+  </ul>
+</section>
 
 {# ============================================ #}
 {# Colors #}
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Colors</h2>
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Colors</h2>
+
+  <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6">
+    <p class="text-gray-700 mb-2">
+      <strong>Rationale:</strong> The legacy site used a blue/orange complementary
+      color scheme. We retain this relationship but generate proper tint/shade
+      scales for flexibility. The 500 values match the original colors exactly.
+    </p>
+    <p class="text-sm text-gray-600">
+      Color values are defined in <code class="bg-gray-200 px-1 rounded">src/css/input.css</code>
+      using Tailwind v4's <code class="bg-gray-200 px-1 rounded">@theme</code> syntax.
+    </p>
+  </div>
 
   <h3 class="text-lg font-medium text-gray-700 mb-4">Primary (Blue)</h3>
+  <p class="text-sm text-gray-600 mb-3">
+    Used for navigation, headers, buttons, and links. Legacy value: <code class="bg-gray-200 px-1 rounded">#006699</code>
+  </p>
   <div class="grid grid-cols-5 md:grid-cols-10 gap-2 mb-8">
     <div class="text-center">
       <div class="h-12 bg-primary-50 rounded border border-gray-200"></div>
@@ -62,6 +102,9 @@ title: Style Guide
   </div>
 
   <h3 class="text-lg font-medium text-gray-700 mb-4">Accent (Orange)</h3>
+  <p class="text-sm text-gray-600 mb-3">
+    Used for emphasis, CTAs, and highlights. Legacy value: <code class="bg-gray-200 px-1 rounded">#CC3300</code>
+  </p>
   <div class="grid grid-cols-5 md:grid-cols-10 gap-2 mb-8">
     <div class="text-center">
       <div class="h-12 bg-accent-50 rounded border border-gray-200"></div>
@@ -105,8 +148,11 @@ title: Style Guide
     </div>
   </div>
 
-  <h3 class="text-lg font-medium text-gray-700 mb-4">Neutral (Gray) — Tailwind defaults</h3>
-  <div class="grid grid-cols-5 md:grid-cols-10 gap-2">
+  <h3 class="text-lg font-medium text-gray-700 mb-4">Neutral (Gray)</h3>
+  <p class="text-sm text-gray-600 mb-3">
+    Tailwind's default gray scale. Used for text, borders, and backgrounds.
+  </p>
+  <div class="grid grid-cols-5 md:grid-cols-10 gap-2 mb-8">
     <div class="text-center">
       <div class="h-12 bg-gray-50 rounded border border-gray-200"></div>
       <span class="text-xs text-gray-600">50</span>
@@ -148,6 +194,29 @@ title: Style Guide
       <span class="text-xs text-gray-600">900</span>
     </div>
   </div>
+
+  <h3 class="text-lg font-medium text-gray-700 mb-4">Color Usage Guide</h3>
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm border-collapse">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="text-left p-2 border border-gray-300">Element</th>
+          <th class="text-left p-2 border border-gray-300">Color</th>
+          <th class="text-left p-2 border border-gray-300">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="p-2 border border-gray-200">Primary buttons</td><td class="p-2 border border-gray-200">primary-500</td><td class="p-2 border border-gray-200">White text</td></tr>
+        <tr><td class="p-2 border border-gray-200">Button hover</td><td class="p-2 border border-gray-200">primary-600</td><td class="p-2 border border-gray-200"></td></tr>
+        <tr><td class="p-2 border border-gray-200">Links</td><td class="p-2 border border-gray-200">primary-600</td><td class="p-2 border border-gray-200">Underline on hover</td></tr>
+        <tr><td class="p-2 border border-gray-200">Section headings</td><td class="p-2 border border-gray-200">primary-700</td><td class="p-2 border border-gray-200"></td></tr>
+        <tr><td class="p-2 border border-gray-200">Body text</td><td class="p-2 border border-gray-200">gray-700/800</td><td class="p-2 border border-gray-200"></td></tr>
+        <tr><td class="p-2 border border-gray-200">Secondary text</td><td class="p-2 border border-gray-200">gray-600</td><td class="p-2 border border-gray-200"></td></tr>
+        <tr><td class="p-2 border border-gray-200">Borders</td><td class="p-2 border border-gray-200">gray-200</td><td class="p-2 border border-gray-200"></td></tr>
+        <tr><td class="p-2 border border-gray-200">Backgrounds</td><td class="p-2 border border-gray-200">white, gray-50</td><td class="p-2 border border-gray-200"></td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 {# ============================================ #}
@@ -155,7 +224,22 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Typography</h2>
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Typography</h2>
+
+  <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6">
+    <p class="text-gray-700 mb-2">
+      <strong>Rationale:</strong> We use system fonts for performance and native feel.
+      The legacy site used Arial/Helvetica, so this maintains continuity while
+      looking better on each platform.
+    </p>
+    <p class="text-sm text-gray-600 mb-2">
+      <strong>Font stack:</strong>
+      <code class="bg-gray-200 px-1 rounded text-xs">ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif</code>
+    </p>
+    <p class="text-sm text-gray-600">
+      <strong>Type scale:</strong> Based on Tailwind defaults (roughly 1.25 ratio / Major Third).
+    </p>
+  </div>
 
   <div class="space-y-6">
     <div>
@@ -195,6 +279,46 @@ title: Style Guide
       <p class="text-xs text-gray-500">Fine print and legal text.</p>
     </div>
   </div>
+
+  <h3 class="text-lg font-medium text-gray-700 mt-8 mb-4">Font Weights</h3>
+  <div class="space-y-2">
+    <p class="font-normal text-gray-700"><span class="text-gray-500 w-24 inline-block">Normal (400):</span> Body text</p>
+    <p class="font-medium text-gray-700"><span class="text-gray-500 w-24 inline-block">Medium (500):</span> Navigation, labels</p>
+    <p class="font-semibold text-gray-700"><span class="text-gray-500 w-24 inline-block">Semibold (600):</span> Subheadings, emphasis</p>
+    <p class="font-bold text-gray-700"><span class="text-gray-500 w-24 inline-block">Bold (700):</span> Headings, CTAs</p>
+  </div>
+</section>
+
+{# ============================================ #}
+{# Spacing & Layout #}
+{# ============================================ #}
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Spacing &amp; Layout</h2>
+
+  <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6">
+    <p class="text-gray-700 mb-2">
+      <strong>Rationale:</strong> Use Tailwind's default spacing scale (0.25rem = 4px increments).
+      CSS Grid for page layout, Flexbox for components. Max content width 72rem (1152px).
+    </p>
+  </div>
+
+  <h3 class="text-lg font-medium text-gray-700 mb-4">Common Patterns</h3>
+  <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+    <li>Section padding: <code class="bg-gray-200 px-1 rounded">py-12</code> to <code class="bg-gray-200 px-1 rounded">py-16</code> (48–64px)</li>
+    <li>Container max-width: <code class="bg-gray-200 px-1 rounded">max-w-6xl</code> (72rem = 1152px)</li>
+    <li>Card padding: <code class="bg-gray-200 px-1 rounded">p-6</code> (24px)</li>
+    <li>Stack spacing: <code class="bg-gray-200 px-1 rounded">space-y-4</code> to <code class="bg-gray-200 px-1 rounded">space-y-6</code></li>
+    <li>Inline spacing: <code class="bg-gray-200 px-1 rounded">space-x-2</code> to <code class="bg-gray-200 px-1 rounded">space-x-4</code></li>
+  </ul>
+
+  <h3 class="text-lg font-medium text-gray-700 mb-4">Responsive Breakpoints</h3>
+  <ul class="list-disc list-inside text-gray-700 space-y-1">
+    <li><code class="bg-gray-200 px-1 rounded">sm</code>: 640px</li>
+    <li><code class="bg-gray-200 px-1 rounded">md</code>: 768px</li>
+    <li><code class="bg-gray-200 px-1 rounded">lg</code>: 1024px</li>
+    <li><code class="bg-gray-200 px-1 rounded">xl</code>: 1280px</li>
+  </ul>
 </section>
 
 {# ============================================ #}
@@ -202,9 +326,9 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Buttons</h2>
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Buttons</h2>
 
-  <div class="flex flex-wrap gap-4 items-center">
+  <div class="flex flex-wrap gap-4 items-center mb-6">
     <button type="button" class="bg-primary-500 hover:bg-primary-600 text-white font-medium px-4 py-2 rounded transition-colors">
       Primary Button
     </button>
@@ -218,6 +342,21 @@ title: Style Guide
       Text Link
     </button>
   </div>
+
+  <details class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+    <summary class="font-medium text-gray-700 cursor-pointer">View button code</summary>
+    <pre class="mt-4 text-xs overflow-x-auto"><code>{# Primary #}
+&lt;button class="bg-primary-500 hover:bg-primary-600 text-white
+  font-medium px-4 py-2 rounded transition-colors"&gt;
+  Primary Button
+&lt;/button&gt;
+
+{# Secondary #}
+&lt;button class="border border-primary-500 text-primary-600
+  hover:bg-primary-50 font-medium px-4 py-2 rounded transition-colors"&gt;
+  Secondary Button
+&lt;/button&gt;</code></pre>
+  </details>
 </section>
 
 {# ============================================ #}
@@ -225,9 +364,9 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Cards</h2>
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Cards</h2>
 
-  <div class="grid md:grid-cols-2 gap-6">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
     <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
       <h3 class="text-xl font-semibold text-primary-700 mb-2">Card Title</h3>
       <p class="text-gray-600">Card content goes here. This is a basic card component with a title and body text.</p>
@@ -240,6 +379,14 @@ title: Style Guide
       </button>
     </div>
   </div>
+
+  <details class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+    <summary class="font-medium text-gray-700 cursor-pointer">View card code</summary>
+    <pre class="mt-4 text-xs overflow-x-auto"><code>&lt;div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm"&gt;
+  &lt;h3 class="text-xl font-semibold text-primary-700 mb-2"&gt;Card Title&lt;/h3&gt;
+  &lt;p class="text-gray-600"&gt;Card content goes here.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+  </details>
 </section>
 
 {# ============================================ #}
@@ -247,11 +394,11 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Section Headers</h2>
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Section Headers</h2>
 
   <p class="text-gray-600 mb-4">Inspired by the legacy site's blue header bars:</p>
 
-  <div class="space-y-4">
+  <div class="space-y-4 mb-6">
     <div class="bg-primary-500 text-white px-4 py-2 font-semibold rounded">
       Section Title (Primary)
     </div>
@@ -262,6 +409,13 @@ title: Style Guide
       Section Title (Neutral)
     </div>
   </div>
+
+  <details class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+    <summary class="font-medium text-gray-700 cursor-pointer">View section header code</summary>
+    <pre class="mt-4 text-xs overflow-x-auto"><code>&lt;div class="bg-primary-500 text-white px-4 py-2 font-semibold rounded"&gt;
+  Section Title
+&lt;/div&gt;</code></pre>
+  </details>
 </section>
 
 {# ============================================ #}
@@ -269,13 +423,20 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Links</h2>
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Links</h2>
 
-  <p class="text-gray-700">
+  <p class="text-gray-700 mb-4">
     This is body text with an
     <a href="#" class="text-primary-600 hover:text-primary-700 hover:underline">inline link</a>
     that shows the link styling. Links use primary-600 with underline on hover.
   </p>
+
+  <details class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+    <summary class="font-medium text-gray-700 cursor-pointer">View link code</summary>
+    <pre class="mt-4 text-xs overflow-x-auto"><code>&lt;a href="#" class="text-primary-600 hover:text-primary-700 hover:underline"&gt;
+  Link text
+&lt;/a&gt;</code></pre>
+  </details>
 </section>
 
 {# ============================================ #}
@@ -283,9 +444,9 @@ title: Style Guide
 {# ============================================ #}
 
 <section class="mb-16">
-  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Legacy Color Comparison</h2>
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Legacy Color Comparison</h2>
 
-  <p class="text-gray-600 mb-4">Side-by-side comparison with original legacy colors:</p>
+  <p class="text-gray-600 mb-4">Side-by-side comparison with original legacy colors (they should match):</p>
 
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
     <div class="text-center">
@@ -305,4 +466,48 @@ title: Style Guide
       <span class="text-xs text-gray-600">accent-500</span>
     </div>
   </div>
+</section>
+
+{# ============================================ #}
+{# Accessibility #}
+{# ============================================ #}
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-300">Accessibility</h2>
+
+  <p class="text-gray-700 mb-4">
+    Target: <strong>WCAG 2.1 Level AA</strong>
+  </p>
+
+  <ul class="list-disc list-inside text-gray-700 space-y-1">
+    <li>Color contrast ≥ 4.5:1 for normal text, ≥ 3:1 for large text</li>
+    <li>All images have alt text</li>
+    <li>Heading hierarchy is logical (h1 → h2 → h3, no skips)</li>
+    <li>Interactive elements are keyboard accessible</li>
+    <li>Focus states are visible</li>
+    <li>Skip link to main content</li>
+    <li>No reliance on color alone to convey information</li>
+  </ul>
+</section>
+
+{# ============================================ #}
+{# Files Reference #}
+{# ============================================ #}
+
+<section class="mb-8 bg-gray-50 p-6 rounded-lg border border-gray-200">
+  <h2 class="text-xl font-semibold text-gray-800 mb-4">Files Reference</h2>
+
+  <p class="text-gray-700 mb-4">
+    When making design changes, update these files:
+  </p>
+
+  <ul class="list-disc list-inside text-gray-700 space-y-1">
+    <li><code class="bg-gray-200 px-1 rounded">src/css/input.css</code> — Color/font/spacing values (in <code class="bg-gray-200 px-1 rounded">@theme</code>)</li>
+    <li><code class="bg-gray-200 px-1 rounded">src/style-guide.njk</code> — This page (examples and rationale)</li>
+  </ul>
+
+  <p class="text-sm text-gray-600 mt-4">
+    <strong>Note:</strong> This project uses Tailwind CSS v4, which uses CSS-based
+    configuration. The <code class="bg-gray-200 px-1 rounded">tailwind.config.js</code> file is not used.
+  </p>
 </section>

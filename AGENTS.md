@@ -8,7 +8,7 @@ Static website for airfoils.com, the aerodynamic consulting firm of Dan Somers.
 - Hosted on GitHub Pages, deployed via GitHub Actions
 - See `README.md` for setup and commands
 - See `TODO.md` for current tasks and wishlist
-- See `STYLE_GUIDE.md` for design principles, colors, typography, and patterns
+- See `/style-guide/` page for design principles, colors, typography, and patterns
 
 ## Working With the Developer
 
@@ -53,12 +53,12 @@ work in the sandbox), then run `lint:a11y` separately with full permissions.
 
 ## Design Approach
 
-The design philosophy is **evolution, not revolution**. See `STYLE_GUIDE.md`
-for full details on colors, typography, and component patterns.
+The design philosophy is **evolution, not revolution**. See the style guide
+page (`/style-guide/`) for full details on colors, typography, and patterns.
 
 When changing colors, fonts, or spacing:
 1. Update `src/css/input.css` first (source of truth for values in `@theme`)
-2. Update `STYLE_GUIDE.md` to reflect the rationale
+2. Update `src/style-guide.njk` to reflect the rationale and examples
 3. Verify visually on the style guide page (`/style-guide/`)
 
 **Note:** This project uses Tailwind CSS v4, which uses CSS-based configuration

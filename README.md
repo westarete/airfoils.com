@@ -53,18 +53,15 @@ legacy/                 # Archived copy of original airfoils.com
 
 ## Design System
 
-The site's visual design is documented in three places:
+The site's visual design is documented in two places:
 
-1. **`STYLE_GUIDE.md`** — Design philosophy, color rationale, typography
-   choices, and component patterns. Read this first to understand the "why."
-
-2. **`src/css/input.css`** — The source of truth for actual values (colors,
+1. **`src/css/input.css`** — The source of truth for actual values (colors,
    fonts, spacing) defined in the `@theme` block. This project uses Tailwind
    CSS v4's CSS-based configuration.
 
-3. **`/style-guide/`** — A rendered page showing all design tokens and
-   components. Run `npm run dev` and visit http://localhost:8080/style-guide/
-   to see the design system in action.
+2. **`/style-guide/`** — A self-documenting page showing all design tokens,
+   components, and the rationale behind them. Run `npm run dev` and visit
+   http://localhost:8080/style-guide/ to see the design system in action.
 
 ### Design Philosophy
 
@@ -114,7 +111,7 @@ Push to `main` triggers GitHub Actions which:
   - `.gitignore` — when adding new tools or dependencies
   - `TODO.md` — as tasks are completed or plans change
   - `README.md` — developer instructions and documentation
-  - `STYLE_GUIDE.md` — when design decisions change
+  - `src/style-guide.njk` — when design decisions change
 
 ## Contact
 
