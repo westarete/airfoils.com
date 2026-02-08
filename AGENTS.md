@@ -120,19 +120,24 @@ break on the deployed site.
 
 See `README.md` for commit message style and files to keep in sync.
 
-Additional guidance for agents:
-- Always check with the developer before committing so they can review and
-  edit the commit message.
-- **Update `TODO.md` as you work, not after.** When you finish a sub-task,
-  update the TODO immediately — before moving on to the next sub-task, and
-  before proposing a commit. Add detail (sub-items with `[x]`) showing what
-  was done. Leave the parent checkbox unchecked until the developer approves.
-  This has been forgotten repeatedly; treat it as a hard requirement.
-- When making changes, proactively update **all** related documentation —
-  not just AGENTS.md but also README.md, TODO.md, and the style guide.
-  README.md is the human-facing documentation and matters most. Follow the
-  ripple: if you change a command, a tool, or a workflow, check every file
-  that references it.
+### Pre-commit checklist (mandatory, every time)
+
+Before running `git commit`, verify **all** of these — in order:
+
+1. **TODO.md is up to date.** Every sub-task you completed has a `[x]`
+   with detail showing what was done. Do this as you finish each sub-task,
+   not in a batch at the end.
+2. **Related docs are updated.** If you changed a command, tool, workflow,
+   or design decision, check README.md, AGENTS.md, and style-guide.njk.
+   README.md is the human-facing documentation and matters most.
+3. **Ask the developer** to review the commit message before committing.
+
+If you catch yourself about to commit without having done step 1, stop
+and do it first. This has been forgotten repeatedly — the checklist
+exists because reminders in prose don't work.
+
+### Other guidance
+
 - When you encounter a new constraint, gotcha, or learn something about the
   development environment (e.g., a command needs special permissions, a tool
   has quirks), update AGENTS.md immediately so you don't repeat the mistake.

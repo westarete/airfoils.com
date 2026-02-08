@@ -146,7 +146,9 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
     - [x] Added "Check links" step to CI `build-and-lint` job
     - [x] Consolidated separate `a11y` CI job into `build-and-lint` — all four linters now run together with one server
 15. [x] Responsive testing across devices
-16. [ ] Final accessibility audit (manual screen reader walkthrough)
+16. [x] Final accessibility audit (manual screen reader walkthrough)
+    - [x] VoiceOver walkthrough: footer landmark needed `aria-label`
+    - [x] VoiceOver walkthrough: removed comma from "Airfoils, Incorporated" to fix awkward pause
 
 ### SEO & AI Optimization
 
