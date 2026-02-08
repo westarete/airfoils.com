@@ -77,4 +77,4 @@ Because new airfoils can provide you with up to
 
 ## Related
 
-To see the range of applications that benefit from new airfoils, see [Applications](/applications/). For a look at how airfoil and application design work together, see [Design Integration](/design-integration/). To discuss your project, see [Contact](/contact/).
+To see the range of applications that benefit from new airfoils, see [Applications]({{ '/applications/' | url }}). For a look at how airfoil and application design work together, see [Design Integration]({{ '/design-integration/' | url }}). To discuss your project, see [Contact]({{ '/contact/' | url }}).

@@ -73,6 +73,24 @@ professional tone while applying modern design principles and accessibility
 standards. Dan should recognize his site instantly; a designer should approve
 of the craftsmanship.
 
+## Internal Links and Path Prefix
+
+The site is deployed to GitHub Pages under a path prefix (`/airfoils.com/`).
+**All internal links must use the Liquid `url` filter** so the prefix is
+applied correctly in every environment:
+
+```markdown
+<!-- Correct — works locally and on GitHub Pages -->
+[Publications]({{ '/publications/' | url }})
+
+<!-- Wrong — works locally but breaks on the deployed site -->
+[Publications](/publications/)
+```
+
+This applies everywhere: cross-links, PDF downloads, image `src` attributes,
+etc. The `.njk` files use the same pattern in raw HTML:
+`href="{{ '/contact/' | url }}"`.
+
 ## Legacy Site
 
 A mirror of the original http://airfoils.com/ is preserved in `legacy/` for

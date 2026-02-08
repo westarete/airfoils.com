@@ -16,7 +16,7 @@ It is very efficient and has been successfully applied at Reynolds numbers from 
 
 Download the complete paper: [Eppler Airfoil Design and Analysis Code (PDF)]({{ '/pdf/eppler.pdf' | url }})
 
-For the theoretical foundations behind the code, see [Subsonic Airfoil Design](/airfoil-design/). For related technical reports by Eppler and Somers, see [Publications](/publications/).
+For the theoretical foundations behind the code, see [Subsonic Airfoil Design]({{ '/airfoil-design/' | url }}). For related technical reports by Eppler and Somers, see [Publications]({{ '/publications/' | url }}).
 
 ## Availability
 

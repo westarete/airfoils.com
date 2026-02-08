@@ -52,4 +52,4 @@ description: "Resume of Dan M. Somers — internationally recognized expert in a
 
 ## Related
 
-For the full catalog of Dan's technical reports, see [Publications](/publications/). To get in touch, see [Contact](/contact/).
+For the full catalog of Dan's technical reports, see [Publications]({{ '/publications/' | url }}). To get in touch, see [Contact]({{ '/contact/' | url }}).

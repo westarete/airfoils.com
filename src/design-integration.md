@@ -14,4 +14,4 @@ Maughmer, Mark D.; and Somers, Dan M.: Figures of Merit for Airfoil/Aircraft Des
 
 ## Related
 
-For details on the airfoil design method, see [Subsonic Airfoil Design](/airfoil-design/). For real-world examples, see [Applications](/applications/). To understand the design requirements, see [Specifications](/specifications/).
+For details on the airfoil design method, see [Subsonic Airfoil Design]({{ '/airfoil-design/' | url }}). For real-world examples, see [Applications]({{ '/applications/' | url }}). To understand the design requirements, see [Specifications]({{ '/specifications/' | url }}).

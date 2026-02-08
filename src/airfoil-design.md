@@ -20,4 +20,4 @@ In summary, an experimentally-verified, theoretical method has been developed th
 
 Download the complete paper: [Subsonic Airfoil Design (PDF)]({{ '/pdf/design.pdf' | url }})
 
-For more on the computational tools behind this method, see [The Eppler Airfoil Code](/eppler-code/). For a complete list of technical reports, see [Publications](/publications/).
+For more on the computational tools behind this method, see [The Eppler Airfoil Code]({{ '/eppler-code/' | url }}). For a complete list of technical reports, see [Publications]({{ '/publications/' | url }}).

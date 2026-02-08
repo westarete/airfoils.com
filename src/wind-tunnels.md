@@ -31,4 +31,4 @@ This service normally consists of:
 
 ## Related
 
-For information on how airfoil designs are verified through testing, see [Subsonic Airfoil Design](/airfoil-design/). For the results of wind-tunnel investigations, see [Publications](/publications/).
+For information on how airfoil designs are verified through testing, see [Subsonic Airfoil Design]({{ '/airfoil-design/' | url }}). For the results of wind-tunnel investigations, see [Publications]({{ '/publications/' | url }}).
