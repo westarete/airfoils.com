@@ -69,11 +69,19 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
    - [x] Fat footer with pages grouped by category (About, Services, Resources)
    - [x] Skip link, aria-current, aria-expanded for accessibility
 9. [ ] Build homepage with new design
-   - Hero section with tagline "Only The Best Is Good Enough"
-   - Company overview with key images
-   - Clear calls to action
+   - [x] Hero section with value proposition and dual CTAs (Contact, Why?)
+   - [x] Company overview with airfoil group image and Eppler Code link
+   - [x] Capabilities cards (Airfoil Design, Wind-Tunnel Testing, Applications)
+   - [x] Credentials section with client references and aircraft image
+   - [x] Contact CTA section
+   - [x] Full-width layout support (`fullWidth` front-matter flag in base.njk)
+   - [x] Key legacy images copied to `src/images/` (optimization deferred to step 12)
 10. [ ] Build one interior page to validate design system
-    - Suggest: "Why?" page (good mix of headings, paragraphs, sections)
+    - [x] Installed `@tailwindcss/typography` for Markdown prose styling
+    - [x] Created `page.njk` content layout (extends base, prose wrapper, h2 header bars)
+    - [x] Ported "Why?" page from legacy HTML to `src/why.md` (pure Markdown)
+    - [x] Blue section header bars on h2 elements (matching legacy design)
+    - [x] Added `/why/` to `.pa11yci.json` for accessibility testing
 
 ### Content Import (after design is solid)
 

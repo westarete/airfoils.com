@@ -83,13 +83,12 @@ See `README.md` for commit message style and files to keep in sync.
 Additional guidance for agents:
 - Always check with the developer before committing so they can review and
   edit the commit message.
-- Do NOT mark TODO.md tasks as complete until the developer has reviewed and
-  approved the work. Present the work for review first; only update TODO.md
-  checkboxes after explicit approval.
+- **Update `TODO.md` as you work, not after.** When you finish a sub-task,
+  update the TODO immediately — before moving on to the next sub-task, and
+  before proposing a commit. Add detail (sub-items with `[x]`) showing what
+  was done. Leave the parent checkbox unchecked until the developer approves.
+  This has been forgotten repeatedly; treat it as a hard requirement.
 - When making changes, proactively update related documentation files.
-- Update `TODO.md` as part of the same work — mark tasks complete when they're
-  approved, not in a separate commit. This keeps the TODO in sync without extra
-  overhead.
 - When you encounter a new constraint, gotcha, or learn something about the
   development environment (e.g., a command needs special permissions, a tool
   has quirks), update AGENTS.md immediately so you don't repeat the mistake.
