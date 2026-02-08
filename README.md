@@ -58,8 +58,9 @@ The site's visual design is documented in three places:
 1. **`STYLE_GUIDE.md`** — Design philosophy, color rationale, typography
    choices, and component patterns. Read this first to understand the "why."
 
-2. **`tailwind.config.js`** — The source of truth for actual values (colors,
-   fonts, spacing). This is what the code uses.
+2. **`src/css/input.css`** — The source of truth for actual values (colors,
+   fonts, spacing) defined in the `@theme` block. This project uses Tailwind
+   CSS v4's CSS-based configuration.
 
 3. **`/style-guide/`** — A rendered page showing all design tokens and
    components. Run `npm run dev` and visit http://localhost:8080/style-guide/

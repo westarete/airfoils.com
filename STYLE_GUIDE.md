@@ -260,8 +260,8 @@ Checklist:
 When making design changes, update:
 
 1. **`STYLE_GUIDE.md`** (this file) — rationale and documentation
-2. **`tailwind.config.js`** — actual color/font/spacing values
-3. **`src/style-guide.njk`** — rendered examples (when it exists)
+2. **`src/css/input.css`** — actual color/font/spacing values (in `@theme`)
+3. **`src/style-guide.njk`** — rendered examples
 
-The Tailwind config is the source of truth for values; this document explains
-the reasoning behind those values.
+**Note:** This project uses Tailwind CSS v4, which uses CSS-based configuration
+with `@theme` in `input.css`. The `tailwind.config.js` file is not used.

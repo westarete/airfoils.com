@@ -1,3 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Primary (Blue) - legacy #006699 */
+  --color-primary-50: #E6F0F5;
+  --color-primary-100: #CCE1EB;
+  --color-primary-200: #99C3D7;
+  --color-primary-300: #66A5C3;
+  --color-primary-400: #3387AF;
+  --color-primary-500: #006699;
+  --color-primary-600: #00527A;
+  --color-primary-700: #003D5C;
+  --color-primary-800: #00293D;
+  --color-primary-900: #00141F;
+
+  /* Accent (Orange) - legacy #CC3300 */
+  --color-accent-50: #FEF3EF;
+  --color-accent-100: #FDE7DF;
+  --color-accent-200: #FBCFBF;
+  --color-accent-300: #F9B79F;
+  --color-accent-400: #F79F7F;
+  --color-accent-500: #CC3300;
+  --color-accent-600: #A32900;
+  --color-accent-700: #7A1F00;
+  --color-accent-800: #521400;
+  --color-accent-900: #290A00;
+
+  /* Legacy colors for comparison */
+  --color-legacy-blue: #006699;
+  --color-legacy-orange: #CC3300;
+}

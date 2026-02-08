@@ -1,0 +1,308 @@
+---
+layout: base.njk
+title: Style Guide
+---
+
+<h1 class="text-4xl font-bold text-primary-700 mb-8">Style Guide</h1>
+
+<p class="text-lg text-gray-600 mb-12">
+  Design tokens and component patterns for airfoils.com.
+  See <code class="bg-gray-200 px-1 rounded">STYLE_GUIDE.md</code> for rationale.
+</p>
+
+{# ============================================ #}
+{# Colors #}
+{# ============================================ #}
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Colors</h2>
+
+  <h3 class="text-lg font-medium text-gray-700 mb-4">Primary (Blue)</h3>
+  <div class="grid grid-cols-5 md:grid-cols-10 gap-2 mb-8">
+    <div class="text-center">
+      <div class="h-12 bg-primary-50 rounded border border-gray-200"></div>
+      <span class="text-xs text-gray-600">50</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-primary-100 rounded"></div>
+      <span class="text-xs text-gray-600">100</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-primary-200 rounded"></div>
+      <span class="text-xs text-gray-600">200</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-primary-300 rounded"></div>
+      <span class="text-xs text-gray-600">300</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-primary-400 rounded"></div>
+      <span class="text-xs text-gray-600">400</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-primary-500 rounded"></div>
+      <span class="text-xs text-gray-600 font-semibold">500</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-primary-600 rounded"></div>
+      <span class="text-xs text-gray-600">600</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-primary-700 rounded"></div>
+      <span class="text-xs text-gray-600">700</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-primary-800 rounded"></div>
+      <span class="text-xs text-gray-600">800</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-primary-900 rounded"></div>
+      <span class="text-xs text-gray-600">900</span>
+    </div>
+  </div>
+
+  <h3 class="text-lg font-medium text-gray-700 mb-4">Accent (Orange)</h3>
+  <div class="grid grid-cols-5 md:grid-cols-10 gap-2 mb-8">
+    <div class="text-center">
+      <div class="h-12 bg-accent-50 rounded border border-gray-200"></div>
+      <span class="text-xs text-gray-600">50</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-accent-100 rounded"></div>
+      <span class="text-xs text-gray-600">100</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-accent-200 rounded"></div>
+      <span class="text-xs text-gray-600">200</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-accent-300 rounded"></div>
+      <span class="text-xs text-gray-600">300</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-accent-400 rounded"></div>
+      <span class="text-xs text-gray-600">400</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-accent-500 rounded"></div>
+      <span class="text-xs text-gray-600 font-semibold">500</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-accent-600 rounded"></div>
+      <span class="text-xs text-gray-600">600</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-accent-700 rounded"></div>
+      <span class="text-xs text-gray-600">700</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-accent-800 rounded"></div>
+      <span class="text-xs text-gray-600">800</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-accent-900 rounded"></div>
+      <span class="text-xs text-gray-600">900</span>
+    </div>
+  </div>
+
+  <h3 class="text-lg font-medium text-gray-700 mb-4">Neutral (Gray) — Tailwind defaults</h3>
+  <div class="grid grid-cols-5 md:grid-cols-10 gap-2">
+    <div class="text-center">
+      <div class="h-12 bg-gray-50 rounded border border-gray-200"></div>
+      <span class="text-xs text-gray-600">50</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-gray-100 rounded"></div>
+      <span class="text-xs text-gray-600">100</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-gray-200 rounded"></div>
+      <span class="text-xs text-gray-600">200</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-gray-300 rounded"></div>
+      <span class="text-xs text-gray-600">300</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-gray-400 rounded"></div>
+      <span class="text-xs text-gray-600">400</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-gray-500 rounded"></div>
+      <span class="text-xs text-gray-600">500</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-gray-600 rounded"></div>
+      <span class="text-xs text-gray-600">600</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-gray-700 rounded"></div>
+      <span class="text-xs text-gray-600">700</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-gray-800 rounded"></div>
+      <span class="text-xs text-gray-600">800</span>
+    </div>
+    <div class="text-center">
+      <div class="h-12 bg-gray-900 rounded"></div>
+      <span class="text-xs text-gray-600">900</span>
+    </div>
+  </div>
+</section>
+
+{# ============================================ #}
+{# Typography #}
+{# ============================================ #}
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Typography</h2>
+
+  <div class="space-y-6">
+    <div>
+      <span class="text-xs text-gray-500 uppercase tracking-wide">5xl / Hero</span>
+      <p class="text-5xl font-bold text-primary-700">Only The Best Is Good Enough</p>
+    </div>
+    <div>
+      <span class="text-xs text-gray-500 uppercase tracking-wide">4xl / H1</span>
+      <p class="text-4xl font-bold text-gray-900">Page Title</p>
+    </div>
+    <div>
+      <span class="text-xs text-gray-500 uppercase tracking-wide">3xl / H2</span>
+      <p class="text-3xl font-semibold text-gray-800">Section Heading</p>
+    </div>
+    <div>
+      <span class="text-xs text-gray-500 uppercase tracking-wide">2xl / H3</span>
+      <p class="text-2xl font-semibold text-gray-800">Subsection Heading</p>
+    </div>
+    <div>
+      <span class="text-xs text-gray-500 uppercase tracking-wide">xl / H4</span>
+      <p class="text-xl font-medium text-gray-700">Card Title</p>
+    </div>
+    <div>
+      <span class="text-xs text-gray-500 uppercase tracking-wide">lg / Lead</span>
+      <p class="text-lg text-gray-600">Lead paragraph text for introductions and summaries.</p>
+    </div>
+    <div>
+      <span class="text-xs text-gray-500 uppercase tracking-wide">base / Body</span>
+      <p class="text-base text-gray-700">Regular body text. Airfoils, Incorporated is a consulting firm specializing in airfoil design, analysis, and testing, including high-lift systems.</p>
+    </div>
+    <div>
+      <span class="text-xs text-gray-500 uppercase tracking-wide">sm / Secondary</span>
+      <p class="text-sm text-gray-600">Secondary text for captions and metadata.</p>
+    </div>
+    <div>
+      <span class="text-xs text-gray-500 uppercase tracking-wide">xs / Fine print</span>
+      <p class="text-xs text-gray-500">Fine print and legal text.</p>
+    </div>
+  </div>
+</section>
+
+{# ============================================ #}
+{# Buttons #}
+{# ============================================ #}
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Buttons</h2>
+
+  <div class="flex flex-wrap gap-4 items-center">
+    <button type="button" class="bg-primary-500 hover:bg-primary-600 text-white font-medium px-4 py-2 rounded transition-colors">
+      Primary Button
+    </button>
+    <button type="button" class="border border-primary-500 text-primary-600 hover:bg-primary-50 font-medium px-4 py-2 rounded transition-colors">
+      Secondary Button
+    </button>
+    <button type="button" class="bg-accent-500 hover:bg-accent-600 text-white font-medium px-4 py-2 rounded transition-colors">
+      Accent Button
+    </button>
+    <button type="button" class="text-primary-600 hover:text-primary-700 hover:underline font-medium px-4 py-2 transition-colors">
+      Text Link
+    </button>
+  </div>
+</section>
+
+{# ============================================ #}
+{# Cards #}
+{# ============================================ #}
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Cards</h2>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+      <h3 class="text-xl font-semibold text-primary-700 mb-2">Card Title</h3>
+      <p class="text-gray-600">Card content goes here. This is a basic card component with a title and body text.</p>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+      <h3 class="text-xl font-semibold text-primary-700 mb-2">Another Card</h3>
+      <p class="text-gray-600 mb-4">Cards can also contain buttons and other interactive elements.</p>
+      <button type="button" class="bg-primary-500 hover:bg-primary-600 text-white font-medium px-4 py-2 rounded transition-colors text-sm">
+        Learn More
+      </button>
+    </div>
+  </div>
+</section>
+
+{# ============================================ #}
+{# Section Headers #}
+{# ============================================ #}
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Section Headers</h2>
+
+  <p class="text-gray-600 mb-4">Inspired by the legacy site's blue header bars:</p>
+
+  <div class="space-y-4">
+    <div class="bg-primary-500 text-white px-4 py-2 font-semibold rounded">
+      Section Title (Primary)
+    </div>
+    <div class="bg-primary-700 text-white px-4 py-2 font-semibold rounded">
+      Section Title (Darker)
+    </div>
+    <div class="bg-gray-200 text-gray-800 px-4 py-2 font-semibold rounded">
+      Section Title (Neutral)
+    </div>
+  </div>
+</section>
+
+{# ============================================ #}
+{# Links #}
+{# ============================================ #}
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Links</h2>
+
+  <p class="text-gray-700">
+    This is body text with an
+    <a href="#" class="text-primary-600 hover:text-primary-700 hover:underline">inline link</a>
+    that shows the link styling. Links use primary-600 with underline on hover.
+  </p>
+</section>
+
+{# ============================================ #}
+{# Legacy Comparison #}
+{# ============================================ #}
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-300">Legacy Color Comparison</h2>
+
+  <p class="text-gray-600 mb-4">Side-by-side comparison with original legacy colors:</p>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="text-center">
+      <div class="h-16 bg-legacy-blue rounded"></div>
+      <span class="text-xs text-gray-600">Legacy #006699</span>
+    </div>
+    <div class="text-center">
+      <div class="h-16 bg-primary-500 rounded"></div>
+      <span class="text-xs text-gray-600">primary-500</span>
+    </div>
+    <div class="text-center">
+      <div class="h-16 bg-legacy-orange rounded"></div>
+      <span class="text-xs text-gray-600">Legacy #CC3300</span>
+    </div>
+    <div class="text-center">
+      <div class="h-16 bg-accent-500 rounded"></div>
+      <span class="text-xs text-gray-600">accent-500</span>
+    </div>
+  </div>
+</section>
