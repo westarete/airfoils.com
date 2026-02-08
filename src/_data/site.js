@@ -11,11 +11,11 @@ const siteUrl =
   (pathPrefix === "/" ? origin : `${origin}${pathPrefix.replace(/\/$/, "")}`);
 
 module.exports = {
-  name: "Airfoils, Incorporated",
+  name: "Airfoils Incorporated",
   url: siteUrl,
   tagline: "Only The Best Is Good Enough",
   description:
-    "Airfoils, Incorporated specializes in airfoil design, analysis, " +
+    "Airfoils Incorporated specializes in airfoil design, analysis, " +
     "and wind-tunnel testing for wind turbines, fans, and aircraft.",
   author: {
     name: "Dan M. Somers",

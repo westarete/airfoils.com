@@ -127,7 +127,6 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
   - [x] Keyboard navigation (aria-expanded on hamburger, aria-current on nav)
   - [x] Color contrast (selected during style guide phase)
   - [x] Review alt text quality — all 10 images have descriptive, contextual alt text
-  - [ ] Final manual audit (screen reader walkthrough)
 - [x] Remove legacy JavaScript (image rollovers → CSS :hover) — new site has no legacy JS
 - [x] Semantic HTML (no tables for layout) — new site uses CSS Grid/Flexbox throughout
 - [x] Review/update external links (many 2000-era links may be broken)
@@ -147,7 +146,7 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
     - [x] Added "Check links" step to CI `build-and-lint` job
     - [x] Consolidated separate `a11y` CI job into `build-and-lint` — all four linters now run together with one server
 15. [x] Responsive testing across devices
-16. [ ] Final accessibility audit
+16. [ ] Final accessibility audit (manual screen reader walkthrough)
 
 ### SEO & AI Optimization
 

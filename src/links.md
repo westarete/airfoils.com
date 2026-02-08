@@ -1,7 +1,7 @@
 ---
 layout: page.njk
 title: "Links"
-description: "Links to wind energy, aviation, fan, and wind tunnel organizations related to the work of Airfoils, Incorporated."
+description: "Links to wind energy, aviation, fan, and wind tunnel organizations related to the work of Airfoils Incorporated."
 ---
 
 ## Wind Energy

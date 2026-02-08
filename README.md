@@ -1,6 +1,6 @@
 # airfoils.com
 
-Static website for Airfoils, Incorporated, the aerodynamic consulting firm of Dan Somers.
+Static website for Airfoils Incorporated, the aerodynamic consulting firm of Dan Somers.
 
 **Live site:** https://westarete.github.io/airfoils.com/
 

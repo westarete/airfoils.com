@@ -12,7 +12,7 @@ description: "Resume of Dan M. Somers — internationally recognized expert in a
 
 ## Employment History
 
-- President, Airfoils, Incorporated, 1980 to present
+- President, Airfoils Incorporated, 1980 to present
 - Research Engineer, NASA Langley Research Center, 1974 to 1989
 
 ## Qualifications and Major Contributions

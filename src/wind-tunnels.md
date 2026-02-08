@@ -1,12 +1,12 @@
 ---
 layout: page.njk
 title: "Wind-Tunnel Testing"
-description: "Airfoils, Incorporated offers experimental verification of airfoil designs and high-lift systems using world-class wind-tunnel facilities."
+description: "Airfoils Incorporated offers experimental verification of airfoil designs and high-lift systems using world-class wind-tunnel facilities."
 ---
 
 ![NASA Langley Low-Turbulence Pressure Tunnel]({{ '/images/tiunnel_small.jpg' | url }} "Photograph taken in the NASA Langley Low-Turbulence Pressure Tunnel")
 
-Airfoils, Incorporated offers experimental verification of its airfoil designs and high-lift systems using appropriate wind-tunnel facilities.
+Airfoils Incorporated offers experimental verification of its airfoil designs and high-lift systems using appropriate wind-tunnel facilities.
 
 ## Facilities
 
