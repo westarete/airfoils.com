@@ -25,8 +25,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          PATH_PREFIX: /airfoils.com/
 
       - name: Lint HTML
         run: npm run lint:html
@@ -34,41 +32,30 @@ jobs:
       - name: Lint CSS
         run: npm run lint:css
 
+      - name: Start server
+        run: |
+          npx serve dist -l 8080 &
+          timeout 30 bash -c 'until curl -s http://localhost:8080 > /dev/null; do sleep 1; done'
+
+      - name: Check links
+        run: npm run lint:links
+
+      - name: Check accessibility
+        run: npm run lint:a11y
+
+      - name: Rebuild for deployment
+        run: npm run build
+        env:
+          PATH_PREFIX: /airfoils.com/
+
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/
 
-  a11y:
-    runs-on: ubuntu-latest
-    needs: build-and-lint
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Start server and run a11y tests
-        run: |
-          npx serve dist -l 8080 &
-          # Wait for server to be ready
-          timeout 30 bash -c 'until curl -s http://localhost:8080 > /dev/null; do sleep 1; done'
-          npm run lint:a11y
-
   deploy:
     runs-on: ubuntu-latest
-    needs: [build-and-lint, a11y]
+    needs: build-and-lint
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     permissions:

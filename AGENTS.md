@@ -61,6 +61,18 @@ attempt to work around OS-level permission issues.
 - Minimize environment differences between local dev, CI, and production.
   When differences are necessary (like path prefixes), make them explicit
   and configurable.
+- Prioritize clarity and cohesion over micro-optimizations. If something
+  is logically a lint check, it belongs with the other lint checks — not
+  shoved into an unrelated CI job because that job happens to have a
+  running server. A few extra seconds of build time is always worth clear
+  organization.
+- Own the coherence of the codebase. You are the one writing the code, so
+  keeping it well-factored is your responsibility — not just the current
+  task, but everything you touch. If a new change reveals that a previous
+  decision no longer makes sense, say so and fix it. Don't defer to
+  "someone decided this before" — all decisions are documented, so the
+  current context is all the context you need. Scope-creep is the wrong
+  frame; coherence is the job.
 
 ## Design Approach
 

@@ -13,7 +13,8 @@
     "lint:html": "html-validate dist/**/*.html",
     "lint:css": "stylelint src/css/input.css",
     "lint:a11y": "pa11y-ci",
-    "lint": "npm run lint:html && npm run lint:css && npm run lint:a11y",
+    "lint:links": "linkinator http://localhost:8080 --config .linkinator.config.json",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:a11y && npm run lint:links",
     "check": "npm run build && npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,6 +34,7 @@
     "@tailwindcss/cli": "^4.1.18",
     "@tailwindcss/typography": "^0.5.19",
     "html-validate": "^10.7.0",
+    "linkinator": "^7.5.3",
     "npm-run-all": "^4.1.5",
     "pa11y-ci": "^4.0.1",
     "stylelint": "^17.1.1",

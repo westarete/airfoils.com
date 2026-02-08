@@ -138,13 +138,18 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 
 ### Validation
 
-14. [ ] Add link checker to CI
+14. [x] Add link checker to CI
+    - [x] Installed `linkinator` (Google-maintained broken-link checker)
+    - [x] Added `.linkinator.config.json` — recurse site, check internal links only (external skipped for CI reliability)
+    - [x] Added `lint:links` npm script, wired into `lint` pipeline
+    - [x] Added "Check links" step to CI `build-and-lint` job
+    - [x] Consolidated separate `a11y` CI job into `build-and-lint` — all four linters now run together with one server
 15. [ ] Responsive testing across devices
 16. [ ] Final accessibility audit
 
 ### Consider Adding to Build/Lint
 
-- **Broken link checker** - `linkinator` or html-validate plugin (after content)
+- ~~**Broken link checker**~~ — done (linkinator, internal links only; see item 14)
 - **Image optimization** - `eleventy-img` or build script (when importing)
 - **Visual regression** - Playwright or Percy screenshots (optional)
 

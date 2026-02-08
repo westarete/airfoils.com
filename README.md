@@ -52,6 +52,7 @@ Linting mirrors CI to catch issues before commit:
 - **html-validate** — HTML validation
 - **Stylelint** — CSS linting
 - **pa11y-ci** — Accessibility testing
+- **linkinator** — Broken link checking (internal links only)
 
 ## Project Structure
 
