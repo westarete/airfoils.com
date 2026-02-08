@@ -30,6 +30,8 @@ project directory — use the Shell tool's `working_directory` parameter instead
 
 Some commands require specific permissions:
 
+- **`npm install`** — Requires `["all"]` permissions because the sandbox
+  blocks writes to `~/.npm` cache outside the workspace.
 - **`npm run check`** and **`npm run lint`** — Require `["all"]` permissions
   because pa11y-ci launches a headless browser that the sandbox blocks.
 - **`npm run dev`** — Can run in background with `is_background: true`

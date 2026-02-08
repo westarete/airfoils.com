@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
 /* ===== Skip link: visually hidden until focused ===== */
 .skip-link {
   position: absolute;
