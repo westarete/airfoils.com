@@ -120,18 +120,21 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 
 ### Modernization Checklist
 
-- [ ] Responsive design (mobile-first, test at 320px, 768px, 1024px+)
-- [ ] Accessibility (WCAG 2.1 AA target)
-  - Proper heading hierarchy (h1 → h2 → h3)
-  - Alt text for all images
-  - Sufficient color contrast
-  - Keyboard navigation
-  - Skip links
+- [x] Responsive design (mobile-first via Tailwind, hamburger nav on mobile, Flexbox/Grid layout)
+  - [ ] QA pass: test at 320px, 768px, 1024px+ and fix edge cases
+- [x] Accessibility (WCAG 2.1 AA) — pa11y-ci runs on all 14 pages with 0 errors
+  - [x] Proper heading hierarchy (h1 in header, h2 section bars, enforced by layouts)
+  - [x] Skip link in `base.njk`
+  - [x] Keyboard navigation (aria-expanded on hamburger, aria-current on nav)
+  - [x] Color contrast (selected during style guide phase)
+  - [ ] Review alt text quality (present on all images, but review for descriptiveness)
+  - [ ] Final manual audit (screen reader walkthrough)
 - [x] Remove legacy JavaScript (image rollovers → CSS :hover) — new site has no legacy JS
 - [x] Semantic HTML (no tables for layout) — new site uses CSS Grid/Flexbox throughout
 - [ ] Review/update external links (many 2000-era links may be broken)
   - [x] Publications page: all legacy links replaced with DOIs and current NTRS citations
-- [ ] Verify contact info is current
+  - [ ] Links page (`src/links.md`): check and update 2000-era URLs
+- [ ] Verify contact info is current (need to confirm with Dan)
 
 ### Validation
 
@@ -144,6 +147,26 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 - **Broken link checker** - `linkinator` or html-validate plugin (after content)
 - **Image optimization** - `eleventy-img` or build script (when importing)
 - **Visual regression** - Playwright or Percy screenshots (optional)
+
+### SEO & AI Optimization
+
+- [ ] SEO fundamentals
+  - [ ] Add `<meta name="robots" content="index, follow">` to base layout
+  - [ ] Add canonical URLs (`<link rel="canonical">`)
+  - [ ] Add Open Graph meta tags (og:title, og:description, og:type, og:url)
+  - [ ] Generate a `sitemap.xml` (eleventy-plugin-sitemap or build script)
+  - [ ] Add `robots.txt` allowing all crawlers
+  - [ ] Structured data (JSON-LD) for Organization, Person (Dan), and Article schemas
+  - [ ] Verify heading hierarchy is clean on every page (h1 > h2 > h3)
+  - [ ] Ensure all images have descriptive alt text (not just present, but useful)
+- [ ] AI discoverability
+  - [ ] Add `llms.txt` — a plain-text summary of who Dan is, what Airfoils Inc. does, key capabilities, and how to contact (see llmstxt.org)
+  - [ ] Add `llms-full.txt` — extended version with publication list, client list, and technical background
+  - [ ] Consider structured data markup that AI systems can parse (JSON-LD covers this)
+- [ ] Content quality for search
+  - [ ] Review page titles and meta descriptions for keyword relevance (airfoil design, wind tunnel testing, Eppler code, etc.)
+  - [ ] Ensure the homepage has enough indexable text (not just images/cards)
+  - [ ] Add internal cross-links between related pages (e.g., Publications ↔ Resume, Eppler Code ↔ Airfoil Design)
 
 ## Go Live Checklist
 
@@ -159,6 +182,4 @@ When ready to deploy to production at `airfoils.com`:
 ## Wishlist
 
 - Responsive design refinements
-- SEO optimization (meta tags, structured data)
-- AI optimization (llms.txt, etc.)
 - Performance tuning (image optimization, etc.)
