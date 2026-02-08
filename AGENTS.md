@@ -73,6 +73,9 @@ Additional guidance for agents:
 - Always check with the developer before committing so they can review and
   edit the commit message.
 - When making changes, proactively update related documentation files.
+- Update `TODO.md` as part of the same work — mark tasks complete when they're
+  done, not in a separate commit. This keeps the TODO in sync without extra
+  overhead.
 - When you encounter a new constraint, gotcha, or learn something about the
   development environment (e.g., a command needs special permissions, a tool
-  has quirks), update AGENTS.md immediately so you don't repeat the mistake. 
+  has quirks), update AGENTS.md immediately so you don't repeat the mistake.

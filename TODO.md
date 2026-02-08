@@ -60,10 +60,14 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
    - [x] Configure color palette in `src/css/input.css` (Tailwind v4 @theme)
    - [x] Build self-documenting `src/style-guide.njk` page with rationale
    - [x] Iterate: adjust values, refresh, review until it feels right
-8. [ ] Create base layout (header, nav, footer)
-   - Replace table-based layout with CSS Grid/Flexbox
-   - Responsive navigation (hamburger menu on mobile)
-   - Semantic HTML5 elements (header, nav, main, footer, article, section)
+8. [x] Create base layout (header, nav, footer)
+   - [x] Replace table-based layout with CSS Grid/Flexbox
+   - [x] Responsive navigation (hamburger menu on mobile)
+   - [x] Semantic HTML5 elements (header, nav, main, footer, article, section)
+   - [x] Navigation data in `src/_data/nav.js` (single source of truth)
+   - [x] Curated main nav (9 items mapped to buyer's journey)
+   - [x] Fat footer with pages grouped by category (About, Services, Resources)
+   - [x] Skip link, aria-current, aria-expanded for accessibility
 9. [ ] Build homepage with new design
    - Hero section with tagline "Only The Best Is Good Enough"
    - Company overview with key images
