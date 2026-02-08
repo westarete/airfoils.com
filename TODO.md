@@ -93,6 +93,16 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
     - [x] Airfoil Design (`src/airfoil-design.md`)
     - [x] Eppler Code (`src/eppler-code.md`)
     - [x] Publications (`src/publications.md` — consolidated from 5 sub-pages)
+      - [x] Restored all external links from legacy 5 sub-pages
+      - [x] Replaced broken 2000-era OSTI/NTRS URLs with DOIs and current NTRS citation links
+      - [x] Added DOI links for 18 OSTI publications (wind turbines, SERI)
+      - [x] Added NTRS citation links for 12 NASA publications
+      - [x] Added DOI links for 2 AIAA journal articles
+      - [x] Verified all NTRS IDs via API report-number search
+      - [x] Downloaded 27 freely-available PDFs (114 MB) to `src/pdf/publications/`
+      - [x] Self-hosting 27 PDFs (81 MB after Acrobat optimization) in `src/pdf/publications/`
+      - [x] Each publication has dual links: self-hosted PDF + external DOI or NTRS citation
+      - [x] Uses `{{ '...' | url }}` filter for path prefix compatibility
     - [x] Links (`src/links.md`)
     - [x] Wind Tunnels (`src/wind-tunnels.md`)
     - [x] Design Integration (`src/design-integration.md`)
@@ -120,6 +130,7 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 - [x] Remove legacy JavaScript (image rollovers → CSS :hover) — new site has no legacy JS
 - [x] Semantic HTML (no tables for layout) — new site uses CSS Grid/Flexbox throughout
 - [ ] Review/update external links (many 2000-era links may be broken)
+  - [x] Publications page: all legacy links replaced with DOIs and current NTRS citations
 - [ ] Verify contact info is current
 
 ### Validation
