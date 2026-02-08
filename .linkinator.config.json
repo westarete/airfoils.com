@@ -1,7 +1,7 @@
 {
   "recurse": true,
   "skip": [
-    "^https?://(?!localhost)"
+    "https://navair\\.navy\\.mil"
   ],
-  "timeout": 10000
+  "timeout": 15000
 }
