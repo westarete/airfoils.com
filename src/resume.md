@@ -49,3 +49,7 @@ description: "Resume of Dan M. Somers — internationally recognized expert in a
 - 1991 Soaring Society of America Exceptional Service Award
 - 1991 R&D 100 Award for the Development of Advanced Wind Turbine Blades, with James L. Tangler and James V. Frerotte
 - 1984 NASA Langley Research Center Floyd L. Thompson Fellowship for Medium-Speed, Natural-Laminar-Flow Airfoil Design in cooperation with Universitat Stuttgart and DLR Braunschweig
+
+## Related
+
+For the full catalog of Dan's technical reports, see [Publications](/publications/). To get in touch, see [Contact](/contact/).

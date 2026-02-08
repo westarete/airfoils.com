@@ -16,6 +16,8 @@ Several airfoils have been designed to test Eppler's method. By investigating th
 
 In summary, an experimentally-verified, theoretical method has been developed that allows airfoils to be designed for almost all subcritical applications.
 
-## Read or Print the Entire Paper
+## Read the Full Paper
 
-- Read or print the PDF version: [design.pdf]({{ '/pdf/design.pdf' | url }})
+Download the complete paper: [Subsonic Airfoil Design (PDF)]({{ '/pdf/design.pdf' | url }})
+
+For more on the computational tools behind this method, see [The Eppler Airfoil Code](/eppler-code/). For a complete list of technical reports, see [Publications](/publications/).

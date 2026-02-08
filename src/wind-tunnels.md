@@ -15,7 +15,8 @@ Investigations are conducted primarily in the following facilities, in order of 
 - The Pennsylvania State University low-speed, low-turbulence wind tunnel, University Park, Pennsylvania, USA
 - The low-turbulence wind tunnel of the Delft University of Technology Low Speed Laboratory, Delft, The Netherlands
 - The NASA Langley Low-Turbulence Pressure Tunnel, Hampton, Virginia, USA
-- Other facilities may be utilized as required.
+
+Other facilities may be utilized as required.
 
 ## Service
 
@@ -27,3 +28,7 @@ This service normally consists of:
 4. The fabrication of the wind-tunnel model, including coordination, inspection, and verification of coordinates and orifice locations
 5. Conducting the investigation
 6. Analyzing and reporting the results.
+
+## Related
+
+For information on how airfoil designs are verified through testing, see [Subsonic Airfoil Design](/airfoil-design/). For the results of wind-tunnel investigations, see [Publications](/publications/).

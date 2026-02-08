@@ -13,6 +13,6 @@ description: "Contact Airfoils, Incorporated — Dan M. Somers, airfoil design, 
 | Port Matilda, PA 16870-7535 | **Email:** [dan@airfoils.com](mailto:dan@airfoils.com) |
 | USA | |
 
-## If I'm not in the office, ...
+## If I'm not in the office...
 
 ![Schleicher ASW 22 BLE sailplane]({{ '/images/sailplane.jpg' | url }} "Schleicher ASW 22 BLE sailplane")

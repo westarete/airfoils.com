@@ -95,6 +95,6 @@ description: "Publications by Dan M. Somers on wind turbine airfoils, aircraft a
 
 ## Miscellaneous
 
-- Maughmer, Mark D.; and Somers, Dan M.: Figures of Merit for Airfoil/Aircraft Design Integration. AIAA Paper 88-4416, Sept. 1988.
+- Maughmer, Mark D.; and Somers, Dan M.: Figures of Merit for Airfoil/Aircraft Design Integration. AIAA Paper 88-4416, Sept. 1988. [[DOI](https://doi.org/10.2514/6.1988-4416)]
 - Somers, Dan M.; Stack, John P.; and Harvey, William D.: Influence of Surface Static-Pressure Orifices on Boundary-Layer Transition. NASA TM-84492, 1982. [[PDF]({{ '/pdf/publications/TM-84492-Somers.pdf' | url }}) · [NTRS](https://ntrs.nasa.gov/citations/19820020372)]
 - Sawyer, Patricia L.; and Somers, Dan M.: The Application of Microprocessor Technology to In-Flight Computations. Science and Technology of Low Speed and Motorless Flight, NASA CP-2085, Part I, 1979, pp. 267-284.

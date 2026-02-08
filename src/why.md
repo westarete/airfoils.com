@@ -70,7 +70,11 @@ essentially unaffected by roughness. This characteristic leads to increased
 flight safety for aircraft, consistent peak power for wind turbines, and
 reliable operation for fans.
 
-*Why use new airfoils?* 
+*Why use new airfoils?*
 
 Because new airfoils can provide you with up to
 35 percent greater performance.
+
+## Related
+
+To see the range of applications that benefit from new airfoils, see [Applications](/applications/). For a look at how airfoil and application design work together, see [Design Integration](/design-integration/). To discuss your project, see [Contact](/contact/).

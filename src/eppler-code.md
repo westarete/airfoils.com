@@ -4,11 +4,19 @@ title: "Eppler Airfoil Design and Analysis Code"
 description: "The Eppler Airfoil Design and Analysis Code combines conformal-mapping design, panel-method analysis, and integral boundary-layer methods for airfoil engineering."
 ---
 
-The code described in this paper has been developed over the past 45 years. It combines a conformal-mapping method for the design of airfoils with prescribed velocity-distribution characteristics, a panel method for the analysis of the potential flow about given airfoils, and an integral boundary-layer method. It is very efficient and has been successfully applied at Reynolds numbers from 30,000 to 50,000,000. A compressibility correction to the velocity distributions, which is valid as long as the local flow is not supersonic, has been incorporated into the code.
+The code described in this paper has been developed over the past 45 years. It combines three methods:
 
-## Read or Print the Entire Paper
+- A **conformal-mapping method** for the design of airfoils with prescribed velocity-distribution characteristics
+- A **panel method** for the analysis of the potential flow about given airfoils
+- An **integral boundary-layer method**
 
-- Read or print the PDF version: [eppler.pdf]({{ '/pdf/eppler.pdf' | url }})
+It is very efficient and has been successfully applied at Reynolds numbers from 30,000 to 50,000,000. A compressibility correction to the velocity distributions, which is valid as long as the local flow is not supersonic, has been incorporated into the code.
+
+## Read the Full Paper
+
+Download the complete paper: [Eppler Airfoil Design and Analysis Code (PDF)]({{ '/pdf/eppler.pdf' | url }})
+
+For the theoretical foundations behind the code, see [Subsonic Airfoil Design](/airfoil-design/). For related technical reports by Eppler and Somers, see [Publications](/publications/).
 
 ## Availability
 
@@ -16,7 +24,7 @@ The code described in this paper has been developed over the past 45 years. It c
 
 ### In North America
 
-[Email](mailto:dan@airfoils.com)
+Dan M. Somers — [Email](mailto:dan@airfoils.com)
 
 ### Everywhere Else
 
@@ -27,4 +35,4 @@ GERMANY
 
 ![Richard Eppler and Dan Somers discuss a finer point of the code]({{ '/images/eppler_small.jpg' | url }} "Richard Eppler and Dan Somers")
 
-**Dick and Dan discuss a finer point of the code**
+*Dick and Dan discuss a finer point of the code*

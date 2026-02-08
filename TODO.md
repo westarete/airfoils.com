@@ -166,7 +166,13 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 - [ ] Content quality for search
   - [ ] Review page titles and meta descriptions for keyword relevance (airfoil design, wind tunnel testing, Eppler code, etc.)
   - [ ] Ensure the homepage has enough indexable text (not just images/cards)
-  - [ ] Add internal cross-links between related pages (e.g., Publications ↔ Resume, Eppler Code ↔ Airfoil Design)
+  - [x] Add internal cross-links between related pages
+    - [x] Airfoil Design ↔ Eppler Code ↔ Publications
+    - [x] Design Integration → Airfoil Design, Applications, Specifications (+ DOI for reference)
+    - [x] Why? → Applications, Design Integration, Contact
+    - [x] Wind Tunnels → Airfoil Design, Publications
+    - [x] Resume → Publications, Contact
+    - [x] Applications → Airfoil Design, Clients, Publications (also removed raw-image links)
 
 ## Go Live Checklist
 
