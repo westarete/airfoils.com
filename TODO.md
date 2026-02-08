@@ -141,7 +141,8 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 
 14. [x] Add link checker to CI
     - [x] Installed `linkinator` (Google-maintained broken-link checker)
-    - [x] Added `.linkinator.config.json` — recurse site, check internal and external links (only navair.navy.mil skipped — blocks bots)
+    - [x] Added `.linkinator.config.json` — recurse site, internal links only in CI
+    - [x] Added `.linkinator.external.json` and `check:links-external` script for manual external link checking (too many sites block datacenter IPs for CI)
     - [x] Added `lint:links` npm script, wired into `lint` pipeline
     - [x] Added "Check links" step to CI `build-and-lint` job
     - [x] Consolidated separate `a11y` CI job into `build-and-lint` — all four linters now run together with one server

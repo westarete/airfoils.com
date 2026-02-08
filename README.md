@@ -52,7 +52,24 @@ Linting mirrors CI to catch issues before commit:
 - **html-validate** — HTML validation
 - **Stylelint** — CSS linting
 - **pa11y-ci** — Accessibility testing
-- **linkinator** — Broken link checking (internal and external)
+- **linkinator** — Broken link checking (internal links in CI; see below for external)
+
+### External Link Checking
+
+CI only checks internal links (pages, images, PDFs) because too many
+external sites block requests from datacenter IPs, causing false failures.
+The skip list is in `.linkinator.external.json`.
+
+**Run external link checks periodically** (with the dev server running):
+
+```bash
+npm run check:links-external
+```
+
+This should be done before any release and occasionally during development
+to catch links that have gone stale. When a link fails, verify it in a
+browser first — a `[0]` status usually means the site blocks automated
+requests, not that the link is broken.
 
 ## Project Structure
 

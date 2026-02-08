@@ -14,6 +14,7 @@
     "lint:css": "stylelint src/css/input.css",
     "lint:a11y": "pa11y-ci",
     "lint:links": "linkinator http://localhost:8080 --config .linkinator.config.json",
+    "check:links-external": "linkinator http://localhost:8080 --config .linkinator.external.json",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:a11y && npm run lint:links",
     "check": "npm run build && npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1"
