@@ -38,6 +38,11 @@ Some commands require specific permissions:
 The dev server (`npm run dev`) must be running before `lint` or `check`
 because pa11y-ci tests against `http://localhost:8080`.
 
+**Never run `sudo` or commands that require elevated privileges.** If a
+command fails due to permissions (e.g., npm cache ownership), explain the
+problem to the developer and let them fix it in their own terminal. Do not
+attempt to work around OS-level permission issues.
+
 ## Principles
 
 - Choose the best tools that are coherent and native to the environment, that
