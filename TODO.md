@@ -130,9 +130,11 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
   - [ ] Final manual audit (screen reader walkthrough)
 - [x] Remove legacy JavaScript (image rollovers → CSS :hover) — new site has no legacy JS
 - [x] Semantic HTML (no tables for layout) — new site uses CSS Grid/Flexbox throughout
-- [ ] Review/update external links (many 2000-era links may be broken)
+- [x] Review/update external links (many 2000-era links may be broken)
   - [x] Publications page: all legacy links replaced with DOIs and current NTRS citations
-  - [ ] Links page (`src/links.md`): check and update 2000-era URLs
+  - [x] Publications page: replaced 2 broken DOIs with direct OSTI links
+  - [x] Links page: updated 6 broken URLs (LM Wind Power, GAMA, Lancair, Beechcraft, NASA LTPT, Penn State)
+  - [x] Clients page: updated NAWCAD URL
 - [ ] Verify contact info is current (need to confirm with Dan)
 
 ### Validation
