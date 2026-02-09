@@ -102,7 +102,40 @@ src/
 
 dist/                   # Built output (generated, not committed)
 legacy/                 # Archived copy of original airfoils.com
+personas/               # Expert personas for AI-assisted development
 ```
+
+## Working With AI
+
+This project was built with significant AI assistance, and the quality came
+from blending the perspectives of different experts — a typographer, an
+accessibility specialist, an SEO expert, a software engineer, and someone
+who understands Dan's audience. AI is good at channeling these perspectives
+when asked, but it forgets them between conversations. The same AI that gave
+you exacting typographic advice yesterday will make naive font choices today
+unless you re-activate that expertise.
+
+The `personas/` directory solves this. Each file is a prompt that changes
+how the AI thinks — not project documentation, but an instruction to adopt
+a specific expert's cognitive stance. When you want the AI to evaluate a
+change through the eyes of a typographer, or to review content the way Dan's
+clients would read it, reference the persona:
+
+> "You are an expert @personas/typographer.md — review this heading scale."
+>
+> "@personas/audience.md — how does this page land with you?"
+
+The personas don't duplicate project decisions (those live in the style guide,
+README, and AGENTS.md). They change the AI's *way of thinking* — what it
+notices, what it pushes back on, what it raises unprompted.
+
+Available personas:
+
+- **engineer.md** — Craft, feedback loops, tooling discipline
+- **typographer.md** — Type systems, readability, the traditions of technical publishing
+- **accessibility.md** — WCAG, perceptual review, the gap between automated and human judgment
+- **seo.md** — Search optimization, AI discoverability, internal linking
+- **audience.md** — Dan's clients: aerospace engineers who evaluate on substance, not polish
 
 ## Design System
 
