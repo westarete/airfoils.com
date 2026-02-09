@@ -8,6 +8,7 @@ dist/
 .cache/
 
 # Tailwind
+src/css/style.css
 *.css.map
 
 # OS files
