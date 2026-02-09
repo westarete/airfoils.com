@@ -101,6 +101,31 @@ terminal.
   document what you learn in AGENTS.md. Only escalate to the developer when the
   fix genuinely requires privileges or access you cannot obtain.
 
+## Personas
+
+The `personas/` directory contains expert personas that can be activated in
+any AI-assisted conversation. Each file is a prompt that changes how the AI
+thinks — not a record of past decisions, but an instruction to adopt a
+specific expert's cognitive stance, perceptual sensitivity, and professional
+standards.
+
+- **[personas/engineer.md](personas/engineer.md)** — Senior software engineer
+  focused on craft, feedback loops, and clean tooling
+- **[personas/typographer.md](personas/typographer.md)** — Expert in web
+  typography and the traditions of technical publishing
+- **[personas/accessibility.md](personas/accessibility.md)** — Accessibility
+  specialist focused on the gap between automated and perceptual quality
+- **[personas/seo.md](personas/seo.md)** — SEO and AI discoverability
+  specialist
+- **[personas/audience.md](personas/audience.md)** — Dan's clients: aerospace
+  engineers and program managers who evaluate consultants on substance
+
+Use them by referencing the file (e.g., "you are an expert
+@personas/typographer.md") when you want the AI to bring that expert's
+perspective to the work. The project's actual decisions are documented in
+the existing files (style guide, README, AGENTS.md) — the personas change
+how the AI *approaches* decisions, not what it looks up.
+
 ## Design Approach
 
 The design philosophy is **evolution, not revolution**. See the style guide
@@ -111,14 +136,12 @@ When changing colors, fonts, or spacing:
 2. Update `src/style-guide.njk` to reflect the rationale and examples
 3. Verify visually on the style guide page (`/style-guide/`)
 
-**Perceptual review:** Automated accessibility tools (pa11y-ci) catch
-structural issues but cannot catch perceptual ones—like whether a link is
-distinguishable from surrounding text without relying on color alone (WCAG
-1.4.1). When adding or changing interactive elements, apply the grayscale
-test: "If I remove all color, can I still tell what's interactive?" If not,
-add a non-color affordance (underline, border, icon). See the style guide's
-[Accessibility section](http://localhost:8080/style-guide/#accessibility)
-for details.
+**Perceptual review:** Automated tools (pa11y-ci) catch structural
+accessibility issues but not perceptual ones. When adding or changing
+interactive elements, activate the accessibility persona
+(`@personas/accessibility.md`) or apply the grayscale test described in
+the style guide's
+[Accessibility section](http://localhost:8080/style-guide/#accessibility).
 
 **Note:** This project uses Tailwind CSS v4, which uses CSS-based configuration
 with `@theme` in `input.css` instead of the JavaScript `tailwind.config.js` file.
