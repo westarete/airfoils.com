@@ -4,6 +4,10 @@ title: "Publications"
 description: "Publications by Dan M. Somers on wind turbine airfoils, aircraft airfoils, cooling-tower fans, and airfoil design and analysis methods."
 ---
 
+The following is a selected bibliography of nearly 60 publications by
+Dan M. Somers on airfoil design, analysis, and testing — including NASA
+Technical Papers, NREL subcontractor reports, and AIAA journal articles.
+
 ## Horizontal-Axis Wind Turbines
 
 - Somers, Dan M.: Design and Experimental Results for the S827 Airfoil. Airfoils, Inc., 1999. [[PDF]({{ '/pdf/publications/S827-NREL-SR-500-36345.pdf' | url }}) · [DOI](https://doi.org/10.2172/15011672)]
