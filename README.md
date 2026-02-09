@@ -47,6 +47,13 @@ npm run build
 because pa11y-ci and linkinator test against `http://localhost:8080`. Start the
 dev server in a separate terminal first.
 
+**Why `check` and not `test`?** This project has no test suite — no assertions,
+no test framework. What it has are quality checks: HTML validation, accessibility
+auditing, link checking, and linting. The script is named `check` to accurately
+describe what it does, and to leave `npm test` available if the project ever
+needs real tests. The name follows precedent in TypeScript, Rust (`cargo check`),
+and SvelteKit.
+
 Linting mirrors CI to catch issues before commit:
 
 - **html-validate** — HTML validation
@@ -116,6 +123,20 @@ We're modernizing a site that's been unchanged since ~2000. The goal is
 professional tone while applying modern design principles and accessibility
 standards. Dan should recognize his site instantly; a designer should approve
 of the craftsmanship.
+
+### Perceptual Accessibility
+
+Automated tools (pa11y-ci) catch structural accessibility issues—missing alt
+text, heading hierarchy, contrast ratios against backgrounds. They **cannot**
+catch perceptual issues like whether a link is visually distinguishable from
+surrounding text without relying on color alone (WCAG 1.4.1). This is a known
+gap in AI-assisted development: AI tends to validate what automated tools can
+measure and miss what requires human visual judgment.
+
+**The developer should periodically apply the grayscale test:** look at the
+site with color removed and ask, "Can I still tell what's interactive?" See
+the [style guide's Accessibility section](/style-guide/#accessibility) for
+details on the test and the rationale.
 
 ## SEO and AI Discoverability
 

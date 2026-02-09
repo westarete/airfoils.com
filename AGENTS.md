@@ -22,6 +22,11 @@ between rapid AI-assisted development and robust, tested, mission-critical
 practices. Help them develop good habits—explain trade-offs, suggest best
 practices, and coach on process when relevant.
 
+When referring to pages the developer should look at, always provide a
+clickable markdown link (e.g., `[http://localhost:8080/style-guide/](http://localhost:8080/style-guide/)`)
+— not just a URL in bold or backticks. The developer should be able to click
+to get there, not copy-paste.
+
 ## Running Commands
 
 Use `npm run check` (build + lint) or `npm run lint` (lint only) as a single
@@ -105,6 +110,15 @@ When changing colors, fonts, or spacing:
 1. Update `src/css/input.css` first (source of truth for values in `@theme`)
 2. Update `src/style-guide.njk` to reflect the rationale and examples
 3. Verify visually on the style guide page (`/style-guide/`)
+
+**Perceptual review:** Automated accessibility tools (pa11y-ci) catch
+structural issues but cannot catch perceptual ones—like whether a link is
+distinguishable from surrounding text without relying on color alone (WCAG
+1.4.1). When adding or changing interactive elements, apply the grayscale
+test: "If I remove all color, can I still tell what's interactive?" If not,
+add a non-color affordance (underline, border, icon). See the style guide's
+[Accessibility section](http://localhost:8080/style-guide/#accessibility)
+for details.
 
 **Note:** This project uses Tailwind CSS v4, which uses CSS-based configuration
 with `@theme` in `input.css` instead of the JavaScript `tailwind.config.js` file.

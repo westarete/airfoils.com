@@ -127,6 +127,8 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
   - [x] Keyboard navigation (aria-expanded on hamburger, aria-current on nav)
   - [x] Color contrast (selected during style guide phase)
   - [x] Review alt text quality — all 10 images have descriptive, contextual alt text
+  - [x] Links underlined by default (WCAG 1.4.1 — no reliance on color alone)
+  - [x] Added "grayscale test" principle to style guide for perceptual review
 - [x] Remove legacy JavaScript (image rollovers → CSS :hover) — new site has no legacy JS
 - [x] Semantic HTML (no tables for layout) — new site uses CSS Grid/Flexbox throughout
 - [x] Review/update external links (many 2000-era links may be broken)
