@@ -4,26 +4,122 @@ Static website for Airfoils Incorporated, the aerodynamic consulting firm of Dan
 
 **Live site:** https://westarete.github.io/airfoils.com/
 
-## Tech Stack
+## Relationship with AI
 
-- **[Eleventy (11ty)](https://www.11ty.dev/)** - Static site generator
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
-- **GitHub Actions** - CI/CD pipeline
-- **GitHub Pages** - Hosting
+This project is built for AI to be a first-class collaborator with the developer. Before you set up the dev environment, it's good to understand your role as it relates to the AI.
 
-## Why Eleventy?
+### Direction
 
-- Simple mental model: HTML templates with includes and layouts
-- Zero client-side JavaScript in output
-- Great Tailwind integration
-- Markdown support if content editing is needed later
-- Stable, active community
+You decide what to work on and in what order. At a high level, you do this
+through `TODO.md` — it tracks the project's goals, current phase, and
+completed work. At a tactical level, you manage direction through your
+prompts: what to build, which files to change, which expert perspective to
+activate.
 
-## Prerequisites
+Activate the right expertise for each task — the typographer for a font
+decision, the audience persona for a content review, the engineer when
+evaluating a tool change. The AI executes; you set the course.
 
-- Node.js (v18 or later recommended)
+### Context
 
-## Development
+The AI starts every conversation knowing only what's in its persistent files
+and whatever you reference. When it makes a mistake because it didn't know
+something — the path prefix convention, that Dan's clients are aerospace
+engineers, how the build pipeline works — the fix is to put that knowledge
+where the AI will find it next time.
+
+Context lives in many places depending on what it is:
+
+- **`README.md`** — Project documentation, conventions, and setup. Both
+  humans and AI read this.
+- **`src/style-guide.njk`** — The visual source of truth for the design
+  system. Run `npm run dev` and visit
+  [http://localhost:8080/style-guide/](http://localhost:8080/style-guide/)
+  to see it rendered. When the AI needs to understand what the site looks
+  like and why, this is where it looks.
+- **`src/_data/site.js`** — Centralized site metadata (name, URL, author,
+  address). Referenced by templates for SEO tags and structured data.
+- **Inline code comments** — Local context about why a specific decision
+  was made. When a line of code has a non-obvious reason, a comment keeps
+  that context next to the code where it matters.
+
+### Behavior
+
+Sometimes the AI has the right information but the wrong approach. It knows
+the font choices but doesn't think typographically. It knows the WCAG rules
+but doesn't perceive the page as a screen reader user would. Two files
+address this:
+
+**`AGENTS.md`** is auto-loaded by AI tools (Cursor, Claude Code) at the
+start of every conversation. It contains project principles, workflow rules,
+and environment-specific guidance — things like "build the feedback loop
+before adding complexity" and "own the coherence of the codebase." This
+shapes the AI's general working behavior on this project.
+
+**`personas/`** contains expert personas that change how the AI *thinks*
+about specific domains. Each file is a prompt that activates a cognitive
+stance — not project documentation, but an instruction to adopt a specific
+expert's perspective. Reference them when you need that expertise:
+
+> "You are an expert @personas/typographer.md — review this heading scale."
+>
+> "@personas/audience.md — how does this page land with you?"
+
+Available personas:
+
+- **engineer.md** — Craft, feedback loops, tooling discipline
+- **typographer.md** — Type systems, readability, the traditions of technical publishing
+- **accessibility.md** — WCAG, perceptual review, the gap between automated and human judgment
+- **seo.md** — Search optimization, AI discoverability, internal linking
+- **audience.md** — Dan's clients: aerospace engineers who evaluate on substance, not polish
+
+### Outputs
+
+You own the quality of everything the AI produces, and that should remain a
+high bar. Review across every discipline — not just for correctness, but for
+coherence. Does this sound like Dan? Does this page build trust with a senior
+engineer at NREL? Does the typography match the authority of the person it
+represents?
+
+**Automated checks** catch structural problems. Run `npm run check` before
+committing — it builds the site and runs four linters: HTML validation
+(html-validate), CSS linting (Stylelint), accessibility testing (pa11y-ci),
+and broken link checking (linkinator).
+
+**You catch everything automation cannot:**
+
+- **Perceptual accessibility.** Automated tools cannot catch whether a link
+  is visually distinguishable from surrounding text without relying on color
+  alone (WCAG 1.4.1). Periodically apply the grayscale test: look at the
+  site with color removed and ask, "Can I still tell what's interactive?"
+  See the
+  [style guide's Accessibility section](/style-guide/#accessibility) for
+  details.
+- **Dan's voice.** The content was originally written by Dan himself —
+  direct, technically precise, confident without being boastful. When the AI
+  generates or edits copy, make sure it still sounds like Dan, not like a
+  marketing agency.
+- **Visual review.** Check the site at different viewport widths (320px,
+  768px, 1024px+). The AI can write responsive CSS but cannot see the result.
+
+
+## Development Setup
+
+This project was developed with [Cursor](https://www.cursor.com/), but
+nothing about it is Cursor-specific. Any AI-enabled editor (Claude Code,
+Copilot, etc.) will pick up `AGENTS.md` and the personas. Manual coding
+works fine too — the README and style guide document everything you need.
+
+The tech stack is [Eleventy](https://www.11ty.dev/) (static site generator)
+and [Tailwind CSS](https://tailwindcss.com/) (utility-first CSS), deployed
+to GitHub Pages via GitHub Actions. Eleventy was chosen for its simple mental
+model (HTML templates with includes and layouts), zero client-side JavaScript
+in output, and great Tailwind integration.
+
+Requires **Node.js v18 or later** (install via [Homebrew](https://brew.sh/):
+`brew install node`).
+
+### Commands
 
 ```bash
 # Install dependencies
@@ -43,23 +139,16 @@ npm run lint
 npm run build
 ```
 
-**Note**: `lint` and `check` require the dev server to be running (`npm run dev`)
-because pa11y-ci and linkinator test against `http://localhost:8080`. Start the
-dev server in a separate terminal first.
+**Note**: `lint` and `check` require the dev server to be running (`npm run
+dev`) because pa11y-ci and linkinator test against `http://localhost:8080`.
+Start the dev server in a separate terminal first.
 
-**Why `check` and not `test`?** This project has no test suite — no assertions,
-no test framework. What it has are quality checks: HTML validation, accessibility
-auditing, link checking, and linting. The script is named `check` to accurately
-describe what it does, and to leave `npm test` available if the project ever
-needs real tests. The name follows precedent in TypeScript, Rust (`cargo check`),
-and SvelteKit.
-
-Linting mirrors CI to catch issues before commit:
-
-- **html-validate** — HTML validation
-- **Stylelint** — CSS linting
-- **pa11y-ci** — Accessibility testing
-- **linkinator** — Broken link checking (internal links in CI; see below for external)
+**Why `check` and not `test`?** This project has no test suite — no
+assertions, no test framework. What it has are quality checks: HTML
+validation, accessibility auditing, link checking, and linting. The script is
+named `check` to accurately describe what it does, and to leave `npm test`
+available if the project ever needs real tests. The name follows precedent in
+TypeScript, Rust (`cargo check`), and SvelteKit.
 
 ### External Link Checking
 
@@ -105,38 +194,6 @@ legacy/                 # Archived copy of original airfoils.com
 personas/               # Expert personas for AI-assisted development
 ```
 
-## Working With AI
-
-This project was built with significant AI assistance, and the quality came
-from blending the perspectives of different experts — a typographer, an
-accessibility specialist, an SEO expert, a software engineer, and someone
-who understands Dan's audience. AI is good at channeling these perspectives
-when asked, but it forgets them between conversations. The same AI that gave
-you exacting typographic advice yesterday will make naive font choices today
-unless you re-activate that expertise.
-
-The `personas/` directory solves this. Each file is a prompt that changes
-how the AI thinks — not project documentation, but an instruction to adopt
-a specific expert's cognitive stance. When you want the AI to evaluate a
-change through the eyes of a typographer, or to review content the way Dan's
-clients would read it, reference the persona:
-
-> "You are an expert @personas/typographer.md — review this heading scale."
->
-> "@personas/audience.md — how does this page land with you?"
-
-The personas don't duplicate project decisions (those live in the style guide,
-README, and AGENTS.md). They change the AI's *way of thinking* — what it
-notices, what it pushes back on, what it raises unprompted.
-
-Available personas:
-
-- **engineer.md** — Craft, feedback loops, tooling discipline
-- **typographer.md** — Type systems, readability, the traditions of technical publishing
-- **accessibility.md** — WCAG, perceptual review, the gap between automated and human judgment
-- **seo.md** — Search optimization, AI discoverability, internal linking
-- **audience.md** — Dan's clients: aerospace engineers who evaluate on substance, not polish
-
 ## Design System
 
 The site's visual design is documented in two places:
@@ -147,7 +204,8 @@ The site's visual design is documented in two places:
 
 2. **`/style-guide/`** — A self-documenting page showing all design tokens,
    components, and the rationale behind them. Run `npm run dev` and visit
-   http://localhost:8080/style-guide/ to see the design system in action.
+   [http://localhost:8080/style-guide/](http://localhost:8080/style-guide/)
+   to see the design system in action.
 
 ### Design Philosophy
 
@@ -156,20 +214,6 @@ We're modernizing a site that's been unchanged since ~2000. The goal is
 professional tone while applying modern design principles and accessibility
 standards. Dan should recognize his site instantly; a designer should approve
 of the craftsmanship.
-
-### Perceptual Accessibility
-
-Automated tools (pa11y-ci) catch structural accessibility issues—missing alt
-text, heading hierarchy, contrast ratios against backgrounds. They **cannot**
-catch perceptual issues like whether a link is visually distinguishable from
-surrounding text without relying on color alone (WCAG 1.4.1). This is a known
-gap in AI-assisted development: AI tends to validate what automated tools can
-measure and miss what requires human visual judgment.
-
-**The developer should periodically apply the grayscale test:** look at the
-site with color removed and ask, "Can I still tell what's interactive?" See
-the [style guide's Accessibility section](/style-guide/#accessibility) for
-details on the test and the rationale.
 
 ## SEO and AI Discoverability
 
