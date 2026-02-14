@@ -196,15 +196,15 @@ References:
 These are manual steps by the developer — no code changes, no effect on the
 live site.
 
-0a. [ ] Move DNS for `airfoils.com` from ProHosting to Network Solutions (the registrar)
-    - Consolidates DNS management; replicate existing records, no changes yet
-0b. [x] Create GitHub organization `airfoils` for Dan Somers
+0a. [x] Create GitHub organization `airfoils` for Dan Somers
+0b. [x] Verify `airfoils.com` as an approved domain for the `airfoils` org
+    - Added TXT record at ProHosting: `_gh-airfoils-o.airfoils.com`
 0c. [x] Transfer the `airfoils.com` repo from `westarete` to `airfoils`
     - [x] Transferred repo via GitHub Settings → Danger Zone → Transfer
     - [x] Updated local git remote: `git remote set-url origin git@github.com:airfoils/airfoils.com.git`
     - [x] Updated `westarete` → `airfoils` references in package.json, README.md, src/_data/site.js
     - [x] Made ci.yml smoke test derive origin dynamically from deploy output (no more hardcoded domain)
-    - [ ] Verify CI still runs (push pending)
+    - [x] Verified CI passes on `airfoils` org
 
 ### Phase 1: Build redirects (no disruption)
 
@@ -233,17 +233,16 @@ GitHub [recommends verifying](https://docs.github.com/en/pages/configuring-a-cus
 the domain *before* adding it to the repo, to prevent takeover attacks.
 This only requires a TXT DNS record — it does not affect the live site.
 
-2. [ ] Add DNS TXT record for GitHub domain verification
-   - In GitHub account/org Settings → Pages → Add domain → `airfoils.com`
-   - Create TXT record at Network Solutions: `_github-pages-challenge-airfoils.airfoils.com`
-     with the value GitHub provides
-   - Verify with: `dig _github-pages-challenge-airfoils.airfoils.com +nostats +nocomments +nocmd TXT`
-   - Click "Verify" in GitHub Settings once DNS propagates
+2. [x] Add DNS TXT record for GitHub Pages domain verification
+   - [x] In GitHub account/org Settings → Pages → Add domain → `airfoils.com`
+   - [x] Created TXT record at ProHosting: `_github-pages-challenge-airfoils.airfoils.com`
+   - [x] Verified in GitHub Settings
 
 ### Phase 3: Local verification (no disruption)
 
-3. [ ] Run `npm run check` locally with path prefix removed to verify all
+3. [x] Run `npm run check` locally with path prefix removed to verify all
    links and redirects work at root paths
+   - All lint checks pass: HTML, CSS, accessibility (17/17), links (54/54)
 
 ### Phase 4: Config cutover (one commit, still no disruption to live site)
 
@@ -266,21 +265,21 @@ Settings step is authoritative.
 Configure apex domain (`airfoils.com`) + `www` subdomain. GitHub Pages will
 automatically redirect `www.airfoils.com` → `airfoils.com`.
 
-10. [ ] Add DNS A records for apex domain:
+10. [ ] Add DNS A records at ProHosting for apex domain:
     ```
     185.199.108.153
     185.199.109.153
     185.199.110.153
     185.199.111.153
     ```
-11. [ ] Add DNS AAAA records for IPv6 (recommended):
+11. [ ] Add DNS AAAA records at ProHosting for IPv6 (recommended):
     ```
     2606:50c0:8000::153
     2606:50c0:8001::153
     2606:50c0:8002::153
     2606:50c0:8003::153
     ```
-12. [ ] Add DNS CNAME record at Network Solutions: `www.airfoils.com` → `airfoils.github.io`
+12. [ ] Add DNS CNAME record at ProHosting: `www.airfoils.com` → `airfoils.github.io`
 13. [ ] Wait for DNS propagation (up to 24h) and GitHub Pages SSL provisioning
 
 ### Phase 6: Verify
@@ -291,4 +290,5 @@ automatically redirect `www.airfoils.com` → `airfoils.com`.
 17. [ ] Verify legacy URL redirects (e.g., `/airfoil.html` → `/airfoil-design/`)
 18. [ ] Verify SSL certificate is valid
 19. [ ] Enable "Enforce HTTPS" in GitHub repo Settings → Pages (if not auto-enabled)
+
 
