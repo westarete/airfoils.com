@@ -2,7 +2,7 @@
 
 Static website for Airfoils Incorporated, the aerodynamic consulting firm of Dan Somers.
 
-**Live site:** https://airfoils.github.io/airfoils.com/
+**Live site:** https://airfoils.com/
 
 ## Relationship with AI
 
@@ -227,9 +227,8 @@ The base layout (`src/_includes/base.njk`) includes SEO tags on every page:
   `Page Title | Site Name`
 
 Site-wide metadata is centralized in `src/_data/site.js` (company name, URL,
-author, address, phone). The URL is derived from `PATH_PREFIX` for the current
-deployment; when going live on the custom domain, set `SITE_URL` or update
-the default in `site.js`.
+author, address, phone). The URL defaults to `https://airfoils.com` and can
+be overridden with the `SITE_URL` environment variable.
 
 Generated files (built from Nunjucks templates, not static):
 
@@ -239,18 +238,13 @@ Generated files (built from Nunjucks templates, not static):
 - `/llms-full.txt` — extended version with publications, clients, and
   technical background
 
-## Internal Links and Path Prefix
+## Internal Links
 
-The site is deployed to GitHub Pages under a path prefix (`/airfoils.com/`).
-**All internal links must use the Liquid `url` filter** so the prefix is
-applied correctly in every environment:
+**All internal links must use the Liquid `url` filter** so they work
+correctly in every environment:
 
 ```markdown
-<!-- Correct — works locally and on GitHub Pages -->
 [Publications]({{ '/publications/' | url }})
-
-<!-- Wrong — works locally but breaks on the deployed site -->
-[Publications](/publications/)
 ```
 
 This applies everywhere: cross-links, PDF downloads, image `src` attributes,

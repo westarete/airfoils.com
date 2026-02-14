@@ -252,43 +252,47 @@ The custom domain must be set via GitHub repo Settings → Pages. We still
 include a CNAME file as a safety net (some deploy actions use it), but the
 Settings step is authoritative.
 
-4. [ ] Remove `PATH_PREFIX: /airfoils.com/` from `.github/workflows/ci.yml`
-5. [ ] Update `src/_data/site.js` default URL to `https://airfoils.com` (or set `SITE_URL` env var)
-6. [ ] Add `CNAME` file to `src/` containing `airfoils.com` (safety net for deploy action)
-7. [ ] Update `eleventy.config.js` to copy CNAME to dist
+4. [x] Remove `PATH_PREFIX: /airfoils.com/` from `.github/workflows/ci.yml`
+    - Removed the "Rebuild for deployment" step; single build now serves both lint and deploy
+5. [x] Update `src/_data/site.js` default URL to `https://airfoils.com`
+    - Simplified to `const siteUrl = process.env.SITE_URL || "https://airfoils.com"`
+6. [x] Add `CNAME` file to `src/` containing `airfoils.com`
+7. [x] Update `eleventy.config.js` to copy CNAME to dist
+    - Also removed `pathPrefix` global data (unused by templates)
 8. [ ] Push — CI deploys new config to GitHub Pages
 9. [ ] Set custom domain in GitHub repo Settings → Pages → Custom domain → `airfoils.com`
    - GitHub docs say: set this *before* pointing DNS, to prevent subdomain takeover
+10. [ ] Update repo "About" sidebar URL to `https://airfoils.com`
 
 ### Phase 5: DNS cutover (the switch)
 
 Configure apex domain (`airfoils.com`) + `www` subdomain. GitHub Pages will
 automatically redirect `www.airfoils.com` → `airfoils.com`.
 
-10. [ ] Add DNS A records at ProHosting for apex domain:
+11. [ ] Add DNS A records at ProHosting for apex domain:
     ```
     185.199.108.153
     185.199.109.153
     185.199.110.153
     185.199.111.153
     ```
-11. [ ] Add DNS AAAA records at ProHosting for IPv6 (recommended):
+12. [ ] Add DNS AAAA records at ProHosting for IPv6 (recommended):
     ```
     2606:50c0:8000::153
     2606:50c0:8001::153
     2606:50c0:8002::153
     2606:50c0:8003::153
     ```
-12. [ ] Add DNS CNAME record at ProHosting: `www.airfoils.com` → `airfoils.github.io`
-13. [ ] Wait for DNS propagation (up to 24h) and GitHub Pages SSL provisioning
+13. [ ] Add DNS CNAME record at ProHosting: `www.airfoils.com` → `airfoils.github.io`
+14. [ ] Wait for DNS propagation (up to 24h) and GitHub Pages SSL provisioning
 
 ### Phase 6: Verify
 
-14. [ ] Verify DNS with `dig airfoils.com +noall +answer -t A`
-15. [ ] Verify `https://airfoils.com/` serves the new site
-16. [ ] Verify `https://www.airfoils.com/` redirects to `https://airfoils.com/`
-17. [ ] Verify legacy URL redirects (e.g., `/airfoil.html` → `/airfoil-design/`)
-18. [ ] Verify SSL certificate is valid
-19. [ ] Enable "Enforce HTTPS" in GitHub repo Settings → Pages (if not auto-enabled)
+15. [ ] Verify DNS with `dig airfoils.com +noall +answer -t A`
+16. [ ] Verify `https://airfoils.com/` serves the new site
+17. [ ] Verify `https://www.airfoils.com/` redirects to `https://airfoils.com/`
+18. [ ] Verify legacy URL redirects (e.g., `/airfoil.html` → `/airfoil-design/`)
+19. [ ] Verify SSL certificate is valid
+20. [ ] Enable "Enforce HTTPS" in GitHub repo Settings → Pages (if not auto-enabled)
 
 

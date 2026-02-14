@@ -3,9 +3,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/pdf");
   eleventyConfig.addPassthroughCopy("src/css/style.css");
-
-  // Add pathPrefix as a global data variable for templates
-  eleventyConfig.addGlobalData("pathPrefix", process.env.PATH_PREFIX || "/");
+  eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
 
   // Current year for copyright notices (computed at build time — stays
   // current as long as the site is rebuilt at least once per year, which
@@ -18,6 +16,6 @@ module.exports = function (eleventyConfig) {
       output: "dist",
       includes: "_includes",
     },
-    pathPrefix: process.env.PATH_PREFIX || "/",
+    pathPrefix: "/",
   };
 };

@@ -43,11 +43,6 @@ jobs:
       - name: Check accessibility
         run: npm run lint:a11y
 
-      - name: Rebuild for deployment
-        run: npm run build
-        env:
-          PATH_PREFIX: /airfoils.com/
-
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:

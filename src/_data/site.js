@@ -1,14 +1,6 @@
 // Site-wide metadata for SEO, structured data, and social sharing.
-//
-// SITE_URL should be the full base URL of the deployed site (no trailing
-// slash). When going live on the custom domain, change the default to
-// "https://airfoils.com" and remove the PATH_PREFIX env var from CI.
 
-const pathPrefix = process.env.PATH_PREFIX || "/";
-const origin = "https://airfoils.github.io";
-const siteUrl =
-  process.env.SITE_URL ||
-  (pathPrefix === "/" ? origin : `${origin}${pathPrefix.replace(/\/$/, "")}`);
+const siteUrl = process.env.SITE_URL || "https://airfoils.com";
 
 module.exports = {
   name: "Airfoils Incorporated",

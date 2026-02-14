@@ -147,11 +147,10 @@ the style guide's
 with `@theme` in `input.css` instead of the JavaScript `tailwind.config.js` file.
 The config.js file is kept for reference but is not used by Tailwind v4.
 
-## Internal Links and Path Prefix
+## Internal Links
 
-See "Internal Links and Path Prefix" in `README.md`. All internal links
-**must** use the Liquid `| url` filter — bare paths like `/publications/`
-break on the deployed site.
+See "Internal Links" in `README.md`. All internal links **must** use the
+Liquid `| url` filter for consistency across environments.
 
 ## Git Workflow
 
