@@ -259,10 +259,10 @@ Settings step is authoritative.
 6. [x] Add `CNAME` file to `src/` containing `airfoils.com`
 7. [x] Update `eleventy.config.js` to copy CNAME to dist
     - Also removed `pathPrefix` global data (unused by templates)
-8. [ ] Push — CI deploys new config to GitHub Pages
-9. [ ] Set custom domain in GitHub repo Settings → Pages → Custom domain → `airfoils.com`
-   - GitHub docs say: set this *before* pointing DNS, to prevent subdomain takeover
-10. [ ] Update repo "About" sidebar URL to `https://airfoils.com`
+8. [x] Push — CI deploys new config to GitHub Pages
+9. [x] Set custom domain in GitHub repo Settings → Pages → Custom domain → `airfoils.com`
+   - DNS not yet pointed, so GitHub shows "improperly configured" — expected
+10. [x] Update repo "About" sidebar URL (via "Use your GitHub Pages website" checkbox)
 
 ### Phase 5: DNS cutover (the switch)
 
