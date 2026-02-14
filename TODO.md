@@ -182,15 +182,30 @@ The legacy site (archived in `legacy/airfoils.com/`) was analyzed on 2026-02-07.
 
 ## Go Live Checklist
 
-When ready to deploy to production at `airfoils.com`:
+Deploy to production at `airfoils.com`. Steps are ordered to minimize
+disruption — the legacy site (on its existing static host) stays live until
+the DNS cutover in Phase 5. DNS can be switched back at any time if needed.
 
-1. [ ] Remove `PATH_PREFIX: /airfoils.com/` from `.github/workflows/ci.yml`
-2. [ ] Update `src/_data/site.js` default URL to `https://airfoils.com` (or set `SITE_URL` env var)
-3. [ ] Add `CNAME` file to `src/` containing `airfoils.com`
-4. [ ] Update `eleventy.config.js` to copy CNAME to dist
-5. [ ] Point `airfoils.com` DNS to GitHub Pages (185.199.108-111.153)
-6. [ ] Enable custom domain in GitHub repo settings
-7. [ ] Add legacy URL redirects (GitHub Pages has no server-side redirects)
+References:
+- [About custom domains and GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)
+- [Managing a custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+- [Verifying your custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages)
+
+### Phase 0: Prepare infrastructure (developer, no disruption)
+
+These are manual steps by the developer — no code changes, no effect on the
+live site.
+
+0a. [ ] Move DNS for `airfoils.com` from ProHosting to Network Solutions (the registrar)
+    - Consolidates DNS management; replicate existing records, no changes yet
+0b. [x] Create GitHub organization `airfoils` for Dan Somers
+0c. [ ] Transfer the `airfoils.com` repo from `westarete` to `airfoils`
+    - Update local git remote: `git remote set-url origin git@github.com:airfoils/airfoils.com.git`
+    - Verify CI still runs (GitHub preserves Actions workflows on transfer)
+
+### Phase 1: Build redirects (no disruption)
+
+1. [ ] Add legacy URL redirects (GitHub Pages has no server-side redirects)
    - Create a `redirect.njk` layout with `<meta http-equiv="refresh">` and `<link rel="canonical">`
    - Create a data file (`src/_data/redirects.json` or similar) mapping old → new paths
    - Use Eleventy pagination to generate an HTML file at each old path
@@ -206,5 +221,69 @@ When ready to deploy to production at `airfoils.com`:
      `eppler1.html`–`eppler8.html` → `/eppler-code/`,
      `pubs1.html`–`pubs5.html` → `/publications/`
    - Add redirect pages to pa11y-ci and html-validate checks
-8. [ ] Verify site works at `https://airfoils.com/`
+
+### Phase 2: Verify domain with GitHub (no disruption)
+
+GitHub [recommends verifying](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages)
+the domain *before* adding it to the repo, to prevent takeover attacks.
+This only requires a TXT DNS record — it does not affect the live site.
+
+2. [ ] Add DNS TXT record for GitHub domain verification
+   - In GitHub account/org Settings → Pages → Add domain → `airfoils.com`
+   - Create TXT record at Network Solutions: `_github-pages-challenge-airfoils.airfoils.com`
+     with the value GitHub provides
+   - Verify with: `dig _github-pages-challenge-airfoils.airfoils.com +nostats +nocomments +nocmd TXT`
+   - Click "Verify" in GitHub Settings once DNS propagates
+
+### Phase 3: Local verification (no disruption)
+
+3. [ ] Run `npm run check` locally with path prefix removed to verify all
+   links and redirects work at root paths
+
+### Phase 4: Config cutover (one commit, still no disruption to live site)
+
+**Note:** Since the site uses `actions/deploy-pages`, [the CNAME file in the
+repo is ignored](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain).
+The custom domain must be set via GitHub repo Settings → Pages. We still
+include a CNAME file as a safety net (some deploy actions use it), but the
+Settings step is authoritative.
+
+4. [ ] Remove `PATH_PREFIX: /airfoils.com/` from `.github/workflows/ci.yml`
+5. [ ] Update `src/_data/site.js` default URL to `https://airfoils.com` (or set `SITE_URL` env var)
+6. [ ] Add `CNAME` file to `src/` containing `airfoils.com` (safety net for deploy action)
+7. [ ] Update `eleventy.config.js` to copy CNAME to dist
+8. [ ] Push — CI deploys new config to GitHub Pages
+9. [ ] Set custom domain in GitHub repo Settings → Pages → Custom domain → `airfoils.com`
+   - GitHub docs say: set this *before* pointing DNS, to prevent subdomain takeover
+
+### Phase 5: DNS cutover (the switch)
+
+Configure apex domain (`airfoils.com`) + `www` subdomain. GitHub Pages will
+automatically redirect `www.airfoils.com` → `airfoils.com`.
+
+10. [ ] Add DNS A records for apex domain:
+    ```
+    185.199.108.153
+    185.199.109.153
+    185.199.110.153
+    185.199.111.153
+    ```
+11. [ ] Add DNS AAAA records for IPv6 (recommended):
+    ```
+    2606:50c0:8000::153
+    2606:50c0:8001::153
+    2606:50c0:8002::153
+    2606:50c0:8003::153
+    ```
+12. [ ] Add DNS CNAME record at Network Solutions: `www.airfoils.com` → `airfoils.github.io`
+13. [ ] Wait for DNS propagation (up to 24h) and GitHub Pages SSL provisioning
+
+### Phase 6: Verify
+
+14. [ ] Verify DNS with `dig airfoils.com +noall +answer -t A`
+15. [ ] Verify `https://airfoils.com/` serves the new site
+16. [ ] Verify `https://www.airfoils.com/` redirects to `https://airfoils.com/`
+17. [ ] Verify legacy URL redirects (e.g., `/airfoil.html` → `/airfoil-design/`)
+18. [ ] Verify SSL certificate is valid
+19. [ ] Enable "Enforce HTTPS" in GitHub repo Settings → Pages (if not auto-enabled)
 
