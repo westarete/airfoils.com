@@ -20,6 +20,9 @@
     "http://localhost:8080/links/",
     "http://localhost:8080/wind-tunnels/",
     "http://localhost:8080/design-integration/",
-    "http://localhost:8080/specifications/"
+    "http://localhost:8080/specifications/",
+    "http://localhost:8080/airfoil.html",
+    "http://localhost:8080/integration.htm",
+    "http://localhost:8080/eppler3.html"
   ]
 }

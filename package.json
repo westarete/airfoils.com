@@ -10,7 +10,7 @@
     "dev:css": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/style.css --watch",
     "dev:11ty": "npx eleventy --serve",
     "dev": "npm run build:css && npm-run-all --parallel dev:*",
-    "lint:html": "html-validate dist/**/*.html",
+    "lint:html": "html-validate dist/**/*.html dist/**/*.htm",
     "lint:css": "stylelint src/css/input.css",
     "lint:a11y": "pa11y-ci",
     "lint:links": "linkinator http://localhost:8080 --config .linkinator.config.json",

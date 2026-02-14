@@ -205,22 +205,24 @@ live site.
 
 ### Phase 1: Build redirects (no disruption)
 
-1. [ ] Add legacy URL redirects (GitHub Pages has no server-side redirects)
-   - Create a `redirect.njk` layout with `<meta http-equiv="refresh">` and `<link rel="canonical">`
-   - Create a data file (`src/_data/redirects.json` or similar) mapping old → new paths
-   - Use Eleventy pagination to generate an HTML file at each old path
-   - Legacy main pages (12):
+1. [x] Add legacy URL redirects (GitHub Pages has no server-side redirects)
+   - [x] Created `src/_includes/redirect.njk` layout with `<meta http-equiv="refresh">`, `<link rel="canonical">`, and `<meta name="robots" content="noindex, follow">`
+   - [x] Created `src/_data/redirects.json` mapping 31 old → new paths
+   - [x] Created `src/redirects.njk` using Eleventy pagination to generate an HTML file at each old path
+   - [x] Legacy main pages (12):
      `airfoil.html` → `/airfoil-design/`, `apps.html` → `/applications/`,
      `clients.html` → `/clients/`, `contact.html` → `/contact/`,
      `integration.htm` → `/design-integration/`, `eppler.html` → `/eppler-code/`,
      `links.html` → `/links/`, `pubs.html` → `/publications/`,
      `resume.html` → `/resume/`, `spec.html` → `/specifications/`,
      `why.html` → `/why/`, `tunnel.html` → `/wind-tunnels/`
-   - Legacy multi-page articles (~19):
+   - [x] Legacy multi-page articles (19):
      `airfoil1.html`–`airfoil6.html` → `/airfoil-design/`,
      `eppler1.html`–`eppler8.html` → `/eppler-code/`,
      `pubs1.html`–`pubs5.html` → `/publications/`
-   - Add redirect pages to pa11y-ci and html-validate checks
+   - [x] Added 3 representative redirect URLs to `.pa11yci.json` (covers main page, article sub-page, and `.htm` extension)
+   - [x] Updated `lint:html` script to also validate `.htm` files (`integration.htm`)
+   - [x] All 31 redirect pages pass html-validate, pa11y-ci, and linkinator
 
 ### Phase 2: Verify domain with GitHub (no disruption)
 

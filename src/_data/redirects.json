@@ -1,0 +1,36 @@
+[
+  { "from": "airfoil.html",  "to": "/airfoil-design/",      "title": "Airfoil Design" },
+  { "from": "apps.html",     "to": "/applications/",        "title": "Applications" },
+  { "from": "clients.html",  "to": "/clients/",             "title": "Clients" },
+  { "from": "contact.html",  "to": "/contact/",             "title": "Contact" },
+  { "from": "integration.htm", "to": "/design-integration/", "title": "Design Integration" },
+  { "from": "eppler.html",   "to": "/eppler-code/",         "title": "Eppler Code" },
+  { "from": "links.html",    "to": "/links/",               "title": "Links" },
+  { "from": "pubs.html",     "to": "/publications/",        "title": "Publications" },
+  { "from": "resume.html",   "to": "/resume/",              "title": "Resume" },
+  { "from": "spec.html",     "to": "/specifications/",      "title": "Specifications" },
+  { "from": "why.html",      "to": "/why/",                 "title": "Why?" },
+  { "from": "tunnel.html",   "to": "/wind-tunnels/",        "title": "Wind Tunnels" },
+
+  { "from": "airfoil1.html", "to": "/airfoil-design/",      "title": "Airfoil Design" },
+  { "from": "airfoil2.html", "to": "/airfoil-design/",      "title": "Airfoil Design" },
+  { "from": "airfoil3.html", "to": "/airfoil-design/",      "title": "Airfoil Design" },
+  { "from": "airfoil4.html", "to": "/airfoil-design/",      "title": "Airfoil Design" },
+  { "from": "airfoil5.html", "to": "/airfoil-design/",      "title": "Airfoil Design" },
+  { "from": "airfoil6.html", "to": "/airfoil-design/",      "title": "Airfoil Design" },
+
+  { "from": "eppler1.html",  "to": "/eppler-code/",         "title": "Eppler Code" },
+  { "from": "eppler2.html",  "to": "/eppler-code/",         "title": "Eppler Code" },
+  { "from": "eppler3.html",  "to": "/eppler-code/",         "title": "Eppler Code" },
+  { "from": "eppler4.html",  "to": "/eppler-code/",         "title": "Eppler Code" },
+  { "from": "eppler5.html",  "to": "/eppler-code/",         "title": "Eppler Code" },
+  { "from": "eppler6.html",  "to": "/eppler-code/",         "title": "Eppler Code" },
+  { "from": "eppler7.html",  "to": "/eppler-code/",         "title": "Eppler Code" },
+  { "from": "eppler8.html",  "to": "/eppler-code/",         "title": "Eppler Code" },
+
+  { "from": "pubs1.html",    "to": "/publications/",        "title": "Publications" },
+  { "from": "pubs2.html",    "to": "/publications/",        "title": "Publications" },
+  { "from": "pubs3.html",    "to": "/publications/",        "title": "Publications" },
+  { "from": "pubs4.html",    "to": "/publications/",        "title": "Publications" },
+  { "from": "pubs5.html",    "to": "/publications/",        "title": "Publications" }
+]
