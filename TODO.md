@@ -199,9 +199,12 @@ live site.
 0a. [ ] Move DNS for `airfoils.com` from ProHosting to Network Solutions (the registrar)
     - Consolidates DNS management; replicate existing records, no changes yet
 0b. [x] Create GitHub organization `airfoils` for Dan Somers
-0c. [ ] Transfer the `airfoils.com` repo from `westarete` to `airfoils`
-    - Update local git remote: `git remote set-url origin git@github.com:airfoils/airfoils.com.git`
-    - Verify CI still runs (GitHub preserves Actions workflows on transfer)
+0c. [x] Transfer the `airfoils.com` repo from `westarete` to `airfoils`
+    - [x] Transferred repo via GitHub Settings → Danger Zone → Transfer
+    - [x] Updated local git remote: `git remote set-url origin git@github.com:airfoils/airfoils.com.git`
+    - [x] Updated `westarete` → `airfoils` references in package.json, README.md, src/_data/site.js
+    - [x] Made ci.yml smoke test derive origin dynamically from deploy output (no more hardcoded domain)
+    - [ ] Verify CI still runs (push pending)
 
 ### Phase 1: Build redirects (no disruption)
 

@@ -5,7 +5,7 @@
 // "https://airfoils.com" and remove the PATH_PREFIX env var from CI.
 
 const pathPrefix = process.env.PATH_PREFIX || "/";
-const origin = "https://westarete.github.io";
+const origin = "https://airfoils.github.io";
 const siteUrl =
   process.env.SITE_URL ||
   (pathPrefix === "/" ? origin : `${origin}${pathPrefix.replace(/\/$/, "")}`);

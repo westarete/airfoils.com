@@ -21,15 +21,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/westarete/airfoils.com.git"
+    "url": "git+https://github.com/airfoils/airfoils.com.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/westarete/airfoils.com/issues"
+    "url": "https://github.com/airfoils/airfoils.com/issues"
   },
-  "homepage": "https://github.com/westarete/airfoils.com#readme",
+  "homepage": "https://github.com/airfoils/airfoils.com#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@tailwindcss/cli": "^4.1.18",

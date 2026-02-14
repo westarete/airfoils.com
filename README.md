@@ -2,7 +2,7 @@
 
 Static website for Airfoils Incorporated, the aerodynamic consulting firm of Dan Somers.
 
-**Live site:** https://westarete.github.io/airfoils.com/
+**Live site:** https://airfoils.github.io/airfoils.com/
 
 ## Relationship with AI
 

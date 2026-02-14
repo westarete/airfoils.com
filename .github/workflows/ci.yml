@@ -99,7 +99,8 @@ jobs:
           for css in $CSS_URLS; do
             # Handle relative URLs
             if [[ "$css" == /* ]]; then
-              FULL_URL="https://westarete.github.io${css}"
+              ORIGIN=$(echo "$BASE_URL" | sed 's|\(https\?://[^/]*\).*|\1|')
+              FULL_URL="${ORIGIN}${css}"
             else
               FULL_URL="${BASE_URL}${css}"
             fi
