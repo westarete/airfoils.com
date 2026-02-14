@@ -269,30 +269,36 @@ Settings step is authoritative.
 Configure apex domain (`airfoils.com`) + `www` subdomain. GitHub Pages will
 automatically redirect `www.airfoils.com` → `airfoils.com`.
 
-11. [ ] Add DNS A records at ProHosting for apex domain:
-    ```
-    185.199.108.153
-    185.199.109.153
-    185.199.110.153
-    185.199.111.153
-    ```
-12. [ ] Add DNS AAAA records at ProHosting for IPv6 (recommended):
-    ```
-    2606:50c0:8000::153
-    2606:50c0:8001::153
-    2606:50c0:8002::153
-    2606:50c0:8003::153
-    ```
-13. [ ] Add DNS CNAME record at ProHosting: `www.airfoils.com` → `airfoils.github.io`
-14. [ ] Wait for DNS propagation (up to 24h) and GitHub Pages SSL provisioning
+11. [x] Add DNS A record at ProHosting for apex domain: `185.199.108.153`
+    - ProHosting only supports one A record (no IPv6/AAAA either)
+12. [x] Add DNS CNAME record at ProHosting: `www.airfoils.com` → `airfoils.github.io`
+13. [x] Wait for DNS propagation (up to 24h) and GitHub Pages SSL provisioning
 
 ### Phase 6: Verify
 
-15. [ ] Verify DNS with `dig airfoils.com +noall +answer -t A`
-16. [ ] Verify `https://airfoils.com/` serves the new site
-17. [ ] Verify `https://www.airfoils.com/` redirects to `https://airfoils.com/`
-18. [ ] Verify legacy URL redirects (e.g., `/airfoil.html` → `/airfoil-design/`)
-19. [ ] Verify SSL certificate is valid
-20. [ ] Enable "Enforce HTTPS" in GitHub repo Settings → Pages (if not auto-enabled)
+14. [x] Verify DNS with `dig airfoils.com +noall +answer -t A`
+15. [x] Verify `https://airfoils.com/` serves the new site
+16. [x] Verify `https://www.airfoils.com/` redirects to `https://airfoils.com/`
+17. [x] Verify legacy URL redirects (e.g., `/airfoil.html` → `/airfoil-design/`)
+18. [x] Verify SSL certificate is valid (Let's Encrypt, issued 2026-02-14)
+19. [x] HTTPS enforced (HTTP → HTTPS redirect confirmed; auto-enabled by GitHub)
 
+### Post-launch: DNS transfer to Network Solutions
+
+After launch, transfer DNS from ProHosting to Network Solutions to get full
+redundancy and IPv6 support. Add all four A and AAAA records:
+
+```
+A records:
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+
+AAAA records:
+2606:50c0:8000::153
+2606:50c0:8001::153
+2606:50c0:8002::153
+2606:50c0:8003::153
+```
 
